@@ -1,149 +1,339 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Laravel</title>
+    <title>Minutos - Newsletter</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="{{asset('site/img/favicon.ico')}}" rel="icon">
+    <link href="{{asset('site/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Nunito';
-            background: #f7fafc;
-        }
-    </style>
+    <!-- Vendor CSS Files -->
+    <link href="{{asset('site/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{asset('site/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('site/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('site/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('site/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container-fluid fixed-top p-4">
-        <div class="col-12">
-            <div class="d-flex justify-content-end">
-                @if (Route::has('login'))
-                    <div class="">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
-                        @endif
-                    </div>
-                @endif
-            </div>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <div class="logo">
+            <a href="#"><img src="{{asset('site/img/logo.png')}}" alt="" class="img-fluid"></a>
         </div>
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section class="hero-section" id="hero">
+
+    <div class="wave">
+
+        <svg width="100%" height="655px" viewBox="0 0 1920 655" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+                    <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,757 L1017.15166,757 L0,757 L0,439.134243 Z" id="Path"></path>
+                </g>
+            </g>
+        </svg>
+
     </div>
 
-    <div class="container-fluid my-5 pt-5 px-5">
-        <div class="row justify-content-center px-4">
-            <div class="col-md-12 col-lg-9">
-                <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-4" style="width: 271px">
-                    <g clip-path="url(#clip0)" fill="#EF3B2D">
-                        <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                    </g>
-                </svg>
-
-                <div class="card shadow-sm">
-                    <div class="row">
-                        <div class="col-md-6 pr-0">
-                            <div class="card-body border-right border-bottom p-3 h-100">
-                                <div class="d-flex flex-row bd-highlight pt-2">
-                                    <div>
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                    </div>
-                                    <div class="pl-3">
-                                        <div class="mb-2">
-                                            <a href="https://laravel.com/docs" class="h5 font-weight-bolder text-dark">Documentation</a>
-                                        </div>
-                                        <p class="text-muted small">
-                                            Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 pl-0">
-                            <div class="card-body border-bottom p-3 h-100">
-                                <div class="d-flex flex-row bd-highlight pt-2">
-                                    <div>
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    </div>
-                                    <div class="pl-3">
-                                        <div class="mb-2">
-                                            <a href="https://laracasts.com" class="h5 font-weight-bolder text-dark">Laracasts</a>
-                                        </div>
-                                        <p class="text-muted small">
-                                            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 pr-0">
-                            <div class="card-body border-right p-3 h-100">
-                                <div class="d-flex flex-row bd-highlight pt-2">
-                                    <div>
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                    </div>
-                                    <div class="pl-3 text-sm">
-                                        <div class="mb-2">
-                                            <a href="https://laravel-news.com/" class="h5 font-weight-bolder text-dark">Laravel News</a>
-                                        </div>
-                                        <p class="text-muted small">
-                                            Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 pl-0">
-                            <div class="card-body p-3 h-100">
-                                <div class="d-flex flex-row bd-highlight pt-2">
-                                    <div>
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    </div>
-                                    <div class="pl-3">
-                                        <div class="mb-2">
-                                            <span class="h5 font-weight-bolder text-dark">Vibrant Ecosystem</span>
-                                        </div>
-                                        <p class="text-muted small">
-                                            Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="text-muted">Forge</a>, <a href="https://vapor.laravel.com" class="text-muted">Vapor</a>, <a href="https://nova.laravel.com" class="text-muted">Nova</a>, and <a href="https://envoyer.io" class="text-muted">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="text-muted">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="text-muted">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="text-muted">Echo</a>, <a href="https://laravel.com/docs/horizon" class="text-muted">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="text-muted">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="text-muted">Telescope</a>, and more.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 hero-text-image">
+                <div class="row">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h1 data-aos="fade-right">INFORMAÇÃO SEM TEMPO A PERDER</h1>
+                        <p class="mb-3" data-aos="fade-right" data-aos-delay="100">Comece o dia sabendo do que realmente importa</p>
+                        <p class="font-texto">Ganhamos tempo para você, vasculhando até 85 fontes de notícias para te
+                            entregar os fatos mais relevantes do dia num único, empolgante e conciso boletim informativo.</p>
+                        <p class="font-texto">Das últimas de Brasília ao vai e vem dos mercados, das apostas das gigantes
+                            da tecnologia aos lançamentos dos cinemas e streamings - o que importa está lá, em sete <strong>minutos</strong>
+                            ou menos de leitura. </p>
+                        <p class="font-texto">De segunda a sexta-feira, bem cedinho em sua <strong>caixa de email.</strong></p>
+                        <p class="font-texto">Assine agora a nossa newsletter e se prepare para o dia em <strong>minutos</strong></p>
+                        <p class="font-texto"><strong>É 100% de graça</strong></p>
+                        <p data-aos="fade-right" data-aos-delay="100" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">ASSINAR</a></p>
+                        <p class="font-texto-cancel"><strong>Não tem mais interesse?</strong></p>
+                        <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
                     </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-3">
-                    <div class="text-sm text-muted">
-                        <div class="flex align-content-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="text-muted" style="width: 18px">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="text-muted">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ms-4 text-muted" style="width: 18px">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="text-muted">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="text-sm text-muted">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="col-lg-4 iphone-wrap">
+                        <img src="{{asset('site/img/phone_1.png')}}" alt="Image" class="phone-1" data-aos="fade-right">
+                        <img src="{{asset('site/img/phone_2.png')}}" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+    <section class="causa-section">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5" data-aos="fade">
+                <h3>Por que minutos será relevante para seu dia-a-dia</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="step">
+                        <span class="number">01</span>
+                        <p>Conteúdo confiável entregue de maneira <strong>rápida e eficiente</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step">
+                        <span class="number">02</span>
+                        <p>Jornalismo <strong>baseado em fatos</strong> para que você forme sua própria opinião</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step">
+                        <span class="number">03</span>
+                        <p>Removemos o ruído da internet e focamos no que <strong>realmente tem valor</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step">
+                        <span class="number">04</span>
+                        <p>Olhar voltado para ciência, tecnologias e <strong>mudanças reais</strong> da sociedade</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade">
+                <div class="col-md-6 mt-5 mb-4">
+                    <img src="{{asset('site/img/img_4.jpg')}}" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="causa-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 me-auto">
+                    <h1>NOSSA CAUSA</h1>
+                    <h2 class="mb-4">Informar mais com menos</h2>
+                    <p class="mb-4 text-black">Somos uma empresa de mídia digital cujo foco é oferecer uma <strong>cobertura mais
+                            inteligente e eficiente</strong> das questões que moldam o Brasil e o mundo.</p>
+                    <p class="mb-4 text-black">Nossa missão é fornecer <strong>conteúdo jornalístico confiável</strong> para nosso leitor,
+                        <strong>priorizando o essencial,</strong> e fazendo-o <strong>economizar tempo</strong> no dia-a-dia.</p>
+                    <p class="mb-4 text-black">Acreditamos que a desinformação e as notícias falsas reduzem a nossa capacidade de
+                        fazer boas escolhas, tanto coletivas como individuais, e enfraquecem a democracia.</p>
+                    <p class="mb-4 text-black">Por isso, estamos verdadeiramente obcecados em oferecer informação que realmente
+                        tem valor, com um jornalismo que atenda aos mais altos padrões e calcado em 3Cs – curto, claro
+                        e consistente.</p>
+                    <p class="mb-4 text-black">Mantenha-se informado sobre os fatos que importam sem gastar nada</p>
+                    <p class="mb-4 text-black">Nossa newsletter <strong>é 100% de graça</strong></p>
+                    <p><a href="#" class="btn btn-primary">ASSINAR</a></p>
+                    <p class="font-texto-cancel"><strong>Não tem mais interesse?</strong></p>
+                    <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="{{asset('site/img/img_1.jpg')}}" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section border-top border-bottom">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-5">
+                    <h2 class="section-heading">Opinião dos assinantes</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-7">
+
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="review text-center">
+                                    <p class="stars">
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill muted"></span>
+                                    </p>
+                                    <h3>Excellent App!</h3>
+                                    <blockquote>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
+                                            aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
+                                            provident voluptates consectetur maiores quos.</p>
+                                    </blockquote>
+
+                                    <p class="review-user">
+                                        <img src="{{asset('site/img/person_1.jpg')}}" alt="Image" class="img-fluid rounded-circle mb-3">
+                                        <span class="d-block"> <span class="text-black">Jean Doe</span>, &mdash; App User</span>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item 1-->
+
+                            <div class="swiper-slide">
+                                <div class="review text-center">
+                                    <p class="stars">
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill muted"></span>
+                                    </p>
+                                    <h3>This App is easy to use!</h3>
+                                    <blockquote>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
+                                            aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
+                                            provident voluptates consectetur maiores quos.</p>
+                                    </blockquote>
+
+                                    <p class="review-user">
+                                        <img src="{{asset('site/img/person_2.jpg')}}" alt="Image" class="img-fluid rounded-circle mb-3">
+                                        <span class="d-block"><span class="text-black">Johan Smith</span>, &mdash; App User</span>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item 2-->
+
+                            <div class="swiper-slide">
+                                <div class="review text-center">
+                                    <p class="stars">
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill muted"></span>
+                                    </p>
+                                    <h3>Awesome functionality!</h3>
+                                    <blockquote>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
+                                            aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
+                                            provident voluptates consectetur maiores quos.</p>
+                                    </blockquote>
+                                    <p class="review-user">
+                                        <img src="{{asset('site/img/person_3.jpg')}}" alt="Image" class="img-fluid rounded-circle mb-3">
+                                        <span class="d-block"><span class="text-black">Jean Thunberg</span>, &mdash; App User</span>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item 3-->
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= CTA Section ======= -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 me-auto text-center text-md-start mb-5 mb-md-0">
+                    <h2>Assine Nossa Newsletter</h2>
+                    <h2>É 100% de graça</h2>
+                </div>
+                <div class="col-md-5 text-center text-md-end">
+                    <p>
+                        <a href="#" class="btn d-inline-flex align-items-center btn-mobil"><img width="24" src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid" style="margin-right: 8px;"/><span>ASSINAR</span></a>
+                        <a href="#" class="btn d-inline-flex align-items-center btn-mobil"><img width="24" src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid" style="margin-right: 8px;"/><span>LER ANTERIORES</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End CTA Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h3>Sobre o Canal Minutos</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
+                    dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
+                <p class="social">
+                    <a href="#"><span class="bi bi-twitter"></span></a>
+                    <a href="#"><span class="bi bi-facebook"></span></a>
+                    <a href="#"><span class="bi bi-instagram"></span></a>
+                    <a href="#"><span class="bi bi-linkedin"></span></a>
+                </p>
+            </div>
+            <div class="col-md-7 ms-auto">
+                <div class="row site-section pt-0">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h3>Menu</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Assinar</a></li>
+                            <li><a href="#">Edições Anteriores</a></li>
+                            <li><a href="#">Avaliar o serviço</a></li>
+                            <li><a href="#">Cancelar Assinatura</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h3>Outros Links</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Nossos Termos</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Fale com a gente</a></li>
+                            <li><a href="#">Nosso time</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h3>Baixe nosso APP</h3>
+                        <div>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="btn btn-primary align-items-center"><i class="bx bxl-apple"></i><span> Apple Store</span></a></li>
+                                <li><a href="#" class="btn btn-primary align-items-center"><i class="bx bxl-play-store"></i><span> Google Play</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+            <div class="col-md-7">
+                <p class="copyright">&copy; Copyright Marketing Mix. Todos os direitos reservados</p>
+                <div class="credits">
+                    Desenvolvido com <a href="#">Laravel Framework</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{{asset('site/vendor/aos/aos.js')}}"></script>
+<script src="{{asset('site/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('site/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('site/vendor/php-email-form/validate.js')}}"></script>
+
+<!-- Template Main JS File -->
+<script src="{{asset('site/js/main.js')}}"></script>
 </body>
 </html>
