@@ -166,6 +166,12 @@ return [
          * Package Service Providers...
          */
 
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Bootstrapper\BootstrapperL5ServiceProvider::class,
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -231,7 +237,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Alert' => Bootstrapper\Facades\Alert::class,
+        'Carousel' => Bootstrapper\Facades\Carousel::class,
+        'Button' => Bootstrapper\Facades\Button::class,
+        'Form' => Bootstrapper\Facades\Form::class,
+        'Icon' => Bootstrapper\Facades\Icon::class,
+        'Table' => Bootstrapper\Facades\Table::class,
+        'MediaObject' => Bootstrapper\Facades\MediaObject::class,
+        'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
     ],
 
 ];

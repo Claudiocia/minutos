@@ -4,7 +4,7 @@
             <div class="card-body bg-white px-5 py-3 border-bottom rounded-top">
                 <div class="mx-3 my-3">
                     <div>
-                        <x-jet-application-logo style="width: 317px;" />
+                        <x-jet-application-logo/>
                     </div>
 
                     <h3 class="h3 my-4">
