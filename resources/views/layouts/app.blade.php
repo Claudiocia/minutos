@@ -12,6 +12,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('site/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
 
         @livewireStyles
 
@@ -39,5 +41,5 @@
         @livewireScripts
 
         @stack('scripts')
-    </body>
-</html>
+
+@include('layouts.includes.footer')

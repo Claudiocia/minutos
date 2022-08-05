@@ -12,11 +12,12 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('site/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="bg-light font-sans antialiased">
         {{ $slot }}
-    </body>
-</html>
+    @include('layouts.includes.footer')

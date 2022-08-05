@@ -4,7 +4,7 @@
   <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
 </svg> -->
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-     width="40.000000pt" height="61.000000pt" viewBox="0 0 800.000000 1216.000000"
+     height="40.000000pt" viewBox="0 0 800.000000 1216.000000"
      preserveAspectRatio="xMidYMid meet">
 
     <g transform="translate(0.000000,1216.000000) scale(0.100000,-0.100000)"

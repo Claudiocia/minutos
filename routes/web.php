@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,16 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SiteController::class, 'publico'])->name('/');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::group([
+    'prefix' => 'admin', 'as' => 'admin.', 'middleware' => [
+        'can:admin', 'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified']
+], function (){
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('users', UserController::class);
+    Route::resource('sites', SiteController::class);
+
 });

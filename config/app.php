@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' =>  'America/Sao_Paulo',  //'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-BR', //'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,6 +244,7 @@ return [
         'Icon' => Bootstrapper\Facades\Icon::class,
         'Table' => Bootstrapper\Facades\Table::class,
         'MediaObject' => Bootstrapper\Facades\MediaObject::class,
+        'Modal' => Bootstrapper\Facades\Modal::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,

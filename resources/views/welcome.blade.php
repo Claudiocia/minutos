@@ -14,7 +14,7 @@
     <link href="{{asset('site/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Serif:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{asset('site/vendor/aos/aos.css')}}" rel="stylesheet">
@@ -59,14 +59,15 @@
         <div class="row align-items-center">
             <div class="col-12 hero-text-image">
                 <div class="row">
-                    <div class="col-lg-8 text-center text-lg-start">
-                        <h1 data-aos="fade-right">INFORMAÇÃO SEM TEMPO A PERDER</h1>
-                        <p class="mb-3" data-aos="fade-right" data-aos-delay="100">Comece o dia sabendo do que realmente importa</p>
-                        <p class="font-texto">Ganhamos tempo para você, vasculhando até 85 fontes de notícias para te
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 data-aos="fade-right">Informação sem</h1>
+                        <h1 data-aos="fade-right">tempo a perder</h1>
+                        <p class="mb-3" data-aos="fade-right" data-aos-delay="100"><strong style="font-style: italic;">Comece o dia sabendo do que realmente importa</strong></p>
+                        <p class="font-texto">Ganhamos tempo para você, vasculhando até <strong>85 fontes de notícias</strong> para te
                             entregar os fatos mais relevantes do dia num único, empolgante e conciso boletim informativo.</p>
                         <p class="font-texto">Das últimas de Brasília ao vai e vem dos mercados, das apostas das gigantes
-                            da tecnologia aos lançamentos dos cinemas e streamings - o que importa está lá, em sete <strong>minutos</strong>
-                            ou menos de leitura. </p>
+                            da tecnologia aos lançamentos dos cinemas e streamings - o que importa está lá, em <strong>sete
+                                minutos ou menos de leitura.</strong> </p>
                         <p class="font-texto">De segunda a sexta-feira, bem cedinho em sua <strong>caixa de email.</strong></p>
                         <p class="font-texto">Assine agora a nossa newsletter e se prepare para o dia em <strong>minutos</strong></p>
                         <p class="font-texto"><strong>É 100% de graça</strong></p>
@@ -74,7 +75,7 @@
                         <p class="font-texto-cancel"><strong>Não tem mais interesse?</strong></p>
                         <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
                     </div>
-                    <div class="col-lg-4 iphone-wrap">
+                    <div class="col-lg-6 iphone-wrap">
                         <img src="{{asset('site/img/phone_1.png')}}" alt="Image" class="phone-1" data-aos="fade-right">
                         <img src="{{asset('site/img/phone_2.png')}}" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200">
                     </div>
@@ -131,18 +132,18 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-5 me-auto">
-                    <h1>NOSSA CAUSA</h1>
+                    <h1>Nossa Causa</h1>
                     <h2 class="mb-4">Informar mais com menos</h2>
                     <p class="mb-4 text-black">Somos uma empresa de mídia digital cujo foco é oferecer uma <strong>cobertura mais
                             inteligente e eficiente</strong> das questões que moldam o Brasil e o mundo.</p>
                     <p class="mb-4 text-black">Nossa missão é fornecer <strong>conteúdo jornalístico confiável</strong> para nosso leitor,
                         <strong>priorizando o essencial,</strong> e fazendo-o <strong>economizar tempo</strong> no dia-a-dia.</p>
-                    <p class="mb-4 text-black">Acreditamos que a desinformação e as notícias falsas reduzem a nossa capacidade de
-                        fazer boas escolhas, tanto coletivas como individuais, e enfraquecem a democracia.</p>
-                    <p class="mb-4 text-black">Por isso, estamos verdadeiramente obcecados em oferecer informação que realmente
-                        tem valor, com um jornalismo que atenda aos mais altos padrões e calcado em 3Cs – curto, claro
-                        e consistente.</p>
-                    <p class="mb-4 text-black">Mantenha-se informado sobre os fatos que importam sem gastar nada</p>
+                    <p class="mb-4 text-black">Acreditamos que a desinformação e as notícias falsas reduzem a nossa <strong>capacidade de
+                            fazer boas escolhas,</strong> tanto coletivas como individuais, e enfraquecem a democracia.</p>
+                    <p class="mb-4 text-black">Por isso, estamos verdadeiramente obcecados em oferecer <strong>informação que realmente
+                            tem valor,</strong> com um jornalismo que atenda aos mais altos padrões e calcado em <strong>3Cs – curto, claro
+                            e consistente.</strong></p>
+                    <p class="mb-4 text-black">Mantenha-se informado sobre os <strong>fatos que importam</strong> sem gastar nada</p>
                     <p class="mb-4 text-black">Nossa newsletter <strong>é 100% de graça</strong></p>
                     <p><a href="#" class="btn btn-primary">ASSINAR</a></p>
                     <p class="font-texto-cancel"><strong>Não tem mais interesse?</strong></p>
@@ -265,75 +266,4 @@
     <!-- End CTA Section -->
 
 </main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer class="footer" role="contentinfo">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h3>Sobre o Canal Minutos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
-                    dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
-                <p class="social">
-                    <a href="#"><span class="bi bi-twitter"></span></a>
-                    <a href="#"><span class="bi bi-facebook"></span></a>
-                    <a href="#"><span class="bi bi-instagram"></span></a>
-                    <a href="#"><span class="bi bi-linkedin"></span></a>
-                </p>
-            </div>
-            <div class="col-md-7 ms-auto">
-                <div class="row site-section pt-0">
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h3>Menu</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Assinar</a></li>
-                            <li><a href="#">Edições Anteriores</a></li>
-                            <li><a href="#">Avaliar o serviço</a></li>
-                            <li><a href="#">Cancelar Assinatura</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h3>Outros Links</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Nossos Termos</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
-                            <li><a href="#">Fale com a gente</a></li>
-                            <li><a href="#">Nosso time</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h3>Baixe nosso APP</h3>
-                        <div>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="btn btn-primary align-items-center"><i class="bx bxl-apple"></i><span> Apple Store</span></a></li>
-                                <li><a href="#" class="btn btn-primary align-items-center"><i class="bx bxl-play-store"></i><span> Google Play</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center text-center">
-            <div class="col-md-7">
-                <p class="copyright">&copy; Copyright Marketing Mix. Todos os direitos reservados</p>
-                <div class="credits">
-                    Desenvolvido com <a href="#">Laravel Framework</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</footer>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<!-- Vendor JS Files -->
-<script src="{{asset('site/vendor/aos/aos.js')}}"></script>
-<script src="{{asset('site/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('site/vendor/swiper/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('site/vendor/php-email-form/validate.js')}}"></script>
-
-<!-- Template Main JS File -->
-<script src="{{asset('site/js/main.js')}}"></script>
-</body>
-</html>
+@include('layouts.includes.footer')
