@@ -16918,6 +16918,109 @@
         }
          
     }
+            /**
+     * Facade for the Modal class
+     *
+     * @package Bootstrapper\Facades
+     */ 
+        class Modal {
+                    /**
+         * Renders the modal
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function render()
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->render();
+        }
+                    /**
+         * Sets the title of the modal
+         *
+         * @param string $title
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function withTitle($title)
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->withTitle($title);
+        }
+                    /**
+         * Sets the body of the modal
+         *
+         * @param string $body The new body of the modal
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function withBody($body)
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->withBody($body);
+        }
+                    /**
+         * Set the footer of the modal
+         *
+         * @param string $footer The footer
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function withFooter($footer)
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->withFooter($footer);
+        }
+                    /**
+         * Sets the name of the modal
+         *
+         * @param string $name The name of the modal
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function named($name)
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->named($name);
+        }
+                    /**
+         * Sets the button
+         *
+         * @param \Button $button The button to open the modal with
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function withButton($button = null)
+        {
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->withButton($button);
+        }
+                    /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function withAttributes($attributes)
+        {            //Method inherited from \Bootstrapper\RenderedObject         
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->withAttributes($attributes);
+        }
+                    /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return \Bootstrapper\Modal 
+         * @static 
+         */ 
+        public static function addClass($classes)
+        {            //Method inherited from \Bootstrapper\RenderedObject         
+                        /** @var \Bootstrapper\Modal $instance */
+                        return $instance->addClass($classes);
+        }
+         
+    }
      
 }
 
@@ -23543,6 +23646,7 @@ namespace  {
             class Icon extends \Bootstrapper\Facades\Icon {}
             class Table extends \Bootstrapper\Facades\Table {}
             class MediaObject extends \Bootstrapper\Facades\MediaObject {}
+            class Modal extends \Bootstrapper\Facades\Modal {}
             class FormBuilder extends \Kris\LaravelFormBuilder\Facades\FormBuilder {}
             class Image extends \Intervention\Image\Facades\Image {}
             class PDF extends \Barryvdh\DomPDF\Facade\Pdf {}

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Canal Minutos - Newsletter</title>
     <meta content="" name="description">
@@ -15,6 +16,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Serif:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Vendor CSS Files -->
     <link href="{{asset('site/vendor/aos/aos.css')}}" rel="stylesheet">
@@ -23,8 +25,14 @@
     <link href="{{asset('site/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('site/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{asset('css/app.css') }}">
+    @livewireStyles
     <!-- Template Main CSS File -->
     <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -39,7 +47,13 @@
 
     </div>
 </header><!-- End Header -->
-
+<div class="col-4" style="margin-top: 80px;">
+    @if (Session::has('msg'))
+        <div class="my-alert">
+            {!! Alert::success(Session::get('msg')) !!}
+        </div>
+    @endif
+</div>
 <!-- ======= Hero Section ======= -->
 <section class="hero-section" id="hero">
 
@@ -71,7 +85,7 @@
                         <p class="font-texto">De segunda a sexta-feira, bem cedinho em sua <strong>caixa de email.</strong></p>
                         <p class="font-texto">Assine agora a nossa newsletter e se prepare para o dia em <strong>minutos</strong></p>
                         <p class="font-texto"><strong>É 100% de graça</strong></p>
-                        <p data-aos="fade-right" data-aos-delay="100" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">ASSINAR</a></p>
+                        <p data-aos="fade-right" data-aos-delay="100" data-aos-offset="-500"><a href="{{route('clientes.index')}}" class="btn btn-outline-white">ASSINAR</a></p>
                         <p class="font-texto-cancel"><strong>Não tem mais interesse?</strong></p>
                         <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
                     </div>

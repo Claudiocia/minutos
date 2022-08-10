@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Forms\UserForm;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -15,8 +17,8 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
     public function index(Request $request)
     {
@@ -35,7 +37,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create()
     {
@@ -49,8 +51,8 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
@@ -80,7 +82,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  User $user
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function show(User $user)
     {
@@ -91,7 +93,7 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  User $user
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit(User $user)
     {
@@ -108,9 +110,9 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  User $user
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function update(Request $request, User $user)
     {
@@ -135,9 +137,9 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  User $user
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function destroy(Request  $request, User $user)
     {

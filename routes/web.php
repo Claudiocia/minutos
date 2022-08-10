@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClienteAutoController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FotoController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SiteController::class, 'publico'])->name('/');
+Route::resource('clientes', ClienteAutoController::class);
 
 Route::group([
     'prefix' => 'admin', 'as' => 'admin.', 'middleware' => [
@@ -29,5 +33,7 @@ Route::group([
 
     Route::resource('users', UserController::class);
     Route::resource('sites', SiteController::class);
+    Route::resource('fotos', FotoController::class);
+    Route::resource('clientes', ClienteController::class);
 
 });

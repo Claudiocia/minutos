@@ -11,10 +11,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
+                <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Inicial') }}
+                </x-jet-nav-link>
                 <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                     {{ __('Usuários') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
+                <x-jet-nav-link href="{{ route('admin.fotos.index') }}" :active="request()->routeIs('admin.fotos.index')">
+                    {{ __('Gerenc. Fotos') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('admin.clientes.index') }}" :active="request()->routeIs('admin.clientes.index')">
                     {{ __('Clientes') }}
                 </x-jet-nav-link>
             </ul>

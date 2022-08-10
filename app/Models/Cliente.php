@@ -32,6 +32,11 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereSigned($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $motivo
+ * @property-read \App\Models\Rate|null $rate
+ * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereMotivo($value)
+ * @property string|null $validado
+ * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereValidado($value)
  */
 class Cliente extends Model implements Transformable, TableInterface
 {
@@ -44,20 +49,34 @@ class Cliente extends Model implements Transformable, TableInterface
      *
      * @var array
      */
-    protected $fillable = ['id', 'nome', 'email', 'signed', 'review', 'foto_id'];
+    protected $fillable = ['id', 'nome', 'email', 'signed', 'motivo', 'review', 'validado', 'foto_id'];
 
     public function foto()
     {
         return $this->belongsTo(Foto::class);
     }
 
+    public function rate()
+    {
+        return $this->hasOne(Rate::class);
+    }
+
     public function getTableHeaders()
     {
-        // TODO: Implement getTableHeaders() method.
+        return ['Nome', 'Email', 'Situação', 'Avalia'];
     }
 
     public function getValueForHeader($header)
     {
-        // TODO: Implement getValueForHeader() method.
+        switch ($header){
+            case 'Nome':
+                return $this->nome;
+            case 'Email':
+                return $this->email;
+            case 'Situação':
+                return $this->signed == 1 ? 'Ativo' : 'Inativo';
+            case 'Avalia':
+                return !$this->review ? 'Sem Avaliação' : $this->rate->nota;
+        }
     }
 }

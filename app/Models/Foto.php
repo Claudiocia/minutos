@@ -72,11 +72,14 @@ class Foto extends Model implements Transformable, TableInterface
 
     public function getTableHeaders()
     {
-        // TODO: Implement getTableHeaders() method.
+        return [];
     }
 
     public function getValueForHeader($header)
     {
-        // TODO: Implement getValueForHeader() method.
+        switch ($header){
+            case 'ident':
+                return $this->id;
+        }
     }
 }

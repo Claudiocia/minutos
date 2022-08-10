@@ -17,6 +17,16 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light font-sans antialiased">
-        {{ $slot }}
+    <body>
+    <!-- Page Content -->
+    <main class="container my-5">
+        @yield('conteudo')
+    </main>
+    @if($assina ?? '')
+    </body>
+    </html>
+    @else
     @include('layouts.includes.footer')
+    @endif
+
+

@@ -7,10 +7,10 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
                     dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
                 <p class="social">
-                    <a href="#"><span class="bi bi-twitter"></span></a>
-                    <a href="#"><span class="bi bi-facebook"></span></a>
-                    <a href="#"><span class="bi bi-instagram"></span></a>
-                    <a href="#"><span class="bi bi-linkedin"></span></a>
+                    <a href="#"><span class="fa-brands fa-twitter"></span></a>
+                    <a href="#"><span class="fa-brands fa-facebook"></span></a>
+                    <a href="#"><span class="fa-brands fa-instagram"></span></a>
+                    <a href="#"><span class="fa-brands fa-whatsapp"></span></a>
                 </p>
             </div>
             <div class="col-md-7 ms-auto">
@@ -57,7 +57,7 @@
 
     </div>
 </footer>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="{{asset('site/vendor/aos/aos.js')}}"></script>
