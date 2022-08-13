@@ -33,6 +33,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Rate whereTitle($value)
  * @method static Builder|Rate whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Cliente $cliente
  */
 class Rate extends Model implements Transformable, TableInterface
 {

@@ -29,6 +29,7 @@
     @livewireStyles
     <!-- Template Main CSS File -->
     <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
+    @stack('styles')
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>

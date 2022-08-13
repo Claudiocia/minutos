@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use Bootstrapper\Interfaces\TableInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -12,20 +16,26 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @package namespace App\Models;
  * @property int $id
  * @property string $nome
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca query()
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca whereNome($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Retranca whereUpdatedAt($value)
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Retranca newModelQuery()
+ * @method static Builder|Retranca newQuery()
+ * @method static Builder|Retranca query()
+ * @method static Builder|Retranca whereCreatedAt($value)
+ * @method static Builder|Retranca whereId($value)
+ * @method static Builder|Retranca whereNome($value)
+ * @method static Builder|Retranca whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Retranca onlyTrashed()
+ * @method static Builder|Retranca whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Retranca withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Retranca withoutTrashed()
  */
-class Retranca extends Model implements Transformable
+class Retranca extends Model implements Transformable, TableInterface
 {
     use TransformableTrait;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +46,18 @@ class Retranca extends Model implements Transformable
         'id', 'nome'
     ];
 
+    public function getTableHeaders()
+    {
+        return ['ID', 'Nome'];
+    }
+
+    public function getValueForHeader($header)
+    {
+        switch ($header){
+            case 'ID':
+                return $this->id;
+            case 'Nome':
+                return $this->nome;
+        }
+    }
 }

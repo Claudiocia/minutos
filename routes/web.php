@@ -6,6 +6,7 @@ use App\Http\Controllers\FotoController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\RateAdminController;
 use App\Http\Controllers\RateController;
+use App\Http\Controllers\RetrancaController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -56,5 +57,7 @@ Route::group([
     Route::resource('fotos', FotoController::class);
     Route::resource('clientes', ClienteController::class);
     Route::resource('rates', RateAdminController::class);
+    Route::resource('retrancas', RetrancaController::class);
+    Route::get('retrancas/apagar/{id}', [RetrancaController::class, 'apagar'])->name('retrancas.apagar');
 
 });

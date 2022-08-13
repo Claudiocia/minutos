@@ -9,6 +9,8 @@ class RetrancaForm extends Form
     public function buildForm()
     {
         $this
-            ->add('nome', 'text');
+            ->add('nome', 'text', [
+                'label' => 'Editoria',
+            ]);
     }
 }
