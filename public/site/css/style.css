@@ -494,7 +494,7 @@ section {
 }
 .form-search{
     padding: 5px;
-    width: 50%;
+    width: 60%;
 }
 
 .label-search{
@@ -539,6 +539,15 @@ section {
 .texto-show{
     background: #FFFFFF;
     height: 40px;
+    border: solid 0.5pt #0b6bd3;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.texto-comment{
+    background: #FFFFFF;
     border: solid 0.5pt #0b6bd3;
     border-radius: 10px;
     padding-left: 10px;
@@ -696,4 +705,28 @@ section {
     border: solid 0.5pt darkgrey;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     text-align: center;
+}
+
+.aviso {
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+}
+.aviso a {
+    color: #0a53be;
+    text-transform: uppercase;
+}
+
+/* --------- RATES ---------- */
+.estrelas input[type=radio]{
+    display: none;
+}
+.estrelas label i.fa:before{
+     content: '\f005';
+     color: #FC0;
+    font-size: 20px;
+}
+.estrelas  input[type=radio]:checked  ~ label i.fa:before{
+      color: #CCC;
 }

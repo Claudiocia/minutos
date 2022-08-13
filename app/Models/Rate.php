@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Bootstrapper\Interfaces\TableInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -17,19 +19,19 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property string $title
  * @property string|null $texto
  * @property string $public
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Rate newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Rate newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Rate query()
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereClienteId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereNota($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate wherePublic($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereTexto($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Rate whereUpdatedAt($value)
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Rate newModelQuery()
+ * @method static Builder|Rate newQuery()
+ * @method static Builder|Rate query()
+ * @method static Builder|Rate whereClienteId($value)
+ * @method static Builder|Rate whereCreatedAt($value)
+ * @method static Builder|Rate whereId($value)
+ * @method static Builder|Rate whereNota($value)
+ * @method static Builder|Rate wherePublic($value)
+ * @method static Builder|Rate whereTexto($value)
+ * @method static Builder|Rate whereTitle($value)
+ * @method static Builder|Rate whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Rate extends Model implements Transformable, TableInterface
@@ -45,11 +47,25 @@ class Rate extends Model implements Transformable, TableInterface
 
     public function getTableHeaders()
     {
-        // TODO: Implement getTableHeaders() method.
+        return ['Nome', 'Título', 'Nota', 'Public' ];
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class);
     }
 
     public function getValueForHeader($header)
     {
-        // TODO: Implement getValueForHeader() method.
+        switch ($header){
+            case 'Nome':
+                return $this->cliente->nome;
+            case 'Título':
+                return $this->title;
+            case 'Nota':
+                return $this->nota;
+            case 'Public':
+                return $this->public == 'n' ? 'Não' : 'Publicada';
+        }
     }
 }

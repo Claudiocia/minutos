@@ -33,6 +33,9 @@ class ClienteController extends Controller
             $clientes = Cliente::where('signed', '=', '2')
                 ->orderBy('nome', 'ASC')->paginate();
             return view('admin.clientes.index', compact('clientes'));
+        }elseif ($search == 'cancelado'){
+            $clientes = Cliente::onlyTrashed()->orderBy('deleted_at')->paginate();
+            return view('admin.clientes.index', compact('clientes'));
         }else{
             $clientes = Cliente::where('nome', 'LIKE', '%'.$search.'%')
                 ->orWhere('email', 'LIKE', '%'.$search.'%')
@@ -71,6 +74,8 @@ class ClienteController extends Controller
             'email.unique' => 'Este email já se encontra cadastrado e ativo no sistema'
         ])->validate();
         $data['signed'] = 1;
+        $data['token'] = md5(now().$data['email'].$data['nome']);
+        $data['validado'] = now();
 
         Cliente::create($data);
         $request->session()->flash('msg', 'Assinatura criada com sucesso');

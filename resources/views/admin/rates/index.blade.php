@@ -7,16 +7,16 @@
                     <div class="col-md-12">
                         <div class="w-auto p-3">
                             <div class="panel-heading-admin">
-                                <h5>Lista de Assinantes</h5>
+                                <h5>Rol de avaliações - Média: {{number_format($media, 2, ",", ".")}}</h5>
                                 <div class="form-search">
-                                    <form action="{{ route('admin.clientes.index') }}" method="get">
+                                    <form action="{{ route('admin.rates.index') }}" method="get">
                                         <label class="label-search">Pesquisar</label>
                                         <x-jet-input id="search" class="mt-1 w-full" type="search" name="search"/>
                                         <div class="nome" style="margin-top: 5px;">
                                             <x-jet-label for="inativos" value="{{ __('Buscar: ') }}" />
-                                            <input type="radio" name="search" value="ativo"/> Ativo
-                                            <input type="radio" name="search" value="inativo"/> Inativo
-                                            <input type="radio" name="search" value="cancelado"/> Cancelado
+                                            <input type="radio" name="search" value="altas"/> Altas
+                                            <input type="radio" name="search" value="baixas"/> Baixas
+                                            <input type="radio" name="search" value="public"/> Ñ Public
                                         </div>
                                         <div class="buton-search">
                                             <x-jet-button class="ml-4 buton-sch">
@@ -28,15 +28,14 @@
                             </div>
                             <div class="panel-body">
                                 <div class="row btn-new-reset">
-                                    {!! Button::primary('Novo')->asLinkTo(route('admin.clientes.create'))->addClass(['class'=>'estilo-btn']) !!}
-                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.clientes.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.rates.index'))->addClass(['class'=>'estilo-btn']) !!}
                                 </div>
                                 <div class="row" style="margin-left: 10px; margin-right: 10px;">
                                     {!!
-                                        Table::withContents($clientes)->striped()
-                                        ->callback('Actions', function ($field, $cliente){
-                                            $linkEdit = route('admin.clientes.edit', ['cliente' => $cliente->id]);
-                                            $linkShow = route('admin.clientes.show', ['cliente' => $cliente->id]);
+                                        Table::withContents($rates)->striped()
+                                        ->callback('Actions', function ($field, $rate){
+                                            $linkEdit = route('admin.rates.edit', ['rate' => $rate->id]);
+                                            $linkShow = route('admin.rates.show', ['rate' => $rate->id]);
                                             return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-pencil-alt"></i>')->asLinkTo($linkEdit)." | ".
                                             \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow);
                                         })
@@ -44,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{ $clientes->links() }}
+                        {{ $rates->links() }}
                     </div>
                 </div>
             </div>

@@ -236,7 +236,7 @@
                                         <span class="bi bi-star-fill"></span>
                                         <span class="bi bi-star-fill"></span>
                                         <span class="bi bi-star-fill"></span>
-                                        <span class="bi bi-star-fill"></span>
+                                        <span class="bi bi-star-fill muted"></span>
                                         <span class="bi bi-star-fill muted"></span>
                                     </p>
                                     <h3>Awesome functionality!</h3>

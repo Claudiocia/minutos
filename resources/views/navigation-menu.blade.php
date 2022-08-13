@@ -10,6 +10,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
+            @auth
             <ul class="navbar-nav me-auto">
                 <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Inicial') }}
@@ -21,14 +22,17 @@
                     {{ __('Gerenc. Fotos') }}
                 </x-jet-nav-link>
                 <x-jet-nav-link href="{{ route('admin.clientes.index') }}" :active="request()->routeIs('admin.clientes.index')">
-                    {{ __('Clientes') }}
+                    {{ __('Assinantes') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('admin.rates.index') }}" :active="request()->routeIs('admin.rates.index')">
+                    {{ __('Avaliações') }}
                 </x-jet-nav-link>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav align-items-baseline">
                 <!-- Settings Dropdown -->
-                @auth
+
                     <x-jet-dropdown id="settingsDropdown">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -71,8 +75,8 @@
                             </form>
                         </x-slot>
                     </x-jet-dropdown>
-                @endauth
             </ul>
+            @endauth
         </div>
     </div>
 </nav>

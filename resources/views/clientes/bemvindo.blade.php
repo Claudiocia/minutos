@@ -15,15 +15,21 @@
                                     <a href="{{route('/')}}"><x-jet-authentication-card-logo /></a>
                                 </div>
                                 <div class="row">
-                                        <?php $icon = '<i class="fas fa-pencil"></i>'; ?>
-                                        {!!
-                                             form($form->add('salvar', 'submit', [
-                                                 'attr' => ['class' => 'btn btn-primary btn-block estilo-btn', 'style' => 'width:220px'],
-                                                 'label' => $icon.' Assinar'
-                                               ]),['class' => 'form-assin'])
-                                          !!}
+                                        Mensagem de boas vindas
+                                    @if (Session::has('msg'))
+                                        <div class="my-alert">
+                                            {!! Alert::success(Session::get('msg')) !!}
+                                        </div>
+                                    @elseif(Session::has('error'))
+                                        <div>
+                                            {!! Alert::danger(Session::get('error')) !!}
+                                        </div>
+                                        <div class="row">
+                                            {!! Button::primary('Reenviar')->asLinkTo(route('clientes.create'))->addClass(['class'=>'estilo-btn']) !!}
+                                        </div>
+                                    @endif
                                     <div class="aviso">
-                                        <p>Ao subscrever você concorda com nossa política de privacidade e nossos termos de uso. <a href="#"> Leia aqui</a></p>
+                                        <p>Para solicitar o reenvio do email de validação <a href="{{route('clientes.create')}}"> clique aqui</a></p>
                                     </div>
                                 </div>
                             </div>

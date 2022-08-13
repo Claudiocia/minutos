@@ -18,10 +18,10 @@
                     <div class="col-md-4 mb-4 mb-md-0">
                         <h3>Menu</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Assinar</a></li>
+                            <li><a href="{{route('clientes.create')}}">Reenviar E-mail</a></li>
                             <li><a href="#">Edições Anteriores</a></li>
-                            <li><a href="#">Avaliar o serviço</a></li>
-                            <li><a href="#">Cancelar Assinatura</a></li>
+                            <li><a href="{{route('rates.index')}}">Avaliar o serviço</a></li>
+                            <li><a href="{{route('clientes.cancelar')}}">Cancelar Assinatura</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">

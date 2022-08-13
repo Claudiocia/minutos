@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Rate;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class RateController extends Controller
@@ -9,32 +13,68 @@ class RateController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        //
+        return view('rates.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View|RedirectResponse
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $email = $request['email'];
+        $cliente = Cliente::whereEmail($email)->first();
+        if ($cliente == null){
+            $error = "Este email não está cadastrado em nosso sistema. Para avaliar você precisa conhecer!";
+            $request->session()->flash('error', $error);
+            return  redirect()->route('rates.index');
+        }elseif (!$cliente->validado){
+            $error = "Este email ainda não foi confirmado pelo assinante. Se ainda não recebeu o e-mail de confirmação, solicite o reenvio";
+            $request->session()->flash('error', $error);
+            return  view('clientes.reenvio', compact('cliente'));
+        }elseif (!$cliente->review){
+            return view('rates.create', compact('cliente'));
+        }else {
+            $rate = Rate::whereClienteId($cliente->id)->first();
+            return view('rates.edit', compact('cliente', 'rate'));
+        }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        \Validator::make($data, [
+            'cliente_id' => ['required'],
+            'nota' => ['required'],
+            'title' => ['required', 'string', 'max:255'],
+            'texto' => ['required', 'max:255']
+        ], [
+            'nota.required' => 'Favor selecionar de 1 a 5 estrelas como avaliação!',
+            'title.required' => 'Dê um título para a sua avaliação',
+            'texto.required' => 'Escreva, no campo "Comentário", em poucas palavras, porque você deu a nota acima!'
+        ])->validate();
+        $cliente = Cliente::whereId($data['cliente_id'])->first();
+        $rate = Rate::create($data);
+        if ($rate != null){
+            $dataCli['review'] = true;
+            $cliente->fill($dataCli);
+            $cliente->save();
+        }
+
+        $request->session()->flash('msg', 'Obrigado pela sua avaliação!');
+        return redirect()->route('/');
     }
 
     /**
@@ -51,10 +91,10 @@ class RateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         //
     }
@@ -62,13 +102,33 @@ class RateController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param  Rate $rate
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Rate $rate)
     {
-        //
+        $data = $request->all();
+        \Validator::make($data, [
+            'cliente_id' => ['required'],
+            'title' => ['required', 'string', 'max:255'],
+            'texto' => ['required', 'max:255']
+        ], [
+            'title.required' => 'Dê um título para a sua reavaliação',
+            'texto.required' => 'Escreva, no campo "Comentário", em poucas palavras, porque você deu a nota acima!'
+        ])->validate();
+
+        if ($data['nota'] == null){
+            $data['nota'] = $data['nota1'];
+        }
+        unset($data['nota1']);
+        if ($rate->public == 's'){
+            $data['public']= 'n';
+        }
+        $rate->fill($data);
+        $rate->save();
+        $request->session()->flash('msg', 'Obrigado pela sua reavaliação!');
+        return redirect()->route('/');
     }
 
     /**

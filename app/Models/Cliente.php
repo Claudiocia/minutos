@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Bootstrapper\Interfaces\TableInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -37,10 +38,18 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereMotivo($value)
  * @property string|null $validado
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereValidado($value)
+ * @property string|null $token
+ * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereToken($value)
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Cliente onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Cliente withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Cliente withoutTrashed()
  */
 class Cliente extends Model implements Transformable, TableInterface
 {
     use TransformableTrait;
+    use SoftDeletes;
 
     const ASSINANTE = 1;
 
@@ -49,7 +58,10 @@ class Cliente extends Model implements Transformable, TableInterface
      *
      * @var array
      */
-    protected $fillable = ['id', 'nome', 'email', 'signed', 'motivo', 'review', 'validado', 'foto_id'];
+    protected $fillable = [
+        'id', 'nome', 'email',
+        'signed', 'motivo', 'review',
+        'token', 'validado', 'foto_id'];
 
     public function foto()
     {
