@@ -21,7 +21,7 @@ class CreateNoticiasTable extends Migration
             $table->string('resumo');
             $table->text('texto');
             $table->string('fonte');
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->dateTime('data_cria');
             $table->dateTime('data_edit')->nullable();
             $table->unsignedBigInteger('user_id');

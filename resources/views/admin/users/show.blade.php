@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index').'#user')->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::primary('Editar')->asLinkTo(route('admin.users.edit', ['user' => $user->id]))->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::danger('Delete')
                                         ->asLinkTo(route('admin.users.destroy', ['user' => $user->id]))->addClass(['class'=>'estilo-btn'])

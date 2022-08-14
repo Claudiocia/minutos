@@ -15,16 +15,16 @@
                 <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Inicial') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
+                <x-jet-nav-link href="{{ route('admin.users.index').'#user' }}" :active="request()->routeIs('admin.users.index')">
                     {{ __('Usuários') }}
                 </x-jet-nav-link>
                 <x-jet-nav-link href="{{ route('admin.fotos.index') }}" :active="request()->routeIs('admin.fotos.index')">
                     {{ __('Gerenc. Fotos') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('admin.clientes.index') }}" :active="request()->routeIs('admin.clientes.index')">
+                <x-jet-nav-link href="{{ route('admin.clientes.index').'#assinante' }}" :active="request()->routeIs('admin.clientes.index')">
                     {{ __('Assinantes') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('admin.rates.index') }}" :active="request()->routeIs('admin.rates.index')">
+                <x-jet-nav-link href="{{ route('admin.rates.index').'#rate' }}" :active="request()->routeIs('admin.rates.index')">
                     {{ __('Avaliações') }}
                 </x-jet-nav-link>
                 <x-jet-dropdown id="dropdown">
@@ -38,11 +38,11 @@
                         <h6 class="dropdown-header small text-muted">
                             {{ __('Gerencia Newsletters') }}
                         </h6>
-                        <x-jet-dropdown-link href="{{ route('admin.retrancas.index') }}" :active="request()->routeIs('admin.retrancas.index')" >
+                        <x-jet-dropdown-link href="{{ route('admin.retrancas.index').'#editoria' }}" :active="request()->routeIs('admin.retrancas.index')" >
                             {{ __('Editorias') }}
                         </x-jet-dropdown-link>
                         <hr class="dropdown-divider">
-                        <x-jet-dropdown-link href="#">
+                        <x-jet-dropdown-link href="{{route('admin.noticias.index').'#noticia'}}" :active="request()->routeIs('admin.noticias.index')">
                             {{ __('Notícias') }}
                         </x-jet-dropdown-link>
                         <hr class="dropdown-divider">

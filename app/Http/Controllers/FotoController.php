@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Forms\FotoForm;
 use App\Models\Foto;
+use App\Models\Retranca;
 use App\Utils\DefaultFunctions;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 use Intervention\Image\Facades\Image;
 use Intervention\Image\File;
 
@@ -15,7 +18,7 @@ class FotoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -36,8 +39,8 @@ class FotoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      * @return \Illuminate\Contracts\View\View
      */
     public function store(Request $request)
@@ -114,7 +117,7 @@ class FotoController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Foto $foto
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit(Foto $foto)
     {
@@ -131,27 +134,30 @@ class FotoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  Foto $foto
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function update(Request $request, Foto $foto)
     {
         $data = $request->all();
-        $foto->fill($data);
-        $foto->save();
-
+        if (key_exists('retranca_id', $data)){
+            $retrancas = Retranca::whereIn('id', $data['retranca_id'])->get();
+            $foto->retrancas()->sync($retrancas, false);
+        }
+        $foto2 = Foto::whereId($foto->id)->with('retrancas')->first();
+        $foto2->fill($data);
+        $foto2->save();
         $request->session()->flash('msg', 'Dados da foto atualizados');
         return redirect()->route('admin.fotos.index');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  Foto $foto
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function destroy(Request $request, Foto $foto)
     {

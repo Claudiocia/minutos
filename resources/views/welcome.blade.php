@@ -90,8 +90,11 @@
                         <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
                     </div>
                     <div class="col-lg-6 iphone-wrap">
+                        <img src="{{asset('site/img/hero.png')}}" alt="Image" class="phone-1" data-aos="fade-right">
+                        <!--
                         <img src="{{asset('site/img/phone_1.png')}}" alt="Image" class="phone-1" data-aos="fade-right">
                         <img src="{{asset('site/img/phone_2.png')}}" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200">
+                        -->
                     </div>
                 </div>
             </div>
@@ -164,7 +167,7 @@
                     <p class="font-texto-cancel"><strong>Em apenas dois cliques você pode cancelar.</strong></p>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
-                    <img src="{{asset('site/img/img_1.jpg')}}" alt="Image" class="img-fluid">
+                    <img src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid">
                 </div>
             </div>
         </div>

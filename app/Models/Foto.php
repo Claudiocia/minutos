@@ -41,6 +41,8 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Foto whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Foto whereUsing($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Retranca[] $retrancas
+ * @property-read int|null $retrancas_count
  */
 class Foto extends Model implements Transformable, TableInterface
 {
@@ -68,6 +70,11 @@ class Foto extends Model implements Transformable, TableInterface
     public function newsletters()
     {
         return $this->belongsToMany(Newsletter::class);
+    }
+
+    public function retrancas()
+    {
+        return $this->belongsToMany(Retranca::class);
     }
 
     public function getTableHeaders()

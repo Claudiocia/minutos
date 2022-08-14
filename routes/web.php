@@ -4,6 +4,7 @@ use App\Http\Controllers\ClienteAutoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\RateAdminController;
 use App\Http\Controllers\RateController;
 use App\Http\Controllers\RetrancaController;
@@ -59,5 +60,7 @@ Route::group([
     Route::resource('rates', RateAdminController::class);
     Route::resource('retrancas', RetrancaController::class);
     Route::get('retrancas/apagar/{id}', [RetrancaController::class, 'apagar'])->name('retrancas.apagar');
+    Route::resource('noticias', NoticiaController::class);
+    Route::get('noticias/{noticia}/photo-rel', [NoticiaController::class, 'photorel'])->name('noticias.photorel');
 
 });

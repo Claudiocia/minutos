@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.clientes.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.clientes.index').'#assinante')->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::primary('Editar')->asLinkTo(route('admin.clientes.edit', ['cliente' => $cliente->id]))->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::danger('Delete')
                                         ->asLinkTo(route('admin.clientes.destroy', ['cliente' => $cliente->id]))->addClass(['class'=>'estilo-btn'])
@@ -27,7 +27,7 @@
                                 ]); ?>
                                 {!! form($formDelete) !!}
                             </div>
-                            <div class="row">
+                            <div class="row" id="assinante">
                                 <div id="register-show">
                                     <div class="row bloco-div-show desk">
                                         <div class="nome">

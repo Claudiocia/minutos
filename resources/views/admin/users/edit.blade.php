@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index')) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index').'#user') !!}
                             </div>
                             <div class="form-admin">
                                 <?php $icon = '<i class="fas fa-save"></i>'; ?>
@@ -24,7 +24,7 @@
                                  !!}
                             </div>
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index')) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index').'#user') !!}
                             </div>
                         </div>
                         </div>

@@ -3,8 +3,11 @@
 namespace App\Models;
 
 use Bootstrapper\Interfaces\TableInterface;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -17,28 +20,28 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property string $data_edicao
  * @property string $enviada
  * @property int $user_id
- * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Foto[] $fotos
+ * @property Carbon|null $deleted_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Collection|\App\Models\Foto[] $fotos
  * @property-read int|null $fotos_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Noticia[] $noticias
+ * @property-read Collection|\App\Models\Noticia[] $noticias
  * @property-read int|null $noticias_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Parceiro[] $parceiros
+ * @property-read Collection|\App\Models\Parceiro[] $parceiros
  * @property-read int|null $parceiros_count
  * @property-read \App\Models\User $user
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter newQuery()
+ * @method static Builder|Newsletter newModelQuery()
+ * @method static Builder|Newsletter newQuery()
  * @method static \Illuminate\Database\Query\Builder|Newsletter onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter query()
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereDataEdicao($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereEnviada($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereNumbEdicao($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereUserId($value)
+ * @method static Builder|Newsletter query()
+ * @method static Builder|Newsletter whereCreatedAt($value)
+ * @method static Builder|Newsletter whereDataEdicao($value)
+ * @method static Builder|Newsletter whereDeletedAt($value)
+ * @method static Builder|Newsletter whereEnviada($value)
+ * @method static Builder|Newsletter whereId($value)
+ * @method static Builder|Newsletter whereNumbEdicao($value)
+ * @method static Builder|Newsletter whereUpdatedAt($value)
+ * @method static Builder|Newsletter whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|Newsletter withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Newsletter withoutTrashed()
  * @mixin \Eloquent

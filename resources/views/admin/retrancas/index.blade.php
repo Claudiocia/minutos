@@ -22,9 +22,9 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div class="row btn-new-reset">
+                                <div class="row btn-new-reset" id="editoria">
                                     {!! Button::primary('Novo')->asLinkTo(route('admin.retrancas.create'))->addClass(['class'=>'estilo-btn']) !!}
-                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.retrancas.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.retrancas.index').'#editoria')->addClass(['class'=>'estilo-btn']) !!}
                                 </div>
                                 <div class="row" style="margin-left: 10px; margin-right: 10px;">
                                     {!!

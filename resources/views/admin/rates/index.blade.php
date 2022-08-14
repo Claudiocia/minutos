@@ -27,8 +27,8 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div class="row btn-new-reset">
-                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.rates.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                <div class="row btn-new-reset" id="rate">
+                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.rates.index').'#rate')->addClass(['class'=>'estilo-btn']) !!}
                                 </div>
                                 <div class="row" style="margin-left: 10px; margin-right: 10px;">
                                     {!!

@@ -2,6 +2,7 @@
 
 namespace App\Forms;
 
+use App\Models\Retranca;
 use Kris\LaravelFormBuilder\Form;
 
 class FotoForm extends Form
@@ -20,16 +21,16 @@ class FotoForm extends Form
                 'label' => 'Créditos',
                 'label_attr' => ['class' => 'block label-form'],
             ])
-            ->add('using', 'choice', [
-                'label' => 'Aplicação',
-                'choices' => ['Notícia' => 'Notícia', 'Newsletter' => 'Newsletter', 'Site' => 'Site', 'Parceiro' => 'Parceiro'],
+            ->add('retranca_id[]', 'choice', [
+                'label' => 'Editoria',
                 'label_attr' => ['class' => 'block label-form'],
+                'choices' => Retranca::orderBy('nome', 'ASC')->pluck('nome', 'id')->toArray(),
                 'choice_options' => [
-                    'wrapper' => ['class' => 'choice-wrapper-my'],
+                    'wrapper' => ['class' => 'my-wrapper'],
                     'label_attr' => ['class' => 'label-class'],
-                    'attr' => $this->model ? [ 'selected' => $this->model->using] : [ 'selected' => false],
                 ],
-                'multiple' => false,
+                'empty_value' => 'Selecione...',
+                'multiple' => true,
                 'expanded' => true,
             ]);
     }

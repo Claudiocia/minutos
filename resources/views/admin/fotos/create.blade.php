@@ -13,7 +13,7 @@
                             </div>
                             <div class="panel-body">
                                 <div class="row btn-new-reset">
-                                    {!! Button::primary('Voltar')->asLinkTo(route('admin.dashboard')) !!}
+                                    {!! Button::primary('Voltar')->asLinkTo(route('admin.fotos.index')) !!}
                                 </div>
                                 <div class="form-admin">
                                     <form action="{{route('admin.fotos.store')}}" method="post" enctype="multipart/form-data">

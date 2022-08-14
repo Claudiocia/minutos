@@ -12,7 +12,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.rates.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.rates.index').'#rate')->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::primary('Editar')->asLinkTo(route('admin.rates.edit', ['rate' => $rate->id]))->addClass(['class'=>'estilo-btn']) !!}
                             </div>
                             <div class="row">

@@ -8,11 +8,11 @@
                 <div class="col-md-12">
                     <div class="w-auto p-3">
                         <div class="panel-heading-admin">
-                            <h5>Novo Usuário</h5>
+                            <h5>Nova Editoria</h5>
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index')) !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.users.index').'#editoria') !!}
                             </div>
                             <div class="form-admin">
                                 <?php $icon = '<i class="fas fa-save"></i>'; ?>

@@ -31,6 +31,8 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Retranca whereDeletedAt($value)
  * @method static \Illuminate\Database\Query\Builder|Retranca withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Retranca withoutTrashed()
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Foto[] $fotos
+ * @property-read int|null $fotos_count
  */
 class Retranca extends Model implements Transformable, TableInterface
 {
@@ -45,6 +47,11 @@ class Retranca extends Model implements Transformable, TableInterface
     protected $fillable = [
         'id', 'nome'
     ];
+
+    public function fotos()
+    {
+        return $this->belongsToMany(Foto::class);
+    }
 
     public function getTableHeaders()
     {

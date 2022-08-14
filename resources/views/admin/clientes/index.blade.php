@@ -27,9 +27,9 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div class="row btn-new-reset">
+                                <div class="row btn-new-reset" id="assinante">
                                     {!! Button::primary('Novo')->asLinkTo(route('admin.clientes.create'))->addClass(['class'=>'estilo-btn']) !!}
-                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.clientes.index'))->addClass(['class'=>'estilo-btn']) !!}
+                                    {!! Button::primary('Limpar')->asLinkTo(route('admin.clientes.index').'#assinante')->addClass(['class'=>'estilo-btn']) !!}
                                 </div>
                                 <div class="row" style="margin-left: 10px; margin-right: 10px;">
                                     {!!
@@ -38,7 +38,7 @@
                                             $linkEdit = route('admin.clientes.edit', ['cliente' => $cliente->id]);
                                             $linkShow = route('admin.clientes.show', ['cliente' => $cliente->id]);
                                             return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-pencil-alt"></i>')->asLinkTo($linkEdit)." | ".
-                                            \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow);
+                                            \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow.'#assinante');
                                         })
                                     !!}
                                 </div>
