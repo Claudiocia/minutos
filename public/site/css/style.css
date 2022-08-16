@@ -7,7 +7,8 @@ html {
 
 body {
     font-family: "Roboto Serif", sans-serif;
-    color: #9fa1a4;
+    background-color: #FFFFFF;
+    color: #858585;
     line-height: 1.5;
 }
 
@@ -23,7 +24,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: "Roboto Serif", sans-serif;
-    color: #000;
+    color: #545454;
 }
 
 .container {
@@ -59,7 +60,7 @@ section {
 }
 
 .section {
-    padding: 7rem 0;
+    padding: 3rem 0;
 }
 
 .section-heading {
@@ -112,6 +113,17 @@ section {
     border: none;
     padding: 15px 30px !important;
 }
+
+.btn-assinar{
+    width: 80%;
+    background: #41a7d7;
+    elevation: higher;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
 .btn.btn-outline-white {
     border: 2px solid #fff;
     background: #001374;
@@ -140,53 +152,59 @@ section {
 .font-texto {
     font-size: 20px;
 }
+
+/*---- colors configuraçoes -------*/
+.minutos {
+    color: #41a7d7;
+}
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-    background: rgba(39, 70, 133, 0.8);
-    height: 80px;
+    background: #FFFFFF;
+    height: 70px;
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
 }
 #header.header-scrolled {
-    background: rgba(39, 70, 133, 0.8);
-    height: 80px;
+    background: #d6eeF0;
+    height: 70px;
 }
-#header .logo h1 {
-    font-size: 28px;
-    margin: 0;
-    padding: 4px 0;
-    line-height: 1;
-    font-weight: 500;
-}
-#header .logo h1 a, #header .logo h1 a:hover {
-    color: #fff;
-    text-decoration: none;
-}
+
 #header .logo img {
     padding: 0;
-    margin: 0;
+    margin:  0;
     max-height: 60px;
+}
+
+.logo svg{
+    max-height: 50px;
+    margin-bottom: 15px;
 }
 
 @media screen and (max-width: 992px) {
     #header {
-        background: rgba(39, 70, 133, 0.8);
-        height: 80px;
+        background: #f0f0f0;
+        height: 70px;
         transition: all 0.5s;
         z-index: 997;
         transition: all 0.5s;
     }
     #header.header-scrolled {
-        background: rgba(39, 70, 133, 0.8);
-        height: 80px;
+        background: #d6eeF0;
+        height: 70px;
     }
     #header .logo img {
         padding: 0;
         margin: 0px 0px 0px 15%;
         max-height: 60px;
+    }
+    .logo svg{
+        max-height: 60px;
+        margin-bottom: 15px;
     }
 }
 
@@ -194,27 +212,8 @@ section {
 # Hero Section
 --------------------------------------------------------------*/
 .hero-section {
-    background: linear-gradient(to right, rgba(61, 179, 197, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/hero-bg.jpg); /* rgba(39, 70, 133, 0.8) rgba(61, 179, 197, 0.8) */
     position: relative;
-}
-
-.hero-section .wave {
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    z-index: 1;
-    bottom: -480px;
-}
-/* ---- testar configuração abaixo --*/
-@media screen and (max-width: 992px) {
-    .hero-section .wave {
-        bottom: -350px;
-    }
-}
-/*---- fim do teste ----*/
-
-.hero-section .wave svg {
-    width: 100%;
+    margin-top: -100px;
 }
 
 .hero-section, .hero-section > .container > .row {
@@ -229,7 +228,6 @@ section {
 
 .hero-section.inner-page .hero-text {
     transform: translateY(-150px);
-    margin-top: -120px;
 }
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
@@ -246,9 +244,9 @@ section {
 
 .hero-section h1 {
     font-size: 3.5rem;
-    color: #000000;
-    font-weight: 700;
+    font-weight: normal;
     margin-bottom: 30px;
+    color: #545454;
 }
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
@@ -264,41 +262,37 @@ section {
 /*---- fim do teste ----*/
 .hero-section p {
     font-size: 18px;
-    color: #000000;
+    color: #858585;
+    margin-top: 25px;
+    line-height: 1.9;
 }
 .font-texto-cancel {
     color: #000000;
     font-style: italic;
     font-size: 12px!important;
+    margin-top: 2px!important;
 }
-
 .hero-section .iphone-wrap {
     position: relative;
 }
-
-.hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
+.hero-section .iphone-wrap .phone-1 {
     position: absolute;
     top: 0;
     overflow: hidden;
     left: 0;
-    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
+    border-radius: 20px;
 }
-.hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
+.hero-section .iphone-wrap .phone-1 {
     width: 600px;
 }
-.hero-section .iphone-wrap .phone-2 {
-    margin-top: 50px;
-    margin-left: 100px;
-    width: 200px;
-}
+
 
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section .iphone-wrap {
         text-align: center;
     }
-    .hero-section .iphone-wrap .phone-2, .hero-section .iphone-wrap .phone-1 {
+    .hero-section .iphone-wrap .phone-1 {
         position: relative;
         top: 0;
         max-width: 100%;
@@ -307,42 +301,102 @@ section {
         width: 150px;
         margin-left: -100px;
     }
-    .hero-section .iphone-wrap .phone-2 {
-        width: 150px;
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 150px;
-    }
+
 }
 /*---- fim do teste ----*/
 
 /* Step */
+.step-section {
+    overflow: hidden;
+    background-color: #41a7d7;
+    padding: 15px;
+}
+.step-title {
+    margin-top: 40px;
+}
+.step-title h1{
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 300;
+    color: #FFFFFF;
+    margin-top: -5px;
+}
+
+.tampa{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86px;
+    height: 86px;
+    border-radius: 15px;
+    elevation: higher;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.65);
+}
+
+.icon-step{
+    font-size: 36px;
+}
+.fast{
+    color: #ff689b;
+}
+.fact{
+    color: #41a7d7;
+}
+.valor{
+    color: #0a53be;
+}
+
+.fundo{
+    color: #ff2222;
+}
+
+.ciencia{
+    color: #4cc780;
+}
+
 .step {
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-    background: #fff;
     padding: 30px;
 }
 .step p{
     font-family: "Roboto Serif";
-    color: #000000;
+    color: #FFFFFF;
 }
-.step .number {
-    background: linear-gradient(-45deg, #1391a5, #274685);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    letter-spacing: 0.2rem;
-    margin-bottom: 10px;
-    display: block;
+
+.linha{
+    width: 20%;
+    height: 4px!important;
+    text-align: center;
+    color: #555555;
 }
-.step p:last-child {
-    margin-bottom: 0px;
-}
+
 /* CAUSA Section */
 .causa-section {
     overflow: hidden;
+    background: #cccccc;
+    padding-top: 30px;
+    padding-bottom: 15px;
 }
 
+.causa-section h2 {
+    text-transform: uppercase;
+}
+
+.causa-section h1 {
+    color: #FFFFFF;
+    font-size: 45px;
+}
+
+.causa-section p {
+    font-size: 23px;
+    margin-top: 35px;
+}
+
+.testemunho {
+    padding-top: 20px!important;
+}
 /* Testimonial Carousel */
 .testimonials-slider .swiper-pagination {
     margin-top: 20px;
@@ -383,13 +437,30 @@ section {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(to right, #274685 0%, #3db3c5 100%);
+    background: #555555;
     color: #fff;
+}
+
+.cta-section h1{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
 }
 .cta-section h2 {
     color: #fff;
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cta-section .btn-assinar{
+    height: 80px;
+    font-size: 30px;
+    color: #555555!important;
+    background: #FFFFFF!important;
+}
+.margem{
+    margin-top: 30px;
 }
 @media screen and (max-width: 768px) {
     .cta-section h2 {
@@ -611,7 +682,7 @@ section {
     margin: 10px!important;
     padding: 5px!important;
     color: #0f5132;
-    background-color: #d1e7dd;
+    background-color: #d6eeF0;
 }
 
 .my-wrapper{

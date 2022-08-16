@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //rotas site
-Route::get('/', [SiteController::class, 'publico'])->name('/');
+Route::get('/', [SiteController::class, 'index'])->name('/');
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);

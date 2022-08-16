@@ -34,6 +34,8 @@
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
+                        <img src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid" height="150px;">
+                        <!--
                         <h3>Baixe nosso APP</h3>
                         <div>
                             <ul class="list-unstyled">
@@ -42,6 +44,7 @@
                             </ul>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>

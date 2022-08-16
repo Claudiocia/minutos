@@ -2,29 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rate;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class SiteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        //
+        $rates = Rate::where([
+            ['public', '=', 's'],
+            ['nota', '>=', '4']
+        ])->inRandomOrder()->limit(5)->get();
+        return view('welcome', compact('rates'));
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function publico()
-    {
-        return view('welcome');
-    }
 
     /**
      * Show the form for creating a new resource.
