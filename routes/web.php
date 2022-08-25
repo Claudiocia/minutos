@@ -4,6 +4,7 @@ use App\Http\Controllers\ClienteAutoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\RateAdminController;
 use App\Http\Controllers\RateController;
@@ -24,9 +25,13 @@ use Illuminate\Support\Facades\Route;
 */
 //rotas site
 Route::get('/', [SiteController::class, 'index'])->name('/');
+Route::get('/newsletters', [SiteController::class, 'oldnews'])->name('oldnews');
+Route::get('/newsletters/{newsletter}', [SiteController::class, 'show'])->name('newsletters.show');
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);
+
+Route::get('/noticias/{id}', [NoticiaController::class, 'showPublic'])->name('noticias.show');
 
 //rotas clientes
 Route::resource('clientes', ClienteAutoController::class);
@@ -62,5 +67,8 @@ Route::group([
     Route::get('retrancas/apagar/{id}', [RetrancaController::class, 'apagar'])->name('retrancas.apagar');
     Route::resource('noticias', NoticiaController::class);
     Route::get('noticias/{noticia}/photo-rel', [NoticiaController::class, 'photorel'])->name('noticias.photorel');
+    Route::resource('newsletters', NewsletterController::class);
+    Route::get('newsletters/{newsletter}/photo-rel', [NewsletterController::class, 'photorel'])->name('newsletters.photorel');
+    Route::get('/newsletters/sendmail/{newsletter}', [NewsletterController::class, 'disparaNews'])->name('newsletters.sendmail');
 
 });

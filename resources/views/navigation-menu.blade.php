@@ -46,7 +46,7 @@
                             {{ __('Notícias') }}
                         </x-jet-dropdown-link>
                         <hr class="dropdown-divider">
-                        <x-jet-dropdown-link href="#">
+                        <x-jet-dropdown-link href="{{route('admin.newsletters.index').'#newsletter'}}" :active="request()->routeIs('admin.newsletters.index')">
                             {{ __('Newsletters') }}
                         </x-jet-dropdown-link>
                         <hr class="dropdown-divider">

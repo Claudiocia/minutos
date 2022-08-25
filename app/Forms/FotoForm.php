@@ -9,6 +9,10 @@ class FotoForm extends Form
 {
     public function buildForm()
     {
+        if ($this->model != null){
+            $selected = $this->model->retrancas->pluck('id')->toArray();
+            //dd($selected);
+        }
         $this
             ->add('id', 'hidden', [
                 'value' => $this->model->id,
@@ -21,15 +25,15 @@ class FotoForm extends Form
                 'label' => 'Créditos',
                 'label_attr' => ['class' => 'block label-form'],
             ])
-            ->add('retranca_id[]', 'choice', [
+            ->add('retranca_id', 'choice', [
                 'label' => 'Editoria',
                 'label_attr' => ['class' => 'block label-form'],
                 'choices' => Retranca::orderBy('nome', 'ASC')->pluck('nome', 'id')->toArray(),
                 'choice_options' => [
-                    'wrapper' => ['class' => 'my-wrapper'],
+                    'wrapper' => ['class' => 'wrapper'],
                     'label_attr' => ['class' => 'label-class'],
                 ],
-                'empty_value' => 'Selecione...',
+                'selected' => $this->model ? $selected : '',
                 'multiple' => true,
                 'expanded' => true,
             ]);

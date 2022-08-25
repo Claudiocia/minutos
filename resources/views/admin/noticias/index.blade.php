@@ -14,6 +14,22 @@
                                     <form action="{{ route('admin.noticias.index') }}" method="get">
                                         <label class="label-search">Pesquisar</label>
                                         <x-jet-input id="search" class="mt-1 w-full" type="search" name="search"/>
+                                        <div class="nome" style="margin-top: 5px;">
+                                            <x-jet-label for="noticias" value="{{ __('Buscar: ') }}" />
+                                            <input type="radio" name="public" value="s"/> Publicada
+                                            <input type="radio" name="public" value="n"/> Não Publicada
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="editoria">Editoria</label>
+                                            </div>
+                                            <select class="custom-select" id="editoria" name="editoria">
+                                                <option selected value="">Escolher...</option>
+                                                @foreach($editorias as $editoria)
+                                                <option value="{{$editoria->id}}">{{$editoria->nome}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="buton-search">
                                             <x-jet-button class="ml-4 buton-sch">
                                                 {{ __('Pesquisar') }}

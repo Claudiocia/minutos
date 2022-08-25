@@ -17,7 +17,9 @@ class CreateNewslettersTable extends Migration
 	{
 		Schema::create('newsletters', function(Blueprint $table) {
             $table->id();
-            $table->integer('numb_edicao');
+            $table->text('abertura');
+            $table->integer('num_seq')->nullable();
+            $table->string('numb_edicao');
             $table->dateTime('data_edicao');
             $table->enum('enviada', ['s', 'n'])->default('n');
             $table->unsignedBigInteger('user_id');

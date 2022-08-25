@@ -15,6 +15,12 @@
                                     <a href="{{route('/')}}"><x-jet-authentication-card-logo /></a>
                                 </div>
                                 <div class="row">
+                                    <h6 style="text-align: center">
+                                        Você está prestes a entrar para um seleto grupo de pessoas bem informadas
+                                        ligadas nos assuntos mais essenciais do dia!
+                                    </h6>
+                                </div>
+                                <div class="row">
                                         <?php $icon = '<i class="fas fa-pencil"></i>'; ?>
                                         {!!
                                              form($form->add('salvar', 'submit', [

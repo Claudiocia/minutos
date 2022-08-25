@@ -3,6 +3,7 @@
 namespace App\Forms;
 
 use App\Models\Foto;
+use App\Models\Retranca;
 use Kris\LaravelFormBuilder\Form;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -10,16 +11,11 @@ class RelFotoNoticiaForm extends Form
 {
     public function buildForm()
     {
-        $fots = \DB::table('foto_retranca')->where('retranca_id', '=', $this->model->retranca_id)->get();
+        $ret_id = $this->model->retranca_id;
+        $retranca = Retranca::with('fotos')->whereId($ret_id)->first();
+        $fotos = $retranca->fotos->pluck('origin_name', 'id')->toArray();
+        $selected = $this->model->fotos->pluck('id')->toArray();
 
-        $fotos = json_decode($fots, true);
-
-        $collect = array();
-        $i =0;
-        foreach ($fotos as $foto){
-            array_push($collect, $foto['foto_id']);
-        }
-        $fotos2 = Foto::whereIn('id', $collect)->pluck('origin_name', 'id')->toArray();
         $this
             ->add('not_title', 'text', [
                 'label' => 'Título Noticia',
@@ -29,15 +25,18 @@ class RelFotoNoticiaForm extends Form
             ->add('noticia_id', 'hidden', [
                 'value' => $this->model->id,
             ])
-            ->add('foto_id[]', 'choice', [
+            ->add('foto', 'hidden', [
+                'value' => true,
+            ])
+            ->add('foto_id', 'choice', [
                 'label' => 'Fotos',
                 'label_attr' => ['class' => 'block label-form'],
-                'choices' => $fotos2,
+                'choices' => $fotos,
                 'choice_options' => [
                     'wrapper' => ['class' => 'my-wrapper label-form'],
                     'label_attr' => ['class' => 'label-class'],
                 ],
-                'empty_value' => 'Selecione...',
+                'selected' => $this->model ? $selected : '',
                 'multiple' => true,
                 'expanded' => true,
             ]);

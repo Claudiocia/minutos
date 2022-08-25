@@ -18,7 +18,7 @@
                                 <?php $icon = '<i class="fas fa-save"></i>'; ?>
                                 {!!
                                     form($form->add('salvar', 'submit', [
-                                        'attr' => ['class' => 'btn btn-primary btn-block', 'style' => 'width:120px'],
+                                        'attr' => ['class' => 'btn btn-primary btn-block estilo-btn', 'style' => 'width:120px'],
                                         'label' => $icon.' Salvar'
                                         ]))
                                  !!}

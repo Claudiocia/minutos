@@ -40,8 +40,22 @@ class NoticiaForm extends Form
             ->add('link', 'text', [
                 'attr' => ['class' => 'form-control', 'maxlength' => '255'],
             ])
+            ->add('foto', 'hidden', [
+                'value' => false,
+            ])
             ->add('user_id', 'hidden', [
                 'value' =>Auth::id()
+            ])
+            ->add('public', 'choice', [
+                'label' => 'Avaliação publicada',
+                'choices' => ['s' => 'Publicada', 'n' => 'Não'],
+                'choice_options' => [
+                    'wrapper' => ['class' => 'choice-wrapper-my'],
+                    'label_attr' => ['class' => 'label-class'],
+                ],
+                'selected' => $this->model->public,
+                'multiple' => false,
+                'expanded' => true,
             ]);
     }
 }

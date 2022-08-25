@@ -10,7 +10,7 @@
                     <a href="#"><span class="fa-brands fa-twitter"></span></a>
                     <a href="#"><span class="fa-brands fa-facebook"></span></a>
                     <a href="#"><span class="fa-brands fa-instagram"></span></a>
-                    <a href="#"><span class="fa-brands fa-whatsapp"></span></a>
+                    <a href="#"><span class="fa-brands fa-linkedin"></span></a>
                 </p>
             </div>
             <div class="col-md-7 ms-auto">
@@ -19,7 +19,7 @@
                         <h3>Menu</h3>
                         <ul class="list-unstyled">
                             <li><a href="{{route('clientes.create')}}">Reenviar E-mail</a></li>
-                            <li><a href="#">Edições Anteriores</a></li>
+                            <li><a href="{{route('oldnews')}}">Edições Anteriores</a></li>
                             <li><a href="{{route('rates.index')}}">Avaliar o serviço</a></li>
                             <li><a href="{{route('clientes.cancelar')}}">Cancelar Assinatura</a></li>
                         </ul>
@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <img src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid" height="150px;">
+                        <img src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid" height="120px;">
                         <!--
                         <h3>Baixe nosso APP</h3>
                         <div>
@@ -51,9 +51,9 @@
 
         <div class="row justify-content-center text-center">
             <div class="col-md-7">
-                <p class="copyright">&copy; Copyright Marketing Mix. Todos os direitos reservados</p>
+                <p class="copyright">&copy; Copyright Canal Minutos. Todos os direitos reservados</p>
                 <div class="credits">
-                    Desenvolvido com <a href="#">Laravel Framework</a>
+                    Desenvolvido por <a href="#">Marketmix</a>
                 </div>
             </div>
         </div>

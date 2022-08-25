@@ -23,11 +23,11 @@ class RateForm extends Form
             ])
             ->add('title', 'text', [
                 'label' => 'Título',
-                'attr' => ['disabled' => 'disabled'],
+                'attr' => ['required' => 'required'],
             ])
             ->add('texto', 'textarea', [
                 'label' => 'Comentário',
-                'attr' => ['disabled' => 'disabled'],
+                'attr' => ['required' => 'required'],
             ])
             ->add('public', 'choice', [
                 'label' => 'Avaliação publicada',

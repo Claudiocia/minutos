@@ -8,7 +8,6 @@
         </div>
         <div class="row justify-content-center text-center">
             <div class="col-md-7">
-
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
                         @foreach($rates as $rate)
@@ -53,7 +52,7 @@
                                 </blockquote>
 
                                 <p class="review-user">
-                                    <span class="d-block"> <span class="text-black">{{$rate->cliente->nome}}</span>, &mdash; Assinante id: {{$rate->id}}</span>
+                                    <span class="d-block"> <span class="text-black">{{$rate->cliente->nome}}</span>, &mdash; Assinante</span>
                                 </p>
                             </div>
                         </div><!-- End testimonial item 1-->

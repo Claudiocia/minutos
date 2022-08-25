@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="w-auto p-3">
                         <div class="panel-heading-assin">
-                            <h5>Olá {{$cliente->nome}}</h5>
+                            <h5>Olá {{$cliente->nome ?? ''}}</h5>
                         </div>
                         <div class="panel-body">
                             <div name="logo">
@@ -21,11 +21,6 @@
                                 <form method="POST" action="{{route('rates.store')}}">
                                     @method('POST')
                                     @csrf
-                                    <div class="mb-3">
-                                        <x-jet-label value="{{ __('Assinante') }}" />
-                                        <x-jet-input type="text" name="cliente" value="{{$cliente->nome}}" disabled="true" />
-                                    </div>
-                                    <input type="hidden" name="cliente_id" value="{{$cliente->id}}">
                                     <div class="mb-3">
                                         <x-jet-label value="{{ __('Nota') }}" />
                                         <div class="estrelas">
@@ -55,6 +50,13 @@
 
                                         <textarea cols="40" rows="7" name="texto" required type="textarea" maxlength="255">{{old('texto')}}</textarea>
                                         <x-jet-input-error for="texto"></x-jet-input-error>
+                                    </div>
+                                    <div class="mb-3">
+                                        <x-jet-label value="{{ __('Informe seu email') }}" />
+                                        <x-jet-input type="text" name="email"  value="{{$cliente->email ?? ''}}" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <x-jet-input type="hidden" name="cliente_id" value="{{$cliente->id ?? ''}}" />
                                     </div>
                                     <div class="mb-0">
                                             <x-jet-button>

@@ -56,6 +56,12 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Noticia wherePublic($value)
  * @method static \Illuminate\Database\Query\Builder|Noticia withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Noticia withoutTrashed()
+ * @property int|null $newsletter_id
+ * @property-read \App\Models\Newsletter|null $newsletter
+ * @method static Builder|Noticia busca($search)
+ * @method static Builder|Noticia newsl($id)
+ * @method static Builder|Noticia public($public)
+ * @method static Builder|Noticia whereNewsletterId($value)
  */
 class Noticia extends Model implements Transformable, TableInterface
 {
@@ -70,8 +76,29 @@ class Noticia extends Model implements Transformable, TableInterface
     protected $fillable = [
         'id', 'title', 'resumo', 'texto', 'fonte',
         'link', 'data_cria', 'data_edit', 'public',
-        'user_id',  'retranca_id'
+        'user_id',  'retranca_id', 'newsletter_id',
     ];
+
+    /**
+	 * Escopo que busca clientes com limite
+	 *
+	 * @param Builder $query
+	 * @return Builder
+	 */
+    public function scopePublic($query, $public)
+    {
+        return $query->where('public', '=', $public);
+    }
+
+    public function scopeBusca($query, $search)
+    {
+        return $query->where('texto', 'LIKE', '%'.$search.'%');
+    }
+
+    public function scopeNewsl($query, $id)
+    {
+        return $query->where('newsletter_id', '=', $id);
+    }
 
     public function retranca()
     {
@@ -83,9 +110,9 @@ class Noticia extends Model implements Transformable, TableInterface
         return $this->belongsTo(User::class);
     }
 
-    public function newsletters()
+    public function newsletter()
     {
-        return $this->belongsToMany(Newsletter::class);
+        return $this->belongsTo(Newsletter::class);
     }
 
     public function fotos()

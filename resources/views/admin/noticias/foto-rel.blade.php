@@ -13,10 +13,8 @@
                                 <img src="{!! asset('site/img/sem_foto.png')!!}" width="220px">
                                 @else
                                     @foreach($noticia->fotos as $foto)
-                                        {{$img = $foto->foto_path}}
-                                        @break
+                                        <img src="{{$foto->foto_path}}" width="80px">
                                     @endforeach
-                                    <img src="{!! asset($img)!!}" width="220px">
                                 @endif
                             </div>
                             <h5>Relacionar foto com Noticia</h5>
@@ -26,6 +24,11 @@
                                 {!! Button::primary('Voltar')->asLinkTo(route('admin.noticias.index').'#noticia') !!}
                             </div>
                             <div class="form-admin">
+                                <div>
+                                    @foreach($retranca->fotos as $foto)
+                                    <img src="{{$foto->foto_path}}" width="120px">
+                                    @endforeach
+                                </div>
                                 <?php $icon = '<i class="fas fa-save"></i>'; ?>
                                 {!!
                                         form($form->add('salvar', 'submit', [

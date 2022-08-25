@@ -46,15 +46,16 @@ class FotoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        //dd($data);
         $request->validate([
-            'photoFile.*' => 'mimes:jpeg,jpg,png,gif',
+            'photoFile.*' => 'image|mimes:jpeg,jpg,png,gif',
             'using' => $data['using'] == null ? ['required'] : '',
         ],
         [
             'photoFile.*.mimes' => 'O arquivo precisa ser no formato de imagens',
+            'file.max' => 'O tamanho do arquivo excede o limite máximo',
             'using.required' => 'Precisa escolher o uso da foto',
         ]);
-
 
         //max:2048
         if ($request->hasFile('photoFile')){
@@ -143,7 +144,7 @@ class FotoController extends Controller
         $data = $request->all();
         if (key_exists('retranca_id', $data)){
             $retrancas = Retranca::whereIn('id', $data['retranca_id'])->get();
-            $foto->retrancas()->sync($retrancas, false);
+            $foto->retrancas()->sync($retrancas);
         }
         $foto2 = Foto::whereId($foto->id)->with('retrancas')->first();
         $foto2->fill($data);

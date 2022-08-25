@@ -8,17 +8,24 @@
                     <div class="col-md-12">
                         <div class="w-auto p-3">
                             <div class="panel-heading-assin">
-                                <h5>Reenviar email de verificação</h5>
+                                <h5>Reenviar e-mail de validação</h5>
                             </div>
                             <div class="panel-body">
                                 <div name="logo">
                                     <a href="{{route('/')}}"><x-jet-authentication-card-logo /></a>
                                 </div>
+                                <div class="row cliente">
+                                    <p class="cliente-textos">
+                                        Para solicitar o reenvio do e-mail favor informar o endereço.
+                                        Caso não esteja na caixa de entrada verifique na lista de spam
+                                        ou lixo eletrônico. Marque o <span class="font-bold">Canal Minutos</span> como confiável.
+                                    </p>
+                                </div>
                                 <div class="card-body">
                                     <form method="POST" action="{{route('clientes.sendemail')}}">
                                         @csrf
                                         <div class="mb-3">
-                                            <x-jet-label value="{{ __('Email') }}" />
+                                            <x-jet-label value="{{ __('E-mail') }}" />
                                             @if($cliente->email ?? '' != null)
                                                 <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
                                                              value="{{$cliente->email}}" required />
@@ -31,7 +38,7 @@
                                         <div class="mb-0">
                                             <div class="d-flex justify-content-end align-items-baseline">
                                                 <a class="text-muted me-3 text-decoration-none" href="{{ route('/') }}">
-                                                    {{ __('Já recebi o email') }}
+                                                    {{ __('Já recebi o e-mail') }}
                                                 </a>
 
                                                 <x-jet-button>

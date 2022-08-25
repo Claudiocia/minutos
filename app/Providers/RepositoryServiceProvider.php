@@ -8,6 +8,8 @@ use App\Repositories\EmailRepository;
 use App\Repositories\EmailRepositoryEloquent;
 use App\Repositories\FotoRepository;
 use App\Repositories\FotoRepositoryEloquent;
+use App\Repositories\NewsletterNoticiaRepository;
+use App\Repositories\NewsletterNoticiaRepositoryEloquent;
 use App\Repositories\NewsletterRepository;
 use App\Repositories\NewsletterRepositoryEloquent;
 use App\Repositories\NoticiaRepository;
@@ -42,6 +44,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(RazionRepository::class, RazionRepositoryEloquent::class);
         $this->app->bind(RetrancaRepository::class, RetrancaRepositoryEloquent::class);
         $this->app->bind(ParceiroRepository::class, ParceiroRepositoryEloquent::class);
+        $this->app->bind(NewsletterNoticiaRepository::class, NewsletterNoticiaRepositoryEloquent::class);
         //:end-bindings:
     }
 

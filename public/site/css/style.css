@@ -187,7 +187,7 @@ section {
 
 @media screen and (max-width: 992px) {
     #header {
-        background: #f0f0f0;
+        background: #FFFFFF;
         height: 70px;
         transition: all 0.5s;
         z-index: 997;
@@ -203,6 +203,7 @@ section {
         max-height: 60px;
     }
     .logo svg{
+        margin-left: 10px;
         max-height: 60px;
         margin-bottom: 15px;
     }
@@ -213,7 +214,7 @@ section {
 --------------------------------------------------------------*/
 .hero-section {
     position: relative;
-    margin-top: -100px;
+    margin-top: -140px;
 }
 
 .hero-section, .hero-section > .container > .row {
@@ -231,49 +232,71 @@ section {
 }
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
+    .hero-section{
+        margin-top: -350px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     .hero-section, .hero-section > .container > .row {
         height: 100vh;
         min-height: 1350px;
     }
     .hero-section.inner-page .hero-text {
-        margin-top: 100px!important;
         padding-bottom: 100px;
+    }
+    .btn-hero{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-left: -10px;
+    }
+    .btn-assinar{
+        width: 300px;
+        grid-auto-columns: fit-content(50vw,75);
     }
 }
 /*---- fim do teste ----*/
 
 .hero-section h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: normal;
+    line-height: 3.5rem;
     margin-bottom: 30px;
     color: #545454;
 }
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section h1 {
-        font-size: 2.5rem;
-        text-align: center;
+        font-size: 2.2rem;
         margin-top: 10px;
+        text-align: left;
+        line-height: 2.7rem;
     }
     .hero-section .hero-text-image {
         margin-top: 2rem;
     }
+    .hero-section p{
+        text-align: left;
+    }
+
 }
 /*---- fim do teste ----*/
 .hero-section p {
-    font-size: 18px;
+    font-size: 16px;
     color: #858585;
-    margin-top: 25px;
-    line-height: 1.9;
+    margin-top: 5px;
+    line-height: 1.7;
 }
 .font-texto-cancel {
     color: #000000;
     font-style: italic;
     font-size: 12px!important;
-    margin-top: 2px!important;
+    margin-top: -10px!important;
 }
 .hero-section .iphone-wrap {
     position: relative;
+    align-content: center;
+    justify-content: center;
 }
 .hero-section .iphone-wrap .phone-1 {
     position: absolute;
@@ -283,23 +306,17 @@ section {
     border-radius: 20px;
 }
 .hero-section .iphone-wrap .phone-1 {
-    width: 600px;
+    width: 400px;
 }
 
-
-/* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
-    .hero-section .iphone-wrap {
-        text-align: center;
+    .hero-section .iphone-wrap .phone-1 {
+        position: absolute;
+        top: 20px;
     }
     .hero-section .iphone-wrap .phone-1 {
-        position: relative;
-        top: 0;
-        max-width: 100%;
-    }
-    .hero-section .iphone-wrap .phone-1 {
-        width: 150px;
-        margin-left: -100px;
+        width: 300px;
+        margin-left: -60px;
     }
 
 }
@@ -339,29 +356,33 @@ section {
 .icon-step{
     font-size: 36px;
 }
-.fast{
-    color: #ff689b;
+.icon-svg{
+    width:  60px;
+    height: 60px;
+}
+.fast {
+    fill: #ff689b;
 }
 .fact{
-    color: #41a7d7;
+    fill: #41a7d7;
 }
 .valor{
-    color: #0a53be;
+    fill: #0a53be;
 }
 
 .fundo{
-    color: #ff2222;
+    fill: #ff2222;
 }
 
 .ciencia{
-    color: #4cc780;
+    fill: #4cc780;
 }
 
 .step {
     padding: 30px;
 }
 .step p{
-    font-family: "Roboto Serif";
+    font-family: "Roboto";
     color: #FFFFFF;
 }
 
@@ -370,6 +391,42 @@ section {
     height: 4px!important;
     text-align: center;
     color: #555555;
+}
+
+.icon-show{
+    width: 220px;
+}
+
+@media screen and (max-width: 992px) {
+    .step-title h1{
+        font-size: 35px;
+    }
+    .tampa{
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.65);
+    }
+    .icon-step{
+        font-size: 26px;
+    }
+    .icon-svg{
+        width:  30px;
+        height: 30px;
+    }
+    .linha{
+        width: 60%;
+    }
+    .step{
+        padding: 5px;
+        text-align: center;
+        margin-top: 8px;
+    }
+    .icon-show{
+        width: 120px;
+    }
 }
 
 /* CAUSA Section */
@@ -390,13 +447,84 @@ section {
 }
 
 .causa-section p {
-    font-size: 23px;
+    font-size: 18px;
     margin-top: 35px;
 }
+
+@media screen and (max-width: 992px) {
+    .causa-section h1 {
+        font-size: 35px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .causa-section p {
+        font-size: 16px;
+        margin-top: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* CTA Section */
+.cta-section {
+    background: #555555;
+    color: #fff;
+}
+
+.cta-section h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+.cta-section h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-section .btn-assinar{
+    height: 80px;
+    width: 60%;
+    font-size: 30px;
+    background: #41a7d7!important;
+}
+.margem{
+    margin-top: 30px;
+}
+@media screen and (max-width: 768px) {
+    .cta-section h1 {
+        font-size: 2rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .cta-section h2 {
+        font-size: 1.3rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+.cta-section .btn {
+    background: #000000;
+    color: #fff;
+}
+.cta-section .btn i {
+    margin-right: 5px;
+    font-size: 24px;
+    line-height: 0;
+}
+
+.imgPreview  img{
+    margin: 15px;
+    width: 100px!important;
+}
+
+/*---------- testemunhos -----------*/
 
 .testemunho {
     padding-top: 20px!important;
 }
+
 /* Testimonial Carousel */
 .testimonials-slider .swiper-pagination {
     margin-top: 20px;
@@ -423,6 +551,12 @@ section {
     font-style: italic;
     color: #333333;
 }
+@media screen and (max-width: 992px) {
+    .review p{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
 .review .stars span {
     color: #FF8803;
 }
@@ -432,54 +566,6 @@ section {
 .review .review-user img {
     width: 70px;
     margin: 0 auto;
-}
-
-
-/* CTA Section */
-.cta-section {
-    background: #555555;
-    color: #fff;
-}
-
-.cta-section h1{
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color: #FFFFFF;
-    margin-bottom: 30px;
-}
-.cta-section h2 {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-.cta-section .btn-assinar{
-    height: 80px;
-    font-size: 30px;
-    color: #555555!important;
-    background: #FFFFFF!important;
-}
-.margem{
-    margin-top: 30px;
-}
-@media screen and (max-width: 768px) {
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-}
-.cta-section .btn {
-    background: #000000;
-    color: #fff;
-}
-.cta-section .btn i {
-    margin-right: 5px;
-    font-size: 24px;
-    line-height: 0;
-}
-
-.imgPreview  img{
-    margin: 15px;
-    width: 100px!important;
 }
 
 /*--------------------------------------------------------------
@@ -512,7 +598,7 @@ section {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #007bff;
+    background: #41a7d7;
     color: #fff;
     position: relative;
     text-align: center;
@@ -532,6 +618,21 @@ section {
 }
 .social a i {
     line-height: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .footer h3 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .footer p{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .footer ul li {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -563,6 +664,32 @@ section {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     justify-content: space-between;
 }
+@media screen and (max-width: 992px) {
+    #admin-content {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        padding: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    .container-admin{
+        padding: 5px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    .panel-heading-admin{
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: solid 0.5pt darkgrey;
+        display: flex;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    .panel-heading-admin h5{
+        font-size: 12px;
+    }
+}
+
 .form-search{
     padding: 5px;
     width: 60%;
@@ -582,6 +709,19 @@ section {
 }
 .buton-sch{
     background-color: #0a58f6;
+}
+
+.btn-limpar {
+    background-color: #0a58f6;
+    color: #FFFFFF;
+    width: 125px;
+    height: 50px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.btn-limpar:hover{
+    background-color: black;
 }
 
 .btn-new-reset{
@@ -755,7 +895,7 @@ section {
     margin-top: 8px;
     margin-bottom: 20px;
     max-width: 600px;
-    background: #e0f3ff;
+    background: #b6effb;
     padding: 50px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -769,14 +909,39 @@ section {
     border-radius: 20px;
 }
 
+.cliente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cliente-textos{
+    font-size: 14px;
+    text-align: center;
+    width: 80%;
+}
+.cliente-textos-just{
+    font-size: 14px;
+    width: 90%;
+}
+.font-bold{
+    color: #41a7d7;
+    font-weight: 700;
+}
+
 .panel-heading-assin {
-    padding: 10px;
-    margin: 10px;
+    padding: 0;
+    margin: 0;
+    min-height: 60px;
     max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     border: solid 0.5pt darkgrey;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     text-align: center;
+    vertical-align: center;
 }
 
 .aviso {
@@ -801,4 +966,457 @@ section {
 }
 .estrelas  input[type=radio]:checked  ~ label i.fa:before{
       color: #CCC;
+}
+
+/*---------- Admin News ---------- */
+
+.div-news {
+    width: 30%;
+    height: 45px;
+}
+
+
+/*------- Show news ---------------*/
+.panel-body-news {
+    font-family: "Roboto Serif";
+}
+.news {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-show-news{
+    width: 100%;
+}
+
+#news-show{
+    padding-left: 75px;
+    padding-right: 75px;
+}
+#news-show .desk h6 {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#news-show .desk .parcei p {
+    padding: 20px;
+    display: inline-flex;
+    align-content: center;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+.desk svg {
+    height: 55px;
+}
+@media screen and (max-width: 992px) {
+    #news-show{
+        margin: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .desk h6{
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .desk svg{
+        height: 40px;
+    }
+}
+/* ---------  novo grupo -----------*/
+.linha-news{
+    width: 80%;
+    height: 2px!important;
+    text-align: center;
+    color: #41a7d7;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.linha-icon{
+    width: 50%;
+    height: 3px!important;
+    color: #41a7d7;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.edit{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.edit h3{
+    color: #41a7d7;
+    font-style: italic;
+    font-weight: lighter;
+}
+.edit-abert{
+    display: flex;
+    justify-content: space-between;
+    vert-align: top;
+}
+.edit-abert p{
+    font-size: 1.5em;
+}
+.icon-news{
+    width: 180px;
+    fill: #41a7d7;
+    margin-top: -40px;
+}
+.aviso-news {
+    margin-top: 5px;
+    margin-right: 50%;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+}
+.aviso-news a {
+    color: #41a7d7;
+    text-decoration: underline;
+}
+@media screen and (max-width: 992px) {
+    .linha-news{
+        width: 90%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .edit{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .edit h4{
+        font-size: 16px;
+    }
+    .edit h3 {
+        font-size: 18px;
+    }
+    .edit-abert p{
+        font-size: 0.8em;
+    }
+    .icon-news{
+        width: 60px;
+        margin-top: -20px;
+    }
+    .aviso-news {
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    .aviso-news h6{
+        font-size: 12px;
+    }
+}
+/*-------------- Fim da Abertura -------------------*/
+.retranca{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 20px;
+}
+.icon-dia{
+    width: 120px;
+    fill: #41a7d7;
+    margin-top: -10px;
+}
+.tit-princ{
+    width: 60%;
+}
+.tit-princ h2{
+    color: black;
+    font-style: normal;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+.tit-princ h3{
+    width: 80%;
+    font-style: normal;
+    color: black;
+    line-height: 1.3em;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+.texto-news{
+    color: black;
+    margin-right: 10%;
+    padding-top: 25px;
+}
+.texto-news p{
+    margin-top: -15px;
+}
+.img-news {
+    margin: 0;
+    padding: 0;
+    width: 100%!important;
+}
+.texto-news a {
+    font-weight: bold;
+    color: #41a7d7;
+    text-decoration: underline;
+}
+@media screen and (max-width: 992px) {
+    .icon-dia{
+        width: 60px;
+        margin-top: -10px;
+    }
+    .tit-princ{
+        width: 100%;
+    }
+    .tit-princ h2{
+        font-size: 20px;
+        line-height: 1.5em;
+        margin-bottom: 10px;
+    }
+    .tit-princ h3{
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    .texto-news{
+        margin-right: 0;
+        padding-top: 15px;
+    }
+    .texto-news p{
+        margin-top: -10px;
+    }
+
+}
+
+.social-news a {
+    display: inline-block;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #41a7d7;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    transition: 0.3s background ease;
+    line-height: 0;
+}
+.social-news a span {
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.social-news a:hover {
+    color: #fff;
+    background: #2d71a1;
+}
+.social-news a i {
+    line-height: 0;
+}
+
+.nota-news{
+    color: black;
+}
+.nota-news a {
+    font-weight: bold;
+    color: #41a7d7;
+    text-decoration: underline;
+}
+
+.disse{
+    border-left: #41a7d7 4px solid;
+    margin-bottom: 40px;
+}
+
+.tit-disse h3{
+    width: 95%;
+    color: black;
+    line-height: 1.3em;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.disse-news p {
+    margin: 0;
+    padding: 0;
+    color: black;
+    width: 80%;
+}
+.disse-news a {
+    font-weight: bold;
+    color: #41a7d7;
+    text-decoration: underline;
+}
+.foto-disse {
+    margin-top: 110px!important;
+    width: 110px;
+    height: 110px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.30);
+}
+
+.circle {
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+}
+
+.circle img {
+    position: absolute;
+    left: -10px;
+    filter: grayscale(80);
+}
+@media screen and (max-width: 992px) {
+    .nota-news{
+        font-size: 12px;
+    }
+    .disse{
+        border-left: #41a7d7 2px solid;
+        margin-bottom: 20px;
+    }
+    .tit-disse h3{
+        width: 98%;
+        line-height: 1.3em;
+        font-size: 16px;
+    }
+    .disse-news p {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+.cota-news{
+    color: black;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+.cota hr {
+    width: 80%;
+    height: 4px!important;
+    text-align: center;
+    color: #41a7d7;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.recuo-news {
+    width: 80%;
+    color: black;
+    margin-left: 10%;
+}
+.recuo-news h6 {
+    color: #41a7d7;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.recuo-news p{
+    margin-top: -10px;
+}
+
+.cult{
+    background-color: #d6eef0;
+    padding: 20px;
+}
+@media screen and (max-width: 992px) {
+    .cota-news{
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .recuo-news {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+/*--------- Rodapé NEWS ----------*/
+
+.rodape-tit{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 20px;
+}
+.rodape-tit2{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 20px;
+}
+.icon-roda{
+    width: 180px;
+    fill: #FFFFFF;
+    margin-top: -10px;
+}
+
+.rodape-news{
+    margin-top: 0;
+    background-color: black;
+    padding: 20px;
+}
+.rodape-tit h3{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.final {
+    margin-right: 30px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.final a{
+    text-decoration: underline;
+}
+.roda-text p{
+    font-size: 20px;
+    font-style: italic;
+    width: 60%;
+    color: #FFFFFF;
+    margin-top: -120px;
+}
+.roda-text a{
+    text-decoration: underline;
+    color: #41a7d7;
+    font-weight: bold;
+}
+.rodape-news-final{
+    margin-top: 0;
+    background-color: #cccccc;
+    padding: 20px;
+}
+.icon-final{
+    width: 250px;
+    margin-top: -10px;
+}
+.fim{
+    font-size: 16px;
+    margin-top: 15px;
+    color: #FFFFFF;
+}
+.showPublic{
+    margin-top: 40px;
+    background: #FFFFFF;
+    padding: 50px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+@media screen and (max-width: 992px) {
+    .rodape-tit{
+        padding-top: 10px;
+    }
+    .rodape-tit2{
+        display: block;
+        align-content: center;
+        padding-top: 10px;
+    }
+    .icon-roda{
+        width: 90px;
+    }
+    .roda-text p{
+        font-size: 16px;
+        width: 80%;
+        margin-top: -30px;
+    }
+    .rodape-news-final{
+        padding: 8px;
+    }
+    .icon-final{
+        width: 150px;
+        margin-top: 10px;
+    }
 }

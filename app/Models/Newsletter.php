@@ -45,6 +45,10 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Query\Builder|Newsletter withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Newsletter withoutTrashed()
  * @mixin \Eloquent
+ * @property string $abertura
+ * @property int|null $num_seq
+ * @method static Builder|Newsletter whereAbertura($value)
+ * @method static Builder|Newsletter whereNumSeq($value)
  */
 class Newsletter extends Model implements Transformable, TableInterface
 {
@@ -57,8 +61,8 @@ class Newsletter extends Model implements Transformable, TableInterface
      * @var array
      */
     protected $fillable = [
-        'id', 'numb_edicao', 'data_edicao',
-        'enviada', 'user_id',
+        'id', 'abertura','numb_edicao', 'data_edicao',
+        'enviada', 'user_id', 'num_seq'
     ];
 
     public function user()
@@ -73,7 +77,7 @@ class Newsletter extends Model implements Transformable, TableInterface
 
     public function noticias()
     {
-        return $this->belongsToMany(Noticia::class);
+        return $this->belongsToMany(Noticia::class, 'newsletter_noticia', 'newsletter_id', 'noticia_id');
     }
 
     public function parceiros()
@@ -83,11 +87,18 @@ class Newsletter extends Model implements Transformable, TableInterface
 
     public function getTableHeaders()
     {
-        // TODO: Implement getTableHeaders() method.
+        return ['Ed. Número', 'Dt. Edição', 'Enviada'];
     }
 
     public function getValueForHeader($header)
     {
-        // TODO: Implement getValueForHeader() method.
+        switch ($header){
+            case 'Ed. Número':
+                return $this->numb_edicao;
+            case 'Dt. Edição':
+                return \Carbon\Carbon::parse($this->data_edicao)->format('d/m/Y');
+            case 'Enviada':
+                return $this->enviada == 'n' ? 'Não' : 'Sim';
+        }
     }
 }

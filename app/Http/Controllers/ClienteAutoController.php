@@ -57,11 +57,20 @@ class ClienteAutoController extends Controller
                 $cliente->save();
             }
             $email = $cliente->email;
+            $mensagem  = "Nós recebemos um pedido de reativação da sua assinatura no Canal Minutos.";
+            $mensagem .= "<br/>";
+            $mensagem .= "Se você fez este pedido, valide o seu e-mail clicando no botão abaixo. ";
+            $mensagem .= "Caso contrário, não precisa fazer nada, apenas ignore esta mensagem.";
+            $mensagem .= "<br/><br/>";
+            $mensagem .= "O Canal Minutos agradece a sua atenção. ";
+            $mensagem .= "<br/>";
+            $mensagem .= "Informação sem tempo a perder! ";
+            $mensagem .= "<br/>";
 
             $mailData = [
                 'title' => 'Olá, '.$cliente->nome,
-                'sub-title' => 'Recebemos um pedido para reativar sua assinatura.',
-                'mensagem' => 'Para confirmar basta clicar no botão abaixo',
+                'sub-title' => 'Reativar assinatura.',
+                'mensagem' => $mensagem,
                 'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
                 'title-button' => 'Confirmar',
                 'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
@@ -74,7 +83,7 @@ class ClienteAutoController extends Controller
                 $msg = 'Mensagem enviada com sucesso';
                 $request->session()->flash('msg', $msg);
             }else{
-                $error = 'Ops! Tivemos problema. Peça um novo email de verificação';
+                $error = 'Ops! Tivemos problema. Peça um novo e-mail de verificação';
                 $request->session()->flash('error', $error);
             }
 
@@ -91,13 +100,22 @@ class ClienteAutoController extends Controller
 
         $cliente = Cliente::create($data);
         $email = $cliente->email;
+        $mensagem  = "Você recebeu esta mensagem porque se inscreveu no Canal Minutos.";
+        $mensagem .= "<br/>";
+        $mensagem .= "Para confirmar a sua inscrição e passar a receber nossa newsletter, ";
+        $mensagem .= "por favor, valide o seu e-mail clicando no botão abaixo. ";
+        $mensagem .= "<br/><br/>";
+        $mensagem .= "Obrigado por assinar o Canal Minutos. ";
+        $mensagem .= "<br/>";
+        $mensagem .= "Informação sem tempo a perder! ";
+        $mensagem .= "<br/>";
 
         $mailData = [
             'title' => 'Olá, '.$cliente->nome,
-            'sub-title' => 'Valide o seu e-mail!',
-            'mensagem' => 'Para isso basta clicar no botão abaixo',
+            'sub-title' => 'Validar e-mail!',
+            'mensagem' => $mensagem,
             'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
-            'title-button' => 'Validar E-mail',
+            'title-button' => 'Validar e-mail',
             'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
             'date' => now(),
         ];
@@ -105,14 +123,14 @@ class ClienteAutoController extends Controller
         Mail::to($email)->send(new SendMailCliente($mailData));
 
         if (Response::HTTP_OK){
-            $msg = 'Mensagem enviada com sucesso';
+            $msg = 'E-mail enviado com sucesso!';
             $request->session()->flash('msg', $msg);
         }else{
-            $error = 'Ops! Tivemos problema. Peça um novo email de verificação';
+            $error = 'Ops! Tivemos problema. Peça um novo e-mail de verificação';
             $request->session()->flash('error', $error);
         }
 
-        return view('clientes.bemvindo');
+        return view('clientes.bemvindo', compact('cliente'));
     }
 
     /**
@@ -215,10 +233,20 @@ class ClienteAutoController extends Controller
             $cliente->save();
         }
 
+        $mensagem  = "Você recebeu esta mensagem porque se inscreveu no Canal Minutos.";
+        $mensagem .= "<br/>";
+        $mensagem .= "Para confirmar a sua inscrição e passar a receber nossa newsletter, ";
+        $mensagem .= "por favor, valide o seu e-mail clicando no botão abaixo. ";
+        $mensagem .= "<br/><br/>";
+        $mensagem .= "Obrigado por assinar o Canal Minutos. ";
+        $mensagem .= "<br/>";
+        $mensagem .= "Informação sem tempo a perder! ";
+        $mensagem .= "<br/>";
+
         $mailData = [
             'title' => 'Olá, '.$cliente->nome,
             'sub-title' => 'Valide o seu e-mail!',
-            'mensagem' => 'Para isso basta clicar no botão abaixo',
+            'mensagem' => $mensagem,
             'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
             'title-button' => 'Validar E-mail',
             'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
@@ -228,10 +256,10 @@ class ClienteAutoController extends Controller
         Mail::to($email)->send(new SendMailCliente($mailData));
 
         if (Response::HTTP_OK){
-            $msg = 'Email enviado com sucesso. Verifique sua caixa de spam';
+            $msg = 'Email enviado com sucesso. Verifique sua caixa de spam!';
             $request->session()->flash('msg', $msg);
         }else{
-            $error = 'Ops! Tivemos problema. Peça um novo email de verificação';
+            $error = 'Ops! Tivemos problema. Peça um novo email de verificação!';
             $request->session()->flash('error', $error);
         }
 

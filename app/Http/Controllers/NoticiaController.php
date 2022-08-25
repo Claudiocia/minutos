@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Forms\NoticiaForm;
 use App\Forms\RelFotoNoticiaForm;
 use App\Models\Foto;
+use App\Models\Newsletter;
+use App\Models\NewsletterNoticia;
 use App\Models\Noticia;
+use App\Models\Retranca;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -21,19 +24,41 @@ class NoticiaController extends Controller
      */
     public function index(Request $request)
     {
+        $editorias = Retranca::all();
         $search = $request->get('search');
-        if ($search == null) {
-            $noticias = Noticia::with('fotos', 'newsletters')->orderBy('data_cria', 'ASC')
-                ->paginate();
+        $editoria = $request->get('editoria');
+        $public = $request->get('public');
 
-            return view('admin.noticias.index', compact('noticias'));
-        }else{
+        if ($search == null && $editoria == null && $public == null) {
+            $noticias = Noticia::with('fotos', 'newsletter')->orderBy('created_at', 'DESC')
+                ->paginate(8);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria == null && $public == null){
             $noticias = Noticia::where('title', 'LIKE', '%'.$search.'%')
                 ->orWhere('resumo', 'LIKE', '%'.$search.'%')
                 ->orWhere('texto', 'LIKE', '%'.$search.'%')
-                ->orderBy('data_cria', 'ASC')->paginate();
+                ->orderBy('data_cria', 'ASC')->paginate(1000);
 
-            return view('admin.noticias.index', compact('noticias'));
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria != null && $public == null){
+            $noticias = Noticia::whereRetrancaId($editoria)->paginate(1000);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria == null && $public != null){
+            $noticias = Noticia::public($public)->orderBy('id', 'ASC')->paginate(1000);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria != null && $public != null){
+            $noticias = Noticia::public($public)->where('retranca_id', '=', $editoria)->paginate(1000);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria == null && $public != null){
+            $noticias = Noticia::public($public)->where('texto', 'LIKE', '%'.$search.'%')->paginate(1000);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+
+        }elseif ($search != null && $editoria != null && $public == null){
+            $noticias = Noticia::busca($search)->where('retranca_id', '=', $editoria)->paginate(1000);
+            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria != null && $public != null){
+            $noticias = Noticia::busca($search)->public($public)->where('retranca_id', '=', $editoria)->paginate(1000);
+           return view('admin.noticias.index', compact('noticias', 'editorias'));
         }
     }
 
@@ -98,13 +123,14 @@ class NoticiaController extends Controller
     {
         $id = $noticia->id;
         $noticia = Noticia::whereId($id)->with('fotos')->first();
+        $retranca = Retranca::with('fotos')->whereId($noticia->retranca_id)->first();
         $form = \FormBuilder::create(RelFotoNoticiaForm::class, [
             'url' => route('admin.noticias.update', ['noticia' => $noticia->id]),
             'method' => 'PUT',
             'model' => $noticia,
         ]);
 
-        return \view('admin.noticias.foto-rel', compact('form', 'noticia'));
+        return \view('admin.noticias.foto-rel', compact('form', 'noticia', 'retranca'));
     }
 
     /**
@@ -118,6 +144,22 @@ class NoticiaController extends Controller
         $noticia = Noticia::whereId($noticia->id)->with('fotos', 'newsletters')->first();
         //dd($noticia);
         return view('admin.noticias.show', compact('noticia'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return View
+     */
+    public function showPublic($id)
+    {
+        $newsletter = Newsletter::with('fotos')->first();//alterar essa busca para pegar só as enviadas
+        $noticias = NewsletterNoticia::whereEditoria($id)->with('noticia')
+            ->orderByDesc('id')->get();
+        $slot = false;
+        //dd($noticias);
+        return view('noticias.show', compact('noticias', 'newsletter', 'slot'));
     }
 
     /**
@@ -147,9 +189,13 @@ class NoticiaController extends Controller
     public function update(Request $request, Noticia $noticia)
     {
         $data = $request->all();
-        if (key_exists('foto_id', $data)){
-            $fotos = Foto::whereIn('id', $data['foto_id'])->get();
-            $noticia->fotos()->sync($fotos, false);
+
+        if($data['foto']){
+            if(key_exists('foto_id', $data)) {
+                $noticia->fotos()->sync($data['foto_id']);
+            }else{
+                $noticia->fotos()->detach();
+            }
         }else{
             $data['data_edit'] = now();
         }

@@ -17,7 +17,8 @@ class RateController extends Controller
      */
     public function index()
     {
-        return view('rates.index');
+        return view('rates.create');
+        //return view('rates.index');
     }
 
     /**
@@ -56,23 +57,36 @@ class RateController extends Controller
     {
         $data = $request->all();
         \Validator::make($data, [
-            'cliente_id' => ['required'],
             'nota' => ['required'],
             'title' => ['required', 'string', 'max:255'],
-            'texto' => ['required', 'max:255']
+            'texto' => ['required', 'max:255'],
+            'email' => ['required', 'exists:clientes']
         ], [
             'nota.required' => 'Favor selecionar de 1 a 5 estrelas como avaliação!',
             'title.required' => 'Dê um título para a sua avaliação',
-            'texto.required' => 'Escreva, no campo "Comentário", em poucas palavras, porque você deu a nota acima!'
+            'texto.required' => 'Escreva, no campo "Comentário", em poucas palavras, porque você deu a nota acima!',
+            'email.exists' => 'Este e-mail não está cadastrado como assinante. Para avaliar é preciso conhecer.'
         ])->validate();
-        $cliente = Cliente::whereId($data['cliente_id'])->first();
-        $rate = Rate::create($data);
-        if ($rate != null){
-            $dataCli['review'] = true;
-            $cliente->fill($dataCli);
-            $cliente->save();
-        }
 
+        $cliente = Cliente::whereEmail($data['email'])->first();
+        if ($data['cliente_id'] == null){
+            $data['cliente_id'] = $cliente->id;
+        }
+        if (!$cliente->review) {
+            $rate = Rate::create($data);
+            if ($rate != null) {
+                $dataCli['review'] = true;
+                $cliente->fill($dataCli);
+                $cliente->save();
+            }
+        }else{
+            $rate = Rate::whereClienteId($cliente->id)->first();
+            if ($rate->public == 's'){
+                $data['public']= 'n';
+            }
+            $rate->fill($data);
+            $rate->save();
+        }
         $request->session()->flash('msg', 'Obrigado pela sua avaliação!');
         return redirect()->route('/');
     }
@@ -114,7 +128,7 @@ class RateController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'texto' => ['required', 'max:255']
         ], [
-            'title.required' => 'Dê um título para a sua reavaliação',
+            'title.required' => 'Dê um título para a sua avaliação',
             'texto.required' => 'Escreva, no campo "Comentário", em poucas palavras, porque você deu a nota acima!'
         ])->validate();
 
@@ -127,7 +141,7 @@ class RateController extends Controller
         }
         $rate->fill($data);
         $rate->save();
-        $request->session()->flash('msg', 'Obrigado pela sua reavaliação!');
+        $request->session()->flash('msg', 'Avaliação atualizada!');
         return redirect()->route('/');
     }
 

@@ -81,6 +81,14 @@ class RateAdminController extends Controller
     public function update(Request $request, Rate $rate)
     {
         $data = $request->all();
+        \Validator::make($data, [
+            'title' => ['required', 'string', 'max:255'],
+            'texto' => ['required', 'max:255']
+        ], [
+            'title.required' => 'Dê um título para a avaliação',
+            'texto.required' => 'O Campo Comentário é Obrigatorio'
+        ])->validate();
+
         if ($rate->public == $data['public']){
            return redirect()->route('admin.rates.index');
         }
