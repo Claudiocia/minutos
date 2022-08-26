@@ -40,6 +40,7 @@
                     <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                 </div>
 
+                <!-- não aparecer
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mb-3">
                         <div class="custom-control custom-checkbox">
@@ -53,7 +54,7 @@
                         </div>
                     </div>
                 @endif
-
+                -->
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
                         <a class="text-muted me-3 text-decoration-none" href="{{ route('login') }}">

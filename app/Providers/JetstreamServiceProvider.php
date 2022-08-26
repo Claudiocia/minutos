@@ -3,7 +3,13 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Http\Middleware\JetstreamMiddleware;
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
+use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Http\Responses\RegisterResponse;
 use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -28,6 +34,14 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
+
+        Fortify::authenticateThrough(function (Request $request){
+            return array_filter([
+                AttemptToAuthenticate::class,
+                PrepareAuthenticatedSession::class,
+                JetstreamMiddleware::class,
+            ]);
+        });
     }
 
     /**
@@ -45,5 +59,6 @@ class JetstreamServiceProvider extends ServiceProvider
             'update',
             'delete',
         ]);
+
     }
 }

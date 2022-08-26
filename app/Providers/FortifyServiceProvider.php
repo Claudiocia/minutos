@@ -6,11 +6,16 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Controllers\RegisteredMyUserController;
+use App\Http\Middleware\JetstreamMiddleware;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -32,6 +37,7 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot()
     {
         Fortify::createUsersUsing(CreateNewUser::class);
+        $this->app->singleton(RegisteredUserController::class, RegisteredMyUserController::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);

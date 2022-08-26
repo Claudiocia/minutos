@@ -10,6 +10,7 @@
                             <div class="panel-heading-assin">
                                 <h5>Faça a sua assinatura 100% gratuita</h5>
                             </div>
+                            <x-jet-validation-errors class="mb-3" />
                             <div class="panel-body">
                                 <div name="logo">
                                     <a href="{{route('/')}}"><x-jet-authentication-card-logo /></a>
@@ -29,7 +30,7 @@
                                                ]),['class' => 'form-assin'])
                                           !!}
                                     <div class="aviso">
-                                        <p>Ao subscrever você concorda com nossa política de privacidade e nossos termos de uso. <a href="#"> Leia aqui</a></p>
+                                        <p>Clique para conhecer a nossa <a href="{{route('policy.show')}}">Política de Privacidade</a>  e nosso <a href="{{route('terms.show')}}">Termos de Uso</a></p>
                                     </div>
                                 </div>
                             </div>

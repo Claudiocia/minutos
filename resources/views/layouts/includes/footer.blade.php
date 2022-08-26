@@ -27,8 +27,8 @@
                     <div class="col-md-4 mb-4 mb-md-0">
                         <h3>Outros Links</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Nossos Termos</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="{{route('terms.show')}}">Nossos Termos</a></li>
+                            <li><a href="{{route('policy.show')}}">Política de Privacidade</a></li>
                             <li><a href="#">Fale com a gente</a></li>
                             <li><a href="#">Nosso time</a></li>
                         </ul>
@@ -43,8 +43,9 @@
                                 <li><a href="#" class="btn btn-primary align-items-center"><i class="bx bxl-play-store"></i><span> Google Play</span></a></li>
                             </ul>
                         </div>
+                        -->
                     </div>
-                    -->
+
                 </div>
             </div>
         </div>

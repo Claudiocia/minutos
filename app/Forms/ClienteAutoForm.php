@@ -14,6 +14,10 @@ class ClienteAutoForm extends Form
             ])
             ->add('email', 'text', [
                 'label' => 'Email'
+            ])
+            ->add('terms', 'checkbox', [
+                'label' => 'Eu concordo com os Termos do Serviço e com a Política de Privacidade',
+                'selected' => false,
             ]);
     }
 }

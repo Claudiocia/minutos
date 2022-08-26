@@ -642,17 +642,14 @@ section {
 #admin-content {
     margin-top: 8px;
     margin-bottom: 20px;
-    background: #e0f3ff;
+    background: #FFFFFF; /*#e0f3ff; */
+    border: 0.5pt solid #e0f3ff;
     padding: 50px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
 }
 
 .container-admin{
     background: white;
     padding: 20px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
 }
 
 .panel-heading-admin{
@@ -660,33 +657,31 @@ section {
     margin: 10px 10px 30px 10px;
     border-radius: 10px;
     border: solid 0.5pt darkgrey;
-    display: flex;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
     justify-content: space-between;
 }
 @media screen and (max-width: 992px) {
     #admin-content {
         margin-top: 8px;
         margin-bottom: 10px;
-        padding: 15px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        padding: 5px;
+        border: 2pt solid #e0f3ff;
         border-radius: 10px;
     }
     .container-admin{
         padding: 5px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
     }
     .panel-heading-admin{
         padding: 5px;
-        margin: 5px;
+        margin: 0px;
         border-radius: 5px;
         border: solid 0.5pt darkgrey;
-        display: flex;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        display: flex;
     }
     .panel-heading-admin h5{
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
@@ -1078,8 +1073,8 @@ section {
         margin-bottom: 15px;
     }
     .edit{
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 8px;
+        margin-right: 8px;
     }
     .edit h4{
         font-size: 16px;
@@ -1088,7 +1083,8 @@ section {
         font-size: 18px;
     }
     .edit-abert p{
-        font-size: 0.8em;
+        font-size: 1.0em;
+        line-height: 1.6em;
     }
     .icon-news{
         width: 60px;
@@ -1099,7 +1095,7 @@ section {
         margin-right: 5px;
     }
     .aviso-news h6{
-        font-size: 12px;
+        font-size: 0.7em;
     }
 }
 /*-------------- Fim da Abertura -------------------*/
@@ -1159,16 +1155,20 @@ section {
         width: 100%;
     }
     .tit-princ h2{
-        font-size: 20px;
+        font-size: 22px;
         line-height: 1.5em;
         margin-bottom: 10px;
     }
     .tit-princ h3{
         width: 100%;
+        font-size: 20px;
+        line-height: 1.5em;
         margin-bottom: 7px;
     }
     .texto-news{
         margin-right: 0;
+        font-size: 16px;
+        line-height: 1.7em;
         padding-top: 15px;
     }
     .texto-news p{
@@ -1262,7 +1262,7 @@ section {
 }
 @media screen and (max-width: 992px) {
     .nota-news{
-        font-size: 12px;
+        font-size: 14px;
     }
     .disse{
         border-left: #41a7d7 2px solid;
@@ -1270,12 +1270,12 @@ section {
     }
     .tit-disse h3{
         width: 98%;
-        line-height: 1.3em;
+        line-height: 1.4em;
         font-size: 16px;
     }
     .disse-news p {
         width: 90%;
-        font-size: 12px;
+        font-size: 13px;
     }
 }
 .cota-news{
@@ -1420,3 +1420,39 @@ section {
         margin-top: 10px;
     }
 }
+
+/*----------- cokie ---------*/
+
+#my-cookie .cookie-consent{
+    width: 80%;
+    min-height: 60px;
+    max-height: 140px;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: #41a7d7;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    elevation: higher;
+}
+.cookie-consent{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.btn-cookie{
+    width: 150px;
+    min-height: 40px;
+    max-height: 100px;
+    margin: 10px;
+    background: #555555;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+.btn-cookie:hover{
+    background-color: black;
+}
+

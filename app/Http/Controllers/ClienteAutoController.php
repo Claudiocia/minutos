@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+use Laravel\Jetstream\Jetstream;
 use Symfony\Component\HttpFoundation\Response;
 
 class ClienteAutoController extends Controller
@@ -91,9 +92,12 @@ class ClienteAutoController extends Controller
         }
         \Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:clientes']
+            'email' => ['required', 'email', 'max:255', 'unique:clientes'],
+            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ], [
-            'email.unique' => 'Este email já se encontra cadastrado e ativo no sistema'
+            'email.unique' => 'Este email já se encontra cadastrado e ativo no sistema',
+            'email.email' => 'Este email não é válido',
+            'terms.accepted' => 'Você precisa aceitar os termos do serviço',
         ])->validate();
         $data['signed'] = 2;
         $data['token'] = md5(now().$data['email'].$data['nome']);
