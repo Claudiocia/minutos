@@ -1,10 +1,10 @@
 <section class="step-section">
     <div class="container">
-        <div class="row justify-content-center text-center mb-5 step-title" data-aos-delay="100" data-aos="fade-left">
+        <div class="row justify-content-center text-center mb-5 step-title">
             <h1>Por que o minutos será relevante</h1>
             <h1>para o seu dia a dia</h1>
         </div>
-        <div class="row justify-content-center text-center mb-5" data-aos-delay="200" data-aos="fade-right">
+        <div class="row justify-content-center text-center mb-5">
             <hr class="linha"/>
         </div>
         <div class="container-fluid">

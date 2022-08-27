@@ -15,7 +15,7 @@
                     que atenda aos mais altos padrões e alicerçado em 3Cs – curto, claro e consistente.</p>
 
             </div>
-            <div class="col-md-5" data-aos="fade-left">
+            <div class="col-md-5">
                 <img src="{{asset('site/img/apost.png')}}" alt="Image" class="img-fluid">
             </div>
         </div>
