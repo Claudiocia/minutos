@@ -84,10 +84,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_hists as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -125,10 +125,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_aindas as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -167,10 +167,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_etcs as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -217,10 +217,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_disses as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -284,10 +284,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_dinhes as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -332,10 +332,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_planes as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -379,11 +379,11 @@
                                             </div>
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
-                                                    @foreach($noti_cuidas as $cuida)
-                                                        <a href="{{route('noticias.show', ['id' => $cuida->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $cuida->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $cuida->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $cuida->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                    @foreach($noti_cuidas as $noti)
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -428,10 +428,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_cults as $noti)
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="{{route('noticias.show', ['id' => $noti->editoria])}}"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -475,7 +475,15 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="btn-hero">
+                        <p><a href="{{route('oldnews')}}" class="btn btn-assinar" style="width: 40%">Voltar</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
 @endsection
 

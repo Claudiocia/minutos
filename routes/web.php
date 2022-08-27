@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteAutoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CookieConsentController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsletterController;
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'index'])->name('/');
 Route::get('/newsletters', [SiteController::class, 'oldnews'])->name('oldnews');
 Route::get('/newsletters/{newsletter}', [SiteController::class, 'show'])->name('newsletters.show');
+Route::get('/cookie-consent/{kook}', CookieConsentController::class)->name('cookieConsent');
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);

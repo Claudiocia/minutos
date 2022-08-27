@@ -17,7 +17,9 @@
                                     {!!Table::withContents($newsletters)->striped()
                                         ->callback('Abrir', function ($field, $newsletter){
                                             $linkShow = route('newsletters.show', ['newsletter' => $newsletter->id]);
-                                            return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow);
+                                            $linkVolt = route('/');
+                                            return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow)." | ".
+                                            \Bootstrapper\Facades\Button::LINK('<i class="fa-solid fa-arrow-rotate-left"></i>')->asLinkTo($linkVolt);
                                         })->ignore(['Enviada']) !!}
                                 </div>
                             </div>
