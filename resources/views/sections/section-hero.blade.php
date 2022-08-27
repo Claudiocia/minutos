@@ -15,13 +15,13 @@
                         <p>De segunda a sexta, bem cedinho em sua <strong class="minutos">caixa de e-mail.</strong> Assine agora a
                             nossa newsletter e se prepare para o dia em minutos. <strong class="minutos">É 100% de graça!</strong></p>
                         <div class="btn-hero">
-                            <p data-aos="fade-right" data-aos-delay="100" data-aos-offset="-500 btn-hero"><a href="{{route('clientes.index')}}" class="btn btn-assinar">ASSINE</a></p>
+                            <p data-aos-delay="100"><a href="{{route('clientes.index')}}" class="btn btn-assinar">ASSINE</a></p>
                         </div>
                         <p class="font-texto-cancel">Não tem mais interesse? Em apenas dois cliques você pode cancelar.</p>
                     </div>
                     <div class="col-7 d-flex justify-content-center">
                         <div class="col-lg-7 iphone-wrap">
-                            <img src="{{asset('site/img/hero5.png')}}" alt="Image" class="phone-1" data-aos="fade-right">
+                            <img src="{{asset('site/img/hero5.png')}}" alt="Image" class="phone-1" data-aos-delay="200">
                         </div>
                     </div>
                 </div>
