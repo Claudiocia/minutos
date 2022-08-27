@@ -33,6 +33,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="javascript">
+        $(function() {
+            AOS.init();
+        });
+
+        $(window).on('load', function() {
+            AOS.refresh();
+        });
+    </script>
 </head>
 <body>
 
