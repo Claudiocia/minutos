@@ -1473,20 +1473,21 @@ section {
 @media screen and (max-width: 992px) {
     #my-cookie .cookie-consent {
         width: 90%;
-        min-height: 60px;
-        max-height: 180px;
+        height: 150px!important;
     }
     .texto-consent p{
         margin: 5px;
-        font-size: 14px;
+        font-size: 13px;
+        color: #FFFFFF;
     }
 
     .btn-cookie{
-        margin: 5px;
+        padding: 8px 18px 8px 18px!important;
+        margin: 4px 4px 4px 12px;
         border-radius: 5px;
     }
     .btn-cookie a{
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
