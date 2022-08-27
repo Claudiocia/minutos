@@ -4,7 +4,7 @@
 
     <div id="my-cookie" class="fixed-bottom d-flex justify-content-center align-items-center">
         <div class="col-12 cookie-consent">
-            <div class="col-8 d-flex align-items-center justify-content-center">
+            <div class="col-8 d-flex align-items-center justify-content-center texto-consent">
                 <p class="texto-consent">Utilizamos cookies neste site para lhe proporcionar uma experiência personalizada.
                     Leia nossa <a href="#">Política de Privacidade</a> para mais informações.</p>
             </div>
