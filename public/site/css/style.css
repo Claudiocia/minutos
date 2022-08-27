@@ -1469,3 +1469,23 @@ section {
     background-color: black;
 }
 
+@media screen and (max-width: 992px) {
+    .cookie-consent {
+        width: 90%;
+        min-height: 60px;
+        max-height: 180px;
+    }
+    .texto-consent{
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .btn-cookie{
+        margin: 5px;
+        border-radius: 5px;
+    }
+    .btn-cookie a{
+        font-size: 13px;
+    }
+}
+
