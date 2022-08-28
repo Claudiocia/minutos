@@ -194,8 +194,8 @@ class NewsletterController extends Controller
     public function update(Request $request, Newsletter $newsletter)
     {
         $data = $request->all();
-        //dd($data);
-        if ($data['foto']){
+        //dd($data['foto']);
+        if ($data['foto']!= null){
             if(key_exists('foto_id', $data)) {
                 $newsletter->fotos()->sync($data['foto_id']);
             }else{

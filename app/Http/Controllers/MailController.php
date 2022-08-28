@@ -30,16 +30,18 @@ class MailController extends Controller
                 'date' => now(),
             ];
         }else{
+            $subject = 'Email TESTE';
             $mailData = [
                 'title' => 'Email Teste',
                 'sub-title' => 'Subtitulo',
                 'mensagem' => 'Teste de mensagem dinamica no email',
                 'url' => 'teste.com.br',
                 'title-button' => 'Teste do botão',
+                'url_copia' => '#',
                 'date' => now(),
             ];
         }
-        Mail::to($email)->send(new SendMailCliente($mailData));
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';

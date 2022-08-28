@@ -36,6 +36,9 @@ class NewsletterForm extends Form
                 'attr' => ['class' => 'div-news', 'required' => 'required'],
                 'value' => $this->model ? $data : '',
             ])
+            ->add('foto', 'hidden', [
+                'value' => false,
+            ])
             ->add('numb', 'text', [
                 'label' => 'Edição nº',
                 'label_attr' => ['class' => 'block control-label label-form'],

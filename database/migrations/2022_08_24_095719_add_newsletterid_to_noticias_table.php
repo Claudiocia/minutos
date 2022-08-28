@@ -27,7 +27,7 @@ class AddNewsletteridToNoticiasTable extends Migration
     public function down()
     {
         Schema::table('noticias', function (Blueprint $table) {
-            $table->dropColumn(['newsletter_id']);
+            $table->dropForeign(['newsletter_id']);
         });
     }
 }
