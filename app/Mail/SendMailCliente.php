@@ -30,6 +30,6 @@ class SendMailCliente extends Mailable
     public function build()
     {
         return $this->markdown('emails.sendEmail')
-            ->with('mailData', $this->mailData);
+            ->with('mailData', $this->mailData)->subject('Email Assinante');
     }
 }

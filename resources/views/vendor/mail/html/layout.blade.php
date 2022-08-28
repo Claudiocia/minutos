@@ -39,7 +39,6 @@ width: 100% !important;
 <!-- Body content -->
 <tr>
 <td class="content-cell">
-    teste de email
 {{ Illuminate\Mail\Markdown::parse($slot) }}
 
 {{ $subcopy ?? '' }}
