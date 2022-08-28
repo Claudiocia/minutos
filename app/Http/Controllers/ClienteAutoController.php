@@ -392,6 +392,12 @@ class ClienteAutoController extends Controller
 
         Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
+        $mensagem  = "Enviamos uma mensagem para o seu email, ";
+        $mensagem .= "<br/>";
+        $mensagem .= "para que você possa confirmar o seu retorno.";
+        $mensagem .= "<br/>";
+        $mensagem .= "Estamos muito felizes com a sua volta!";
+
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';
             $request->session()->flash('msg', $msg);
@@ -400,7 +406,7 @@ class ClienteAutoController extends Controller
             $request->session()->flash('error', $error);
         }
 
-        return view('clientes.retorno');
+        return view('clientes.retorno', compact('mensagem', 'email'));
 
     }
 
