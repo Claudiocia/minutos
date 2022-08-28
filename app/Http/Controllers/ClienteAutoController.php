@@ -17,7 +17,7 @@ class ClienteAutoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -57,6 +57,7 @@ class ClienteAutoController extends Controller
                 $cliente->fill($data);
                 $cliente->save();
             }
+            $subject = 'Reativar Assinatura';
             $email = $cliente->email;
             $mensagem  = "Nós recebemos um pedido de reativação da sua assinatura no Canal Minutos.";
             $mensagem .= "<br/>";
@@ -78,7 +79,7 @@ class ClienteAutoController extends Controller
                 'date' => now(),
             ];
 
-            Mail::to($email)->send(new SendMailCliente($mailData));
+            Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
             if (Response::HTTP_OK){
                 $msg = 'Mensagem enviada com sucesso';
@@ -104,6 +105,7 @@ class ClienteAutoController extends Controller
 
         $cliente = Cliente::create($data);
         $email = $cliente->email;
+        $subject = 'Assinante confirmar email';
         $mensagem  = "Você recebeu esta mensagem porque se inscreveu no Canal Minutos.";
         $mensagem .= "<br/>";
         $mensagem .= "Para confirmar a sua inscrição e passar a receber nossa newsletter, ";
@@ -115,7 +117,6 @@ class ClienteAutoController extends Controller
         $mensagem .= "<br/>";
 
         $mailData = [
-            'subject' => 'Estamos Felizes Com a Sua Chegada!',
             'title' => 'Olá, '.$cliente->nome,
             'sub-title' => 'Validar e-mail!',
             'mensagem' => $mensagem,
@@ -125,7 +126,7 @@ class ClienteAutoController extends Controller
             'date' => now(),
         ];
 
-        Mail::to($email)->send(new SendMailCliente($mailData));
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
         if (Response::HTTP_OK){
             $msg = 'E-mail enviado com sucesso!';
@@ -237,6 +238,7 @@ class ClienteAutoController extends Controller
             $cliente->fill($data);
             $cliente->save();
         }
+        $subject = 'Solicitação de reenvio de email';
 
         $mensagem  = "Você recebeu esta mensagem porque se inscreveu no Canal Minutos.";
         $mensagem .= "<br/>";
@@ -258,7 +260,7 @@ class ClienteAutoController extends Controller
             'date' => now(),
         ];
 
-        Mail::to($email)->send(new SendMailCliente($mailData));
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
         if (Response::HTTP_OK){
             $msg = 'Email enviado com sucesso. Verifique sua caixa de spam!';
@@ -286,7 +288,7 @@ class ClienteAutoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Request $request
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function deleteAssinatura(Request $request)
     {
@@ -305,6 +307,7 @@ class ClienteAutoController extends Controller
             $can = 'Assinatura cancelada. Caso queira voltar é só pedir recadastramento';
             $request->session()->flash('can', $can);
         }
+        $subject = 'Assinatura cancelada';
         $mensagem  = "Se você NÃO pediu o cancelamento é só clicar no botão abaixo.";
         $mensagem .= "<br/>";
         $mensagem .= "Caso você tenha solicitado o cancelamento não precisa fazer mais nada!";
@@ -322,7 +325,7 @@ class ClienteAutoController extends Controller
             'date' => now(),
         ];
 
-        Mail::to($email)->send(new SendMailCliente($mailData));
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
         if (Response::HTTP_OK){
             $msg = 'Email enviado com sucesso.';
@@ -357,7 +360,7 @@ class ClienteAutoController extends Controller
             $cliente->save();
         }
         $email = $cliente->email;
-
+        $subject = 'Reativar assinatura';
         $mailData = [
             'title' => 'Olá, '.$cliente->nome,
             'sub-title' => 'Recebemos um pedido para reativar sua assinatura.',
@@ -368,7 +371,7 @@ class ClienteAutoController extends Controller
             'date' => now(),
         ];
 
-        Mail::to($email)->send(new SendMailCliente($mailData));
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';

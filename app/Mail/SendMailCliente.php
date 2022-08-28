@@ -11,15 +11,17 @@ class SendMailCliente extends Mailable
 {
     use Queueable, SerializesModels;
     public $mailData;
+    public $subject;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($mailData)
+    public function __construct($mailData, $subject)
     {
         $this->mailData = $mailData;
+        $this->subject = $subject;
     }
 
     /**
@@ -30,6 +32,6 @@ class SendMailCliente extends Mailable
     public function build()
     {
         return $this->markdown('emails.sendEmail')
-            ->with('mailData', $this->mailData)->subject('Email Assinante');
+            ->with('mailData', $this->mailData)->subject($this->subject);
     }
 }
