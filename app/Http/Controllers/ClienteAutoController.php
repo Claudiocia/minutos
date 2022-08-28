@@ -48,48 +48,67 @@ class ClienteAutoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        //dd($data);
         $cliente = Cliente::whereEmail($data['email'])->withTrashed()->first();
+
         if ($cliente != null) {
-            $cliente->restore();
-            if ($cliente->signed == 1){
-                $data['signed'] = 2;
-                $cliente->fill($data);
-                $cliente->save();
+            if ($cliente->deleted_at != null) {
+                $cliente->restore();
+                if ($cliente->signed == 1) {
+                    $data['signed'] = 2;
+                    $cliente->fill($data);
+                    $cliente->save();
+                }
+                $subject = 'Reativar Assinatura';
+                $email = $cliente->email;
+                $mensagem = "Nós recebemos um pedido de reativação da sua assinatura no Canal Minutos.";
+                $mensagem .= "<br/>";
+                $mensagem .= "Se você fez este pedido, valide o seu e-mail clicando no botão abaixo. ";
+                $mensagem .= "Caso contrário, não precisa fazer nada, apenas ignore esta mensagem.";
+                $mensagem .= "<br/><br/>";
+                $mensagem .= "O Canal Minutos agradece a sua atenção. ";
+                $mensagem .= "<br/>";
+                $mensagem .= "Informação sem tempo a perder! ";
+                $mensagem .= "<br/>";
+
+                $mailData = [
+                    'title' => 'Olá, ' . $cliente->nome,
+                    'sub-title' => 'Reativar assinatura.',
+                    'mensagem' => $mensagem,
+                    'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
+                    'title-button' => 'Confirmar',
+                    'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
+                    'date' => now(),
+                ];
+
+                Mail::to($email)->send(new SendMailCliente($mailData, $subject));
+
+                if (Response::HTTP_OK) {
+                    $msg = 'Mensagem enviada com sucesso';
+                    $request->session()->flash('msg', $msg);
+                } else {
+                    $error = 'Ops! Tivemos problema. Peça um novo e-mail de verificação';
+                    $request->session()->flash('error', $error);
+                }
+                $mensagem  = "Enviamos uma mensagem para o seu email, ";
+                $mensagem .= "<br/>";
+                $mensagem .= "para que você possa confirmar o seu retorno.";
+                $mensagem .= "<br/>";
+                $mensagem .= "<strong>";
+                $mensagem .= "Estamos muito felizes com a sua volta!";
+                $mensagem .= "</strong>";
+                return view('clientes.retorno', compact('mensagem', 'email'));
+            }elseif ($cliente->validado == null){
+                $mensagem  = "Este email já está cadastrado em nosso sistema. ";
+                $mensagem .= "<br/>";
+                $mensagem .= "Para começar a receber nossa newsletter, por favor,";
+                $mensagem .= "<br/>";
+                $mensagem .= "peça o envio de um novo email de validação no link abaixo!";
+                $mensagem .= "<br/>";
+                $mensagem .= "Estamos muito felizes com a sua chegada!";
+                $email = $cliente->email;
+                return view('clientes.retorno', compact('mensagem', 'email'));
             }
-            $subject = 'Reativar Assinatura';
-            $email = $cliente->email;
-            $mensagem  = "Nós recebemos um pedido de reativação da sua assinatura no Canal Minutos.";
-            $mensagem .= "<br/>";
-            $mensagem .= "Se você fez este pedido, valide o seu e-mail clicando no botão abaixo. ";
-            $mensagem .= "Caso contrário, não precisa fazer nada, apenas ignore esta mensagem.";
-            $mensagem .= "<br/><br/>";
-            $mensagem .= "O Canal Minutos agradece a sua atenção. ";
-            $mensagem .= "<br/>";
-            $mensagem .= "Informação sem tempo a perder! ";
-            $mensagem .= "<br/>";
-
-            $mailData = [
-                'title' => 'Olá, '.$cliente->nome,
-                'sub-title' => 'Reativar assinatura.',
-                'mensagem' => $mensagem,
-                'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
-                'title-button' => 'Confirmar',
-                'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
-                'date' => now(),
-            ];
-
-            Mail::to($email)->send(new SendMailCliente($mailData, $subject));
-
-            if (Response::HTTP_OK){
-                $msg = 'Mensagem enviada com sucesso';
-                $request->session()->flash('msg', $msg);
-            }else{
-                $error = 'Ops! Tivemos problema. Peça um novo e-mail de verificação';
-                $request->session()->flash('error', $error);
-            }
-
-            return view('clientes.retorno');
         }
         \Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
