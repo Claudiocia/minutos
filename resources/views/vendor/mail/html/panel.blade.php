@@ -4,7 +4,6 @@
 <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
 <tr>
 <td class="panel-item">
-    testei aqui
 {{ Illuminate\Mail\Markdown::parse($slot) }}
 </td>
 </tr>
