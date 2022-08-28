@@ -115,6 +115,7 @@ class ClienteAutoController extends Controller
         $mensagem .= "<br/>";
 
         $mailData = [
+            'subject' => 'Estamos Felizes Com a Sua Chegada!',
             'title' => 'Olá, '.$cliente->nome,
             'sub-title' => 'Validar e-mail!',
             'mensagem' => $mensagem,
