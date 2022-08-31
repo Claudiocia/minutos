@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://www.canalminutos.com.br'),
+    'url' => env('APP_URL', 'http://www.canalminutos.com.br'),
 
     'asset_url' => env('ASSET_URL', null),
 

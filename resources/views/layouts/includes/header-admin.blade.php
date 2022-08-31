@@ -27,6 +27,11 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{mix('css/app.css') }}">
     @livewireStyles
+    <style>
+        font-face{
+            font-family: "Roboto Serif", sans-serif;
+        }
+    </style>
     <!-- Template Main CSS File -->
     <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
     @stack('styles')

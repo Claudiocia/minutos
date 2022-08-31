@@ -5,6 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
+<style type="text/css">
+    @font-face {
+        font-family: 'RobotoSerifRegular';
+        src: {{asset('fonts/regular/RobotoSerifRegular.eot')}};
+        src: {{asset('fonts/regular/RobotoSerifRegular.eot')}} format('embedded-opentype'),
+        {{asset('fonts/regular/RobotoSerifRegular.woff2')}} format('woff2'),
+        {{asset('fonts/regular/RobotoSerifRegular.woff')}} format('woff'),
+        {{asset('fonts/regular/RobotoSerifRegular.ttf')}} format('truetype'),
+        {{asset('fonts/regular/RobotoSerifRegular.svg#RobotoSerifRegular')}} format('svg');
+    }
+</style>
 
 <style>
 @media only screen and (max-width: 600px) {

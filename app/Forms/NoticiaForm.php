@@ -47,13 +47,13 @@ class NoticiaForm extends Form
                 'value' =>Auth::id()
             ])
             ->add('public', 'choice', [
-                'label' => 'Avaliação publicada',
+                'label' => 'Noticia publicada',
                 'choices' => ['s' => 'Publicada', 'n' => 'Não'],
                 'choice_options' => [
                     'wrapper' => ['class' => 'choice-wrapper-my'],
                     'label_attr' => ['class' => 'label-class'],
                 ],
-                'selected' => $this->model->public,
+                'selected' => $this->model ? $this->model->public : 'n',
                 'multiple' => false,
                 'expanded' => true,
             ]);

@@ -170,7 +170,7 @@ section {
     transition: all 0.5s;
 }
 #header.header-scrolled {
-    background: #d6eeF0;
+    background: #b6eeF0;
     height: 70px;
 }
 
@@ -194,7 +194,7 @@ section {
         transition: all 0.5s;
     }
     #header.header-scrolled {
-        background: #d6eeF0;
+        background: #b6eeF0;
         height: 70px;
     }
     #header .logo img {
@@ -573,7 +573,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
     padding: 5rem 0 2.5rem 0;
-    background-color: #b6effb;
+    background-color: #b6eeF0;
 }
 .footer h3 {
     font-size: 18px;

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Forms\NewsletterForm;
 use App\Forms\RelFotoNewsletterForm;
+use App\Mail\SendMailCliente;
+use App\Mail\SendMailNews;
+use App\Models\Cliente;
 use App\Models\Foto;
 use App\Models\Newsletter;
 use App\Models\NewsletterNoticia;
@@ -11,7 +14,9 @@ use App\Models\Noticia;
 use App\Models\Retranca;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewsletterController extends Controller
 {
@@ -119,9 +124,137 @@ class NewsletterController extends Controller
      */
     public function disparaNews(Request $request, Newsletter $newsletter)
     {
-        //
+        $newsletter = Newsletter::whereId(1)->with('noticias', 'parceiros', 'fotos')->first();
+        $cliente = Cliente::whereId(1)->first();
+        $subject = 'Email TESTE VIEW';
+
+        $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
+        $ed_ainda_id = Retranca::whereNome('E ainda...')->first()->id;
+        $ed_etc_id = Retranca::whereNome('Etcetera')->first()->id;
+        $ed_disse_id = Retranca::whereNome('Disse-se')->first()->id;
+        $ed_dinhe_id = Retranca::whereNome('Dinheiro')->first()->id;
+        $ed_plane_id = Retranca::whereNome('Planeta')->first()->id;
+        $ed_cuida_id = Retranca::whereNome('Cuidar')->first()->id;
+        $ed_cult_id = Retranca::whereNome('Cult & Tec')->first()->id;
+
+        $noti_hists = NewsletterNoticia::whereEditoria($ed_hist_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_aindas = NewsletterNoticia::whereEditoria($ed_ainda_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_etcs = NewsletterNoticia::whereEditoria($ed_etc_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_disses = NewsletterNoticia::whereEditoria($ed_disse_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_dinhes = NewsletterNoticia::whereEditoria($ed_dinhe_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_planes = NewsletterNoticia::whereEditoria($ed_plane_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_cuidas = NewsletterNoticia::whereEditoria($ed_cuida_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_cults = NewsletterNoticia::whereEditoria($ed_cult_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+
+        //dd($newsletter);
+        if (count($newsletter->fotos) != 0) {
+            foreach ($newsletter->fotos as $foto) {
+                $fotoParceiro = $foto->foto_path;
+                break;
+            }
+        }else{
+            $fotoParceiro = '';
+        }
+
+        $mailData = [
+            'dataNews' => now(),
+            'foto_parca' => $fotoParceiro,
+            'abertura' => $newsletter->abertura,
+            'saud' => $cliente->nome,
+            'hist_dia' => $noti_hists,
+            'noti_ainda' => $noti_aindas,
+            'noti_etcs' => $noti_etcs,
+            'num_col' => 2,
+            'noti_disses' => $noti_disses,
+            'noti_dinhes' => $noti_dinhes,
+            'noti_planes' => $noti_planes,
+            'noti_cuidas' => $noti_cuidas,
+            'noti_cults' => $noti_cults,
+        ];
+
+        return new SendMailNews($mailData, $subject);
+
     }
 
+    public function testeEmail(Request $request, Newsletter $newsletter)
+    {
+        $newsletter = Newsletter::whereId(1)->with('noticias', 'parceiros', 'fotos')->first();
+        $cliente = Cliente::whereId(1)->first();
+        $subject = 'Email TESTE VIEW NEWS';
+
+        $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
+        $ed_ainda_id = Retranca::whereNome('E ainda...')->first()->id;
+        $ed_etc_id = Retranca::whereNome('Etcetera')->first()->id;
+        $ed_disse_id = Retranca::whereNome('Disse-se')->first()->id;
+        $ed_dinhe_id = Retranca::whereNome('Dinheiro')->first()->id;
+        $ed_plane_id = Retranca::whereNome('Planeta')->first()->id;
+        $ed_cuida_id = Retranca::whereNome('Cuidar')->first()->id;
+        $ed_cult_id = Retranca::whereNome('Cult & Tec')->first()->id;
+
+        $noti_hists = NewsletterNoticia::whereEditoria($ed_hist_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_aindas = NewsletterNoticia::whereEditoria($ed_ainda_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_etcs = NewsletterNoticia::whereEditoria($ed_etc_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_disses = NewsletterNoticia::whereEditoria($ed_disse_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_dinhes = NewsletterNoticia::whereEditoria($ed_dinhe_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_planes = NewsletterNoticia::whereEditoria($ed_plane_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_cuidas = NewsletterNoticia::whereEditoria($ed_cuida_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+        $noti_cults = NewsletterNoticia::whereEditoria($ed_cult_id)->with('noticia')
+            ->orderBy('id', 'ASC')->get();
+
+        //dd($newsletter);
+        if (count($newsletter->fotos) != 0) {
+            foreach ($newsletter->fotos as $foto) {
+                $fotoParceiro = $foto->foto_path;
+                break;
+            }
+        }else{
+            $fotoParceiro = '';
+        }
+
+        $mailData = [
+            'dataNews' => now(),
+            'foto_parca' => $fotoParceiro,
+            'abertura' => $newsletter->abertura,
+            'saud' => $cliente->nome,
+            'hist_dia' => $noti_hists,
+            'noti_ainda' => $noti_aindas,
+            'noti_etcs' => $noti_etcs,
+            'num_col' => 2,
+            'noti_disses' => $noti_disses,
+            'noti_dinhes' => $noti_dinhes,
+            'noti_planes' => $noti_planes,
+            'noti_cuidas' => $noti_cuidas,
+            'noti_cults' => $noti_cults,
+        ];
+
+        $email = $cliente->email;
+
+        Mail::to($email)->send(new SendMailNews($mailData, $subject));
+
+        if (Response::HTTP_OK){
+            $msg = 'Mensagem enviada com sucesso';
+        }else{
+            $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
+        }
+        $request->session()->flash('msg', $msg);
+        return redirect()->route('/');
+
+    }
 
 
 

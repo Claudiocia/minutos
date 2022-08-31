@@ -12,6 +12,9 @@ use App\Http\Controllers\RateController;
 use App\Http\Controllers\RetrancaController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Mail\SendMailCliente;
+use App\Mail\SendMailNews;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +35,9 @@ Route::get('/cookie-consent/{kook}', CookieConsentController::class)->name('cook
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);
+Route::get('/preview-email', [NewsletterController::class, 'disparaNews']);
+Route::get('/teste-email', [NewsletterController::class, 'testeEmail']);
+
 
 Route::get('/noticias/{id}', [NoticiaController::class, 'showPublic'])->name('noticias.show');
 
