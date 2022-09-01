@@ -226,25 +226,32 @@ class NewsletterController extends Controller
             $fotoParceiro = '';
         }
 
-        $mailData = [
-            'dataNews' => now(),
-            'foto_parca' => $fotoParceiro,
-            'abertura' => $newsletter->abertura,
-            'saud' => $cliente->nome,
-            'hist_dia' => $noti_hists,
-            'noti_ainda' => $noti_aindas,
-            'noti_etcs' => $noti_etcs,
-            'num_col' => 2,
-            'noti_disses' => $noti_disses,
-            'noti_dinhes' => $noti_dinhes,
-            'noti_planes' => $noti_planes,
-            'noti_cuidas' => $noti_cuidas,
-            'noti_cults' => $noti_cults,
+        $emails = [
+            $cliente->email,
+            'claudiosouza.cia@hotmail.com',
+            'divo.araujo@gmail.com',
+            'adm@canalminutos.com.br',
         ];
 
-        $email = $cliente->email;
+            $mailData = [
+                'dataNews' => now(),
+                'foto_parca' => $fotoParceiro,
+                'abertura' => $newsletter->abertura,
+                'saud' => $cliente->nome,
+                'hist_dia' => $noti_hists,
+                'noti_ainda' => $noti_aindas,
+                'noti_etcs' => $noti_etcs,
+                'num_col' => 2,
+                'noti_disses' => $noti_disses,
+                'noti_dinhes' => $noti_dinhes,
+                'noti_planes' => $noti_planes,
+                'noti_cuidas' => $noti_cuidas,
+                'noti_cults' => $noti_cults,
+            ];
 
-        Mail::to($email)->send(new SendMailNews($mailData, $subject));
+        foreach ($emails as $email) {
+            Mail::to($email)->send(new SendMailNews($mailData, $subject));
+        }
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';
