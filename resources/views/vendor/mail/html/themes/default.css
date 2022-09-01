@@ -321,10 +321,6 @@ img {
     justify-content: center;
     align-items: center;
 }
-.desk svg {
-    max-height: 55px;
-    height: 55px;
-}
 .parceria p{
     font-size: 0.9em;
     margin-top: 5px;
@@ -352,6 +348,20 @@ img {
     display: flex;
     justify-content: space-between;
     vert-align: top;
+}
+.table-icon{
+    border: none;
+    width: 100%;
+}
+.table-icon td{
+    padding: 0;
+}
+.table-icon td:first-child {
+    width: 200px;
+}
+.table-icon td:first-child + td {
+    width: 150px;
+    text-align: right;
 }
 /* ---------- SAUDACAO IMAGEM ----------*/
 .saud-h4 {
@@ -601,21 +611,30 @@ img {
     min-height: 315px;
     background-color: black;
 }
-.rodape-news{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.table-final{
+    width: 100%;
+    border: none;
+    background-color: black;
+    margin: 0;
+    padding: 10px;
 }
-.rodape-tit h3{
+.table-final td{
+    text-align: center;
+    color: #FFFFFF;
+}
+.table-final td h3{
     font-size: 20px;
     text-align: center;
     color: #FFFFFF;
     font-weight: bold;
 }
-.img-final img{
-    width: 90px;
+.rodape-news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.roda-text p{
+
+.table-final td p{
     margin-top: 8px;
     margin-left: 20px;
     margin-right: 20px;
@@ -624,19 +643,23 @@ img {
     font-style: italic;
     color: #FFFFFF;
 }
-.roda-text a{
+.table-final td a{
     text-decoration: underline;
     color: #41a7d7;
     font-weight: bold;
 }
-.fim{
-    color: #FFFFFF;
-}
-.soc-fim{
-    margin-left: 40px;
-}
 
 /* -------- ASSINATURA -------------*/
+.table-final-ass{
+    width: 100%;
+    border: none;
+    background-color: #cccccc;
+    margin: 0;
+    padding: 10px;
+}
+.table-final-ass td {
+    text-align: center;
+}
 .rodape-news-final{
     display: flex;
     justify-content: center;
@@ -656,16 +679,8 @@ img {
     transform: translate(-50%, -50%);
     height: 30px;
 }
-
 .final {
     text-align: center;
     font-size: 12px;
     font-weight: bold;
 }
-.final a{
-    text-decoration: underline;
-}
-.baixo{
-    margin-top: -22px;
-}
-

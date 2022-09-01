@@ -77,7 +77,7 @@ class NewsletterController extends Controller
 
         $cont = count($data['noticias']);
         //dd($data['noticias']);
-        for($i=0; $i < $cont; $i++){
+        for ($i = 0; $i < $cont; $i++) {
             $not_id = $data['noticias'][$i];
             $noti = Noticia::whereId($not_id)->first();
             $edit_id = $noti->retranca->id;
@@ -102,7 +102,7 @@ class NewsletterController extends Controller
      * @param Newsletter $newsletter
      * @return View
      */
-    public function photorel (Newsletter $newsletter)
+    public function photorel(Newsletter $newsletter)
     {
         $fotos = Foto::whereUsing('parceiro')->get();
         $form = \FormBuilder::create(RelFotoNewsletterForm::class, [
@@ -118,7 +118,7 @@ class NewsletterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Newsletter $newsletter
+     * @param Newsletter $newsletter
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
@@ -160,12 +160,26 @@ class NewsletterController extends Controller
                 $fotoParceiro = $foto->foto_path;
                 break;
             }
-        }else{
+        } else {
             $fotoParceiro = '';
         }
 
+        $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
+        $diaFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            "EEEE,",
+            'pt-BR'
+        );
+        $dateFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            "d 'de' MMMM 'de' y",
+            'pt-BR'
+        );
+        $dia = ucwords($diaFormatted);
+
         $mailData = [
-            'dataNews' => now(),
+            'diaNews' => $dia,
+            'dataNews' => $dateFormatted,
             'foto_parca' => $fotoParceiro,
             'abertura' => $newsletter->abertura,
             'saud' => $cliente->nome,
@@ -222,7 +236,7 @@ class NewsletterController extends Controller
                 $fotoParceiro = $foto->foto_path;
                 break;
             }
-        }else{
+        } else {
             $fotoParceiro = '';
         }
 
@@ -233,8 +247,22 @@ class NewsletterController extends Controller
             'adm@canalminutos.com.br',
         ];
 
+        $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
+        $diaFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            "EEEE,",
+            'pt-BR'
+        );
+        $dateFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            "d 'de' MMMM 'de' y",
+            'pt-BR'
+        );
+        $dia = ucwords($diaFormatted);
+
             $mailData = [
-                'dataNews' => now(),
+                'diaNews' => $dia,
+                'dataNews' => $dateFormatted,
                 'foto_parca' => $fotoParceiro,
                 'abertura' => $newsletter->abertura,
                 'saud' => $cliente->nome,

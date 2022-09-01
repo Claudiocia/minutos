@@ -15,13 +15,11 @@
     <div id="news-show-email">
     <!-- Cabeçalho -->
     <div class="row desk-email">
-    @if(setlocale(LC_TIME, 'pt_Br'))
-    <h6>{{strftime("%A", strtotime($mailNews['dataNews']))}}</h6>
-    <h6 class="data-news">{{strftime("%e de %B de %Y", strtotime($mailNews['dataNews']))}}</h6>
-    @endif
+    <h6>{{$mailNews['diaNews']}}</h6>
+    <h6 class="data-news">{{$mailNews['dataNews']}}</h6>
     </div>
     <div class="row desk parceria">
-    <x-marca-minutos class="img-fluid"/>
+    <img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/>
     </div>
     <div class="row desk-email">
     <div>
@@ -43,12 +41,12 @@
     <div class="edit">
     <div class="row">
     <div class="edit-abert">
-    <div>
-    <h4 class="saud-h4">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4>
-    </div>
-    <div>
-    <img src="{{asset('icones/cafe_azul-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h4 class="saud-h4">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4></td>
+    <td><img src="{{asset('icones/cafe_azul-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
+    </tr>
+    </table>
     </div>
     </div>
     <div class="edit-abert">
@@ -80,14 +78,12 @@
     @break
     @endforeach
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">História do dia</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/rapidez_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">História do dia</h3></td>
+    <td><img src="{{asset('icones/rapidez_azul-300.png')}}" width="60" alt="icone Dia" class="img-fluid" /></td>
+    </tr>
+    </table>
     @foreach($mailNews['hist_dia'] as $hist)
     <div class="row">
     <h2 class="tit-princ">{{$hist->noticia->title}}</h2>
@@ -126,14 +122,12 @@
     @endif
     @endforeach
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">E ainda...</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/jornalismo_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">E ainda...</h3></td>
+    <td><img src="{{asset('icones/jornalismo_azul-300.png')}}" width="60" alt="icone E ainda..." class="img-fluid" /></td>
+    </tr>
+    </table>
     @foreach($mailNews['noti_ainda'] as $ainda)
     <div class="row">
     <h3 class="tit-secund">{{$ainda->noticia->title}}</h3>
@@ -162,14 +156,12 @@
     <!-- Inicio Etcetera -->
     <div class="edit">
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Etcetera</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/tempo_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Etcetera</h3></td>
+    <td><img src="{{asset('icones/tempo_azul-300.png')}}" width="60" alt="icone Etcetera" class="img-fluid" /></td>
+    </tr>
+    </table>
     <div class="container-fluid">
     <table class="tab-notas">
     <?php $col = 1; ?>
@@ -210,14 +202,12 @@
     <!-- Inicio Disse -->
     <div class="edit">
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Disse-se</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/internet_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Disse-se</h3></td>
+    <td><img src="{{asset('icones/internet_azul-300.png')}}" width="60" alt="icone Disse-se" class="img-fluid" /></td>
+    </tr>
+    </table>
     <div class="row">
     @foreach($mailNews['noti_disses'] as $disse)
     <div class="disse">
@@ -232,7 +222,7 @@
     <div class="foto-disse">
     <div class="circle">
     @foreach($disse->noticia->fotos as $foto)
-    <img src="{{asset($foto->foto_path)}}" alt="Image" >
+    <img src="{{asset($foto->foto_path)}}" style="filter: grayscale(80)" alt="Image" >
     @endforeach
     </div>
     </div>
@@ -265,14 +255,12 @@
     <!-- Inicio Dinheiro -->
     <div class="edit">
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Dinheiro</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/dolar_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Dinheiro</h3></td>
+    <td><img src="{{asset('icones/dolar_azul-300.png')}}" width="60" alt="icone Dinheiro" class="img-fluid" /></td>
+    </tr>
+    </table>
     @foreach($mailNews['noti_dinhes'] as $dinhe)
     @if($dinhe->noticia->title == 'Dolar')
     <div>
@@ -337,14 +325,12 @@
     @endif
     @endforeach
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Planeta</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/globo_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Planeta</h3></td>
+    <td><img src="{{asset('icones/globo_azul-300.png')}}" width="60" alt="icone Planeta" class="img-fluid" /></td>
+    </tr>
+    </table>
     @foreach($mailNews['noti_planes'] as $plane)
     @if(strpos($plane->noticia->resumo, 'recuo'))
     <div class="recuo-news">
@@ -390,14 +376,12 @@
     @endif
     @endforeach
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Cuidar</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/tempo_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Cuidar</h3></td>
+    <td><img src="{{asset('icones/tempo_azul-300.png')}}" width="60" alt="icone Cuidar" class="img-fluid" /></td>
+    </tr>
+    </table>
     @foreach($mailNews['noti_cuidas'] as $cuida)
     @if(strpos($cuida->noticia->resumo, 'recuo'))
     <div class="recuo-news">
@@ -443,14 +427,12 @@
     @endif
     @endforeach
     <div class="row">
-    <div class="retranca">
-    <div>
-    <h3 class="retr-edit">Cult & Tec</h3>
-    </div>
-    <div>
-    <img src="{{asset('icones/ct_azul-300.png')}}" alt="icone Dia" class="img-fluid" />
-    </div>
-    </div>
+    <table class="table-icon">
+    <tr>
+    <td><h3 class="retr-edit">Cult & Tec</h3></td>
+    <td><img src="{{asset('icones/ct_azul-300.png')}}" width="60" alt="icone Cultura e Tecnologias" class="img-fluid" /></td>
+    </tr>
+    </table
     @foreach($mailNews['noti_cults'] as $cult)
     @if(strpos($cult->noticia->resumo, 'recuo'))
     <div class="recuo-news">
@@ -485,21 +467,20 @@
     </div>
     <!-- Inicio Rodapé -->
     <div class="rodape-geral">
-    <div class="rodape-news">
-    <div class="rodape-tit">
-    <h3>Obrigado por ler</h3>
-    </div>
-    </div>
-    <div class="rodape-news">
-    <div class="img-final">
-    <img src="{{asset('icones/jornalismo_br-300.png')}}" alt="Icone newsletter" class="img-fluid"  />
-    </div>
-    </div>
-    <div class="rodape-news">
-    <div class="row roda-text">
-    <p><a href="#">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="#">aqui.</a> Se gostou, que tal <a href="#">chamar um amigo</a> para assinar?</p>
-    </div>
-    </div>
+    <table class="table-final">
+    <tr>
+    <td><h3>Obrigado por ler</h3></td>
+    </tr>
+    <tr>
+    <td><img src="{{asset('icones/jornalismo_br-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
+    </tr>
+    <tr>
+    <td>
+    <a href="#" style="text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="#">aqui.</a> Se gostou, que tal <a href="#">chamar um amigo</a> para assinar?
+    </td>
+    </tr>
+    <tr>
+    <td>
     <div class="rodape-news">
     <div class="row">
     <p class="fim">Acompanhe nossas redes sociais</p>
@@ -511,20 +492,23 @@
     </p>
     </div>
     </div>
+    </td>
+    </tr>
+    </table>
     </div>
     <!-- FIM RODAPE ---- -->
     <!-- Assinatura Final -->
-    <div class="rodape-news-final">
-    <div class="rodape-tit2">
-    <div class="row">
-    <img src="{{asset('icones/minutos.png')}}" alt="Marca Minutos" class="img-fluid" />
-    </div>
-    <div class="row">
+    <table class="table-final-ass">
+    <tr>
+    <td><img src="{{asset('icones/minutos.png')}}" height="30" alt="Marca Minutos" class="img-fluid" /></td>
+    </tr>
+    <tr>
+    <td>
     <h6 class="final">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
-    <h6 class="final baixo">Para se descadastrar a qualquer momento, <a href="#">clique aqui.</a></h6>
-    </div>
-    </div>
-    </div>
+    <h6 style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="#" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
+    </td>
+    </tr>
+    </table>
     <!-- Assinatura fim -->
     </div>
     </div>
