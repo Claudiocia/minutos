@@ -17,10 +17,7 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
-    <td>&nbsp;</td>
-    </tr>
-    <tr>
-    <td style="text-align: center"><h6>{{$mailNews['diaNews']." ".$mailNews['dataNews']}}</h6></td>
+    <td style="text-align: center">{!! $mailNews['diaNews']." ".$mailNews['dataNews']!!}</td>
     </tr>
     <tr>
     <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
