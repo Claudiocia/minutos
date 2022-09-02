@@ -445,6 +445,7 @@ img {
     padding-top: 20px;
 }
 .retr-edit{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
     font-size: 1.5em;
     color: #41a7d7;
     font-style: italic;
@@ -471,10 +472,12 @@ img {
     font-weight: 700;
 }
 .edit p{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
     font-size: 18px;
     line-height: 1.6em;
 }
 .texto-news p{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
     margin-top: -15px;
 }
 .texto-news a {
