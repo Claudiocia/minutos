@@ -457,6 +457,7 @@ img {
     margin-top: -10px;
 }
 .tit-princ{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 98%;
     font-size: 25px;
     line-height: 1.5em;
@@ -465,6 +466,7 @@ img {
     font-weight: 700;
 }
 .tit-secund{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 90%;
     font-size: 22px;
     line-height: 1.5em;
