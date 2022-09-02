@@ -259,7 +259,7 @@ class NewsletterController extends Controller
         $emails = [
             $cliente->email,
             //'claudiosouza.cia@hotmail.com',
-            //'divo.araujo@gmail.com',
+            'divo.araujo@gmail.com',
             //'adm@canalminutos.com.br',
         ];
 
