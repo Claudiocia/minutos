@@ -137,22 +137,30 @@ class NewsletterController extends Controller
         $ed_cuida_id = Retranca::whereNome('Cuidar')->first()->id;
         $ed_cult_id = Retranca::whereNome('Cult & Tec')->first()->id;
 
-        $noti_hists = NewsletterNoticia::whereEditoria($ed_hist_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_aindas = NewsletterNoticia::whereEditoria($ed_ainda_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_etcs = NewsletterNoticia::whereEditoria($ed_etc_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_disses = NewsletterNoticia::whereEditoria($ed_disse_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_dinhes = NewsletterNoticia::whereEditoria($ed_dinhe_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_planes = NewsletterNoticia::whereEditoria($ed_plane_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_cuidas = NewsletterNoticia::whereEditoria($ed_cuida_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_cults = NewsletterNoticia::whereEditoria($ed_cult_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
+        $noti_hists = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_hist_id)
+            ->orderByDesc('id')->get();
+        $noti_aindas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_ainda_id)
+            ->orderByDesc('id')->get();
+        $noti_etcs = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_etc_id)
+            ->orderByDesc('id')->get();
+        $noti_disses = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_disse_id)
+            ->orderByDesc('id')->get();
+        $noti_dinhes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_dinhe_id)
+            ->orderByDesc('id')->get();
+        $noti_planes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_plane_id)
+            ->orderByDesc('id')->get();
+        $noti_cuidas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cuida_id)
+            ->orderByDesc('id')->get();
+        $noti_cults = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cult_id)
+            ->orderByDesc('id')->get();
 
         //dd($newsletter);
         if (count($newsletter->fotos) != 0) {
@@ -213,22 +221,30 @@ class NewsletterController extends Controller
         $ed_cuida_id = Retranca::whereNome('Cuidar')->first()->id;
         $ed_cult_id = Retranca::whereNome('Cult & Tec')->first()->id;
 
-        $noti_hists = NewsletterNoticia::whereEditoria($ed_hist_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_aindas = NewsletterNoticia::whereEditoria($ed_ainda_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_etcs = NewsletterNoticia::whereEditoria($ed_etc_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_disses = NewsletterNoticia::whereEditoria($ed_disse_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_dinhes = NewsletterNoticia::whereEditoria($ed_dinhe_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_planes = NewsletterNoticia::whereEditoria($ed_plane_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_cuidas = NewsletterNoticia::whereEditoria($ed_cuida_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
-        $noti_cults = NewsletterNoticia::whereEditoria($ed_cult_id)->with('noticia')
-            ->orderBy('id', 'ASC')->get();
+        $noti_hists = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_hist_id)
+            ->orderByDesc('id')->get();
+        $noti_aindas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_ainda_id)
+            ->orderByDesc('id')->get();
+        $noti_etcs = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_etc_id)
+            ->orderByDesc('id')->get();
+        $noti_disses = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_disse_id)
+            ->orderByDesc('id')->get();
+        $noti_dinhes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_dinhe_id)
+            ->orderByDesc('id')->get();
+        $noti_planes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_plane_id)
+            ->orderByDesc('id')->get();
+        $noti_cuidas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cuida_id)
+            ->orderByDesc('id')->get();
+        $noti_cults = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cult_id)
+            ->orderByDesc('id')->get();
 
         //dd($newsletter);
         if (count($newsletter->fotos) != 0) {
@@ -311,21 +327,29 @@ class NewsletterController extends Controller
         $ed_cuida_id = Retranca::whereNome('Cuidar')->first()->id;
         $ed_cult_id = Retranca::whereNome('Cult & Tec')->first()->id;
 
-        $noti_hists = NewsletterNoticia::whereEditoria($ed_hist_id)->with('noticia')
+        $noti_hists = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_hist_id)
             ->orderByDesc('id')->get();
-        $noti_aindas = NewsletterNoticia::whereEditoria($ed_ainda_id)->with('noticia')
+        $noti_aindas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_ainda_id)
             ->orderByDesc('id')->get();
-        $noti_etcs = NewsletterNoticia::whereEditoria($ed_etc_id)->with('noticia')
+        $noti_etcs = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_etc_id)
             ->orderByDesc('id')->get();
-        $noti_disses = NewsletterNoticia::whereEditoria($ed_disse_id)->with('noticia')
+        $noti_disses = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_disse_id)
             ->orderByDesc('id')->get();
-        $noti_dinhes = NewsletterNoticia::whereEditoria($ed_dinhe_id)->with('noticia')
+        $noti_dinhes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_dinhe_id)
             ->orderByDesc('id')->get();
-        $noti_planes = NewsletterNoticia::whereEditoria($ed_plane_id)->with('noticia')
+        $noti_planes = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_plane_id)
             ->orderByDesc('id')->get();
-        $noti_cuidas = NewsletterNoticia::whereEditoria($ed_cuida_id)->with('noticia')
+        $noti_cuidas = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cuida_id)
             ->orderByDesc('id')->get();
-        $noti_cults = NewsletterNoticia::whereEditoria($ed_cult_id)->with('noticia')
+        $noti_cults = Noticia::with('fotos')->newsl($newsletter->id)
+            ->where('retranca_id', '=', $ed_cult_id)
             ->orderByDesc('id')->get();
 
         return \view('admin.newsletters.show', compact('newsletter', 'noti_hists',

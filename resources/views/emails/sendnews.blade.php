@@ -15,23 +15,25 @@
     <div id="news-show-email">
     <!-- Cabeçalho -->
     <div class="row desk-email">
-    <h6>{{$mailNews['diaNews']}}</h6>
-    <h6 class="data-news">{{$mailNews['dataNews']}}</h6>
-    </div>
-    <div class="row desk parceria">
-    <img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/>
-    </div>
-    <div class="row desk-email">
-    <div>
+    <table class="table-abert">
+    <tr>
+    <td><h6>{{$mailNews['diaNews']}}</h6></td>
+    </tr>
+    <tr>
+    <td><h6 class="data-news">{{$mailNews['dataNews']}}</h6></td>
+    </tr>
+    <tr>
+    <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
+    </tr>
     @if($mailNews['foto_parca'] != null)
-    <div class="row parceria">
-    <p>Em parceria com:</p>
-    </div>
-    <div class="row parceria">
-    <img src="{{asset($mailNews['foto_parca'])}}" class="img-fluid"/>
-    </div>
+    <tr>
+    <td><p>Em parceria com:</p></td>
+    </tr>
+    <tr>
+    <td><img src="{{asset($mailNews['foto_parca'])}}" width="180" class="img-fluid"/></td>
+    </tr>
     @endif
-    </div>
+    </table>
     </div>
     <!-- Fim do Cabeçalho -->
     <div class="d-flex justify-content-center">
@@ -43,7 +45,7 @@
     <div class="edit-abert">
     <table class="table-icon">
     <tr>
-    <td><h4 class="saud-h4">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4></td>
+    <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4></td>
     <td><img src="{{asset('icones/cafe_azul-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
     </tr>
     </table>
@@ -67,9 +69,9 @@
     <!-- Inicio Historia do dia -->
     <div class="edit">
     @foreach($mailNews['hist_dia'] as $hist)
-    @if(count($hist->noticia->fotos) > 0)
+    @if(count($hist->fotos) > 0)
     <div class="row img-news img-fluid">
-    @foreach($hist->noticia->fotos as $foto)
+    @foreach($hist->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
     @break
     @endforeach
@@ -86,20 +88,20 @@
     </table>
     @foreach($mailNews['hist_dia'] as $hist)
     <div class="row">
-    <h2 class="tit-princ">{{$hist->noticia->title}}</h2>
+    <h2 class="tit-princ">{{$hist->title}}</h2>
     </div>
     <div class="texto-news">
-    {!! $hist->noticia->texto !!}
+    {!! $hist->texto !!}
     </div>
     @endforeach
     </div>
     <div class="row" style="margin-bottom: -20px">
-    <p class="social-news">
+    <p class="social-news d-inline-block">
     @foreach($mailNews['hist_dia'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -112,9 +114,9 @@
     <!-- Inicio E ainda -->
     <div class="edit">
     @foreach($mailNews['noti_ainda'] as $ainda)
-    @if(count($ainda->noticia->fotos) > 0)
+    @if(count($ainda->fotos) > 0)
     <div class="row img-news img-fluid">
-    @foreach($ainda->noticia->fotos as $foto)
+    @foreach($ainda->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
     @break
     @endforeach
@@ -130,20 +132,20 @@
     </table>
     @foreach($mailNews['noti_ainda'] as $ainda)
     <div class="row">
-    <h3 class="tit-secund">{{$ainda->noticia->title}}</h3>
+    <h3 class="tit-secund">{{$ainda->title}}</h3>
     </div>
     <div class="texto-news">
-    {!! $ainda->noticia->texto !!}
+    {!! $ainda->texto !!}
     </div>
     @endforeach
     </div>
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_ainda'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -169,12 +171,12 @@
     @if($mailNews['num_col'] > $col)
     <tr>
     <td>
-    {!! $etc->noticia->texto !!}
+    {!! $etc->texto !!}
     </td>
     <?php $col++; ?>
     @elseif($mailNews['num_col'] == $col)
     <td>
-    {!! $etc->noticia->texto !!}
+    {!! $etc->texto !!}
     </td>
     </tr>
     <?php $col = 1; ?>
@@ -186,10 +188,10 @@
     <div class="row" style="margin: 10px 0 -20px 0;">
     <p class="social-news">
     @foreach($mailNews['noti_etcs'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -212,23 +214,23 @@
     @foreach($mailNews['noti_disses'] as $disse)
     <div class="disse">
     <div class="row tit-disse">
-    <h3>{{$disse->noticia->title}}</h3>
+    <h3>{{$disse->title}}</h3>
     </div>
     <div class="container-disse">
-    @if(count($disse->noticia->fotos) > 0)
+    @if(count($disse->fotos) > 0)
     <div class="disse-news-i">
-    {!! $disse->noticia->texto !!}
+    {!! $disse->texto !!}
     </div>
     <div class="foto-disse">
     <div class="circle">
-    @foreach($disse->noticia->fotos as $foto)
+    @foreach($disse->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" style="filter: grayscale(80)" alt="Image" >
     @endforeach
     </div>
     </div>
     @else
     <div class="col-12 disse-news">
-    {!! $disse->noticia->texto !!}
+    {!! $disse->texto !!}
     </div>
     @endif
     </div>
@@ -239,10 +241,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_disses'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -262,36 +264,36 @@
     </tr>
     </table>
     @foreach($mailNews['noti_dinhes'] as $dinhe)
-    @if($dinhe->noticia->title == 'Dolar')
+    @if($dinhe->title == 'Dolar')
     <div>
     <div class="row tit-dolar">
     <div>
-    <h3 class="retr-edit">{{$dinhe->noticia->title}}</h3>
+    <h3 class="retr-edit">{{$dinhe->title}}</h3>
     </div>
     </div>
     <div class="cota-news">
-    {!! $dinhe->noticia->texto !!}
+    {!! $dinhe->texto !!}
     </div>
     <hr class="linha-news"/>
     </div>
-    @elseif($dinhe->noticia->title == 'Bovespa')
+    @elseif($dinhe->title == 'Bovespa')
     <div class="col-10">
     <div class="row tit-dolar">
     <div>
-    <h3 class="retr-edit">{{$dinhe->noticia->title}}</h3>
+    <h3 class="retr-edit">{{$dinhe->title}}</h3>
     </div>
     </div>
     <div class="cota-news">
-    {!! $dinhe->noticia->texto !!}
+    {!! $dinhe->texto !!}
     </div>
     <hr class="linha-news"/>
     </div>
     @else
     <div class="row">
-    <h3 class="tit-secund">{{$dinhe->noticia->title}}</h3>
+    <h3 class="tit-secund">{{$dinhe->title}}</h3>
     </div>
     <div class="texto-news">
-    {!! $dinhe->noticia->texto !!}
+    {!! $dinhe->texto !!}
     </div>
     @endif
     @endforeach
@@ -299,10 +301,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_dinhes'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -315,9 +317,9 @@
     <!-- Inicio Planeta -->
     <div class="edit">
     @foreach($mailNews['noti_planes'] as $plane)
-    @if(count($plane->noticia->fotos) > 0)
+    @if(count($plane->fotos) > 0)
     <div class="row img-news img-fluid">
-    @foreach($plane->noticia->fotos as $foto)
+    @foreach($plane->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
     @break
     @endforeach
@@ -332,17 +334,17 @@
     </tr>
     </table>
     @foreach($mailNews['noti_planes'] as $plane)
-    @if(strpos($plane->noticia->resumo, 'recuo'))
+    @if(strpos($plane->resumo, 'recuo'))
     <div class="recuo-news">
-    <h6>{{$plane->noticia->title}}</h6>
-    {!! $plane->noticia->texto !!}
+    <h6>{{$plane->title}}</h6>
+    {!! $plane->texto !!}
     </div>
     @else
     <div class="row">
-    <h3 class="tit-secund">{{$plane->noticia->title}}</h3>
+    <h3 class="tit-secund">{{$plane->title}}</h3>
     </div>
     <div class="texto-news">
-    {!! $plane->noticia->texto !!}
+    {!! $plane->texto !!}
     </div>
     @endif
     @endforeach
@@ -350,10 +352,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_planes'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -366,9 +368,9 @@
     <!-- Inicio Cuidar -->
     <div class="edit">
     @foreach($mailNews['noti_cuidas'] as $cuida)
-    @if(count($cuida->noticia->fotos) > 0)
+    @if(count($cuida->fotos) > 0)
     <div class="row img-news img-fluid">
-    @foreach($cuida->noticia->fotos as $foto)
+    @foreach($cuida->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
     @break
     @endforeach
@@ -383,17 +385,17 @@
     </tr>
     </table>
     @foreach($mailNews['noti_cuidas'] as $cuida)
-    @if(strpos($cuida->noticia->resumo, 'recuo'))
+    @if(strpos($cuida->resumo, 'recuo'))
     <div class="recuo-news">
-    <h6>{{$cuida->noticia->title}}</h6>
-    {!! $cuida->noticia->texto !!}
+    <h6>{{$cuida->title}}</h6>
+    {!! $cuida->texto !!}
     </div>
     @else
     <div class="row">
-    <h3 class="tit-secund">{{$cuida->noticia->title}}</h3>
+    <h3 class="tit-secund">{{$cuida->title}}</h3>
     </div>
     <div class="texto-news">
-    {!! $cuida->noticia->texto !!}
+    {!! $cuida->texto !!}
     </div>
     @endif
     @endforeach
@@ -401,10 +403,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_cuidas'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
@@ -417,9 +419,9 @@
     <!-- Inicio Cult & Tec -->
     <div class="edit cult">
     @foreach($mailNews['noti_cults'] as $cult)
-    @if(count($cult->noticia->fotos) > 0)
+    @if(count($cult->fotos) > 0)
     <div class="row img-news">
-    @foreach($cult->noticia->fotos as $foto)
+    @foreach($cult->fotos as $foto)
     <img src="{{asset($foto->foto_path)}}" alt="imagem principal" class="img-fluid"/>
     @break
     @endforeach
@@ -434,17 +436,17 @@
     </tr>
     </table
     @foreach($mailNews['noti_cults'] as $cult)
-    @if(strpos($cult->noticia->resumo, 'recuo'))
+    @if(strpos($cult->resumo, 'recuo'))
     <div class="recuo-news">
-    <h6>{{$cult->noticia->title}}</h6>
-    {!! $cult->noticia->texto !!}
+    <h6>{{$cult->title}}</h6>
+    {!! $cult->texto !!}
     </div>
     @else
     <div class="row">
-    <h3 class="tit-secund">{{$cult->noticia->title}}</h3>
+    <h3 class="tit-secund">{{$cult->title}}</h3>
     </div>
     <div class="texto-news">
-    {!! $cult->noticia->texto !!}
+    {!! $cult->texto !!}
     </div>
     @endif
     @endforeach
@@ -452,10 +454,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_cults'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
+    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach
     </p>
