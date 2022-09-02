@@ -17,10 +17,10 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
-    <td style="text-align: center"><h6>{{$mailNews['diaNews']}}</h6></td>
+    <td><h6>{{$mailNews['diaNews']}}</h6></td>
     </tr>
     <tr>
-    <td style="text-align: center"><h6 class="data-news">{{$mailNews['dataNews']}}</h6></td>
+    <td><h6 class="data-news">{{$mailNews['dataNews']}}</h6></td>
     </tr>
     <tr>
     <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
@@ -95,7 +95,7 @@
     </div>
     @endforeach
     </div>
-    <div class="row" style="margin-bottom: -30px">
+    <div class="row">
     <p class="social-news">
     @foreach($mailNews['hist_dia'] as $noti)
     <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" /></a>
