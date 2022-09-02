@@ -51,15 +51,15 @@
     </table>
     </div>
     </div>
-    <div class="edit-abert">
+    <div class="edit-abert" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
     <div>{!! $mailNews['abertura'] !!}</div>
     </div>
     <div class="row">
-    <h5 class="saud-h5">Boa leitura!</h5>
+    <h5 class="saud-h5" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h5>
     </div>
     <div class="row aviso-news">
-    <p class="aviso-n">Tem algum feedback? Queremos muito saber. <a href="#">Conte-nos</a></p>
-    <p class="aviso-n pn">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
+    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
+    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
     </div>
     </div>
     <!-- FIM Abertura -->
@@ -95,8 +95,8 @@
     </div>
     @endforeach
     </div>
-    <div class="row" style="margin-bottom: -20px">
-    <p class="social-news d-inline-block">
+    <div class="row" style="margin-bottom: -25px">
+    <p class="social-news">
     @foreach($mailNews['hist_dia'] as $noti)
     <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" /></a>
     <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" /></a>
