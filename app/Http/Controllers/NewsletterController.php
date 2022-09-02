@@ -175,19 +175,13 @@ class NewsletterController extends Controller
         $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
         $diaFormatted = \IntlDateFormatter::formatObject(
             $dateTimeObj,
-            "EEEE,",
-            'pt-BR'
-        );
-        $dateFormatted = \IntlDateFormatter::formatObject(
-            $dateTimeObj,
-            "d 'de' MMMM 'de' y",
+            "EEEE, d 'de' MMMM 'de' y",
             'pt-BR'
         );
         $dia = ucwords($diaFormatted);
 
         $mailData = [
             'diaNews' => $dia,
-            'dataNews' => $dateFormatted,
             'foto_parca' => $fotoParceiro,
             'abertura' => $newsletter->abertura,
             'saud' => $cliente->nome,
@@ -263,22 +257,18 @@ class NewsletterController extends Controller
             //'adm@canalminutos.com.br',
         ];
 
-        $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
+        $dateTimeObj = new \DateTime(
+            $newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
         $diaFormatted = \IntlDateFormatter::formatObject(
             $dateTimeObj,
-            "EEEE,",
+            "EEEE, d 'de' MMMM 'de' y",
             'pt-BR'
         );
-        $dateFormatted = \IntlDateFormatter::formatObject(
-            $dateTimeObj,
-            "d 'de' MMMM 'de' y",
-            'pt-BR'
-        );
+
         $dia = ucwords($diaFormatted);
 
             $mailData = [
                 'diaNews' => $dia,
-                'dataNews' => $dateFormatted,
                 'foto_parca' => $fotoParceiro,
                 'abertura' => $newsletter->abertura,
                 'saud' => $cliente->nome,
