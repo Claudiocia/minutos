@@ -307,6 +307,12 @@ img {
     width: 100%;
     font-family: RobotoSerifRegular, serif;
 }
+.table-abert td p{
+    text-align: center;
+}
+.table-abert td{
+    text-align: center;
+}
 .table-abert tr:first-child{
     vertical-align: bottom;
     font-size: 16px;
@@ -316,12 +322,7 @@ img {
     vertical-align: top;
     font-size: 16px;
 }
-.table-abert td p{
-    text-align: center;
-}
-.table-abert td{
-    text-align: center;
-}
+
 .desk-email {
     margin-bottom: 5px;
 }
@@ -368,6 +369,9 @@ img {
     display: flex;
     justify-content: space-between;
     vert-align: top;
+}
+.edit-abert p{
+    font-family: RobotoSerifRegular, Roboto-Serif, serif;
 }
 .table-icon{
     border: none;

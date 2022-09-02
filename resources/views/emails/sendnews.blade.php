@@ -17,10 +17,10 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
-    <td><h6>{{$mailNews['diaNews']}}</h6></td>
+    <td style="text-align: center"><h6>{{$mailNews['diaNews']}}</h6></td>
     </tr>
     <tr>
-    <td><h6 class="data-news">{{$mailNews['dataNews']}}</h6></td>
+    <td style="text-align: center"><h6 class="data-news">{{$mailNews['dataNews']}}</h6></td>
     </tr>
     <tr>
     <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
@@ -51,15 +51,15 @@
     </table>
     </div>
     </div>
-    <div class="edit-abert" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
+    <div class="edit-abert">
     <div>{!! $mailNews['abertura'] !!}</div>
     </div>
     <div class="row">
     <h5 class="saud-h5" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h5>
     </div>
     <div class="row aviso-news">
-    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
-    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
+    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Tem algum feedback? Queremos muito saber. <a href="#">Conte-nos</a></p>
+    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: ">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
     </div>
     </div>
     <!-- FIM Abertura -->
@@ -95,7 +95,7 @@
     </div>
     @endforeach
     </div>
-    <div class="row" style="margin-bottom: -25px">
+    <div class="row" style="margin-bottom: -30px">
     <p class="social-news">
     @foreach($mailNews['hist_dia'] as $noti)
     <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" /></a>
