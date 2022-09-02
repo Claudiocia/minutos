@@ -311,9 +311,7 @@ img {
 
 .table-abert td:first-child {
     font-family: RobotoSerifRegular, serif;
-    height: 20px;
-    vertical-align: bottom;
-    font-size: 16px;
+    font-size: 14px;
     font-style: italic;
     text-align: center;
 }
