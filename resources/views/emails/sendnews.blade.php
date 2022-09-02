@@ -59,7 +59,7 @@
     </div>
     <div class="row aviso-news">
     <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Tem algum feedback? Queremos muito saber. <a href="#">Conte-nos</a></p>
-    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: ">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
+    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
     </div>
     </div>
     <!-- FIM Abertura -->
