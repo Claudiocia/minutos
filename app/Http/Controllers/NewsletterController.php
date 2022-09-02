@@ -258,9 +258,9 @@ class NewsletterController extends Controller
 
         $emails = [
             $cliente->email,
-            'claudiosouza.cia@hotmail.com',
-            'divo.araujo@gmail.com',
-            'adm@canalminutos.com.br',
+            //'claudiosouza.cia@hotmail.com',
+            //'divo.araujo@gmail.com',
+            //'adm@canalminutos.com.br',
         ];
 
         $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));

@@ -317,7 +317,7 @@ img {
     font-style: italic;
     text-align: center;
 }
-.table-abert tr:first-child + tr td{
+.table-abert tr:first-child + tr + td{
     font-family: RobotoSerifRegular, serif;
     height: 20px;
     vertical-align: top;

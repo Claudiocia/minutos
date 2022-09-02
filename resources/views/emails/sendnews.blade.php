@@ -17,6 +17,9 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
+    <td>&nbsp;</td>
+    </tr>
+    <tr>
     <td style="text-align: center"><h6>{{$mailNews['diaNews']." ".$mailNews['dataNews']}}</h6></td>
     </tr>
     <tr>
