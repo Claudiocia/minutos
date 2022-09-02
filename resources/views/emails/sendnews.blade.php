@@ -17,14 +17,14 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
-    <td><h6>{{$mailNews['diaNews']." ".$mailNews['dataNews']}}</h6></td>
+    <td style="text-align: center"><h6>{{$mailNews['diaNews']." ".$mailNews['dataNews']}}</h6></td>
     </tr>
     <tr>
     <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
     </tr>
     @if($mailNews['foto_parca'] != null)
     <tr>
-    <td><p>Em parceria com:</p></td>
+    <td style="text-align: center"><p>Em parceria com:</p></td>
     </tr>
     <tr>
     <td><img src="{{asset($mailNews['foto_parca'])}}" width="180" class="img-fluid"/></td>
@@ -97,7 +97,7 @@
     @foreach($mailNews['hist_dia'] as $noti)
     <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" /></a>
     <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject=Canal-Minutos?body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" /></a>
     <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" /></a>
     @break
     @endforeach

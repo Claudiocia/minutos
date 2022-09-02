@@ -306,6 +306,7 @@ img {
     border: none;
     width: 100%;
     font-family: RobotoSerifRegular, serif;
+    text-align: center;
 }
 
 .table-abert td:first-child {
@@ -327,6 +328,7 @@ img {
     text-align: center;
 }
 .table-abert td p{
+    font-family: RobotoSerifRegular, serif;
     text-align: center;
 }
 
