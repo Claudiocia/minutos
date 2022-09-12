@@ -23,6 +23,7 @@
     <link href="{{asset('site/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('site/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
     <link href="{{asset('site/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('site/vendor/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('site/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
     <!-- Styles -->

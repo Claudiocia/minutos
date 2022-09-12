@@ -6,9 +6,11 @@ use App\Http\Controllers\CookieConsentController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\NossotimeController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\RateAdminController;
 use App\Http\Controllers\RateController;
+use App\Http\Controllers\RazionController;
 use App\Http\Controllers\RetrancaController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
@@ -28,10 +30,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //rotas site
-Route::get('/', [SiteController::class, 'index'])->name('/');
+Route::get('/', [SiteController::class, 'canalminutos'])->name('/');
 Route::get('/newsletters', [SiteController::class, 'oldnews'])->name('oldnews');
 Route::get('/newsletters/{newsletter}', [SiteController::class, 'show'])->name('newsletters.show');
 Route::get('/cookie-consent/{kook}', CookieConsentController::class)->name('cookieConsent');
+Route::get('/nosso-time', [SiteController::class, 'nossoTime'])->name('nossotime');
+Route::get('/fale-conosco', [SiteController::class, 'faleConosco'])->name('faleconosco');
+Route::post('/mensagem', [SiteController::class, 'enviaMensagem'])->name('envia-mensagem');
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);
@@ -67,8 +72,21 @@ Route::group([
     })->name('dashboard');
 
     Route::resource('users', UserController::class);
-    Route::resource('sites', SiteController::class);
+
+    //Route::resource('sites', SiteController::class);
+    Route::post('sites', [SiteController::class, 'store'])->name('sites.store');
+    Route::get('sites', [SiteController::class, 'index'])->name('sites.index');
+    Route::get('sites/create', [SiteController::class, 'create'])->name('sites.create');
+    Route::delete('sites/{site}', [SiteController::class, 'destroy'])->name('sites.destroy');
+    Route::put('sites/{site}', [SiteController::class, 'update'])->name('sites.update');
+    Route::get('sites/{site}', [SiteController::class, 'show'])->name('sites.show');
+    Route::get('sites/{site}/edit', [SiteController::class, 'edit'])->name('sites.edit');
+
+    //
     Route::resource('fotos', FotoController::class);
+    Route::resource('nossotimes', NossotimeController::class);
+    Route::resource('razions', RazionController::class);
+    Route::get('nossotimes/{nossotime}/photo-rel', [NossotimeController::class, 'photorel'])->name('nossotimes.photorel');
     Route::resource('clientes', ClienteController::class);
     Route::resource('rates', RateAdminController::class);
     Route::resource('retrancas', RetrancaController::class);

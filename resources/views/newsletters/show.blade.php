@@ -58,9 +58,9 @@
                                         <!-- História do Dia -->
                                         <div class="edit">
                                             @foreach($noti_hists as $noti)
-                                                @if(count($noti->noticia->fotos) > 0)
+                                                @if(count($noti->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($noti->noticia->fotos as $foto)
+                                                        @foreach($noti->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -74,20 +74,20 @@
                                                 </div>
                                                 @foreach($noti_hists as $noti_hist)
                                                     <div class="row tit-princ">
-                                                        <h2>{{$noti_hist->noticia->title}}</h2>
+                                                        <h2>{{$noti_hist->title}}</h2>
                                                     </div>
                                                     <div class="texto-news">
-                                                        {!! $noti_hist->noticia->texto !!}
+                                                        {!! $noti_hist->texto !!}
                                                     </div>
                                                 @endforeach
                                             </div>
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_hists as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -99,9 +99,9 @@
                                         <!-- E Ainda... -->
                                         <div class="edit">
                                             @foreach($noti_aindas as $ainda)
-                                                @if(count($ainda->noticia->fotos) > 0)
+                                                @if(count($ainda->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($ainda->noticia->fotos as $foto)
+                                                        @foreach($ainda->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -115,20 +115,20 @@
                                                 </div>
                                                 @foreach($noti_aindas as $ainda)
                                                     <div class="row tit-princ">
-                                                        <h3>{{$ainda->noticia->title}}</h3>
+                                                        <h3>{{$ainda->title}}</h3>
                                                     </div>
                                                     <div class="texto-news">
-                                                        {!! $ainda->noticia->texto !!}
+                                                        {!! $ainda->texto !!}
                                                     </div>
                                                 @endforeach
                                             </div>
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_aindas as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -140,9 +140,9 @@
                                         <!-- Etecetera -->
                                         <div class="edit">
                                             @foreach($noti_etcs as $etc)
-                                                @if(count($etc->noticia->fotos) > 0)
+                                                @if(count($etc->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($etc->noticia->fotos as $foto)
+                                                        @foreach($etc->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -158,7 +158,7 @@
                                                     <div class="row">
                                                         @foreach($noti_etcs as $etc)
                                                             <div class="col-6 nota-news">
-                                                                {!! $etc->noticia->texto !!}
+                                                                {!! $etc->texto !!}
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -167,10 +167,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_etcs as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -191,22 +191,22 @@
                                                         @foreach($noti_disses as $disse)
                                                             <div class="disse">
                                                                 <div class="row tit-disse">
-                                                                    <h3>{{$disse->noticia->title}}</h3>
+                                                                    <h3>{{$disse->title}}</h3>
                                                                 </div>
-                                                                @if(count($disse->noticia->fotos) > 0)
+                                                                @if(count($disse->fotos) > 0)
                                                                     <div class="row d-flex">
                                                                         <div class="col-8 disse-news">
-                                                                            {!! $disse->noticia->texto !!}
+                                                                            {!! $disse->texto !!}
                                                                         </div>
                                                                         <div class="col-4 circle mt-3">
-                                                                            @foreach($disse->noticia->fotos as $foto)
+                                                                            @foreach($disse->fotos as $foto)
                                                                                 <img src="{{asset($foto->foto_path)}}" width="120" alt="Image">
                                                                             @endforeach
                                                                         </div>
                                                                     </div>
                                                                 @else
                                                                     <div class="col-12 disse-news">
-                                                                        {!! $disse->noticia->texto !!}
+                                                                        {!! $disse->texto !!}
                                                                     </div>
                                                                 @endif
                                                             </div>
@@ -217,10 +217,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_disses as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -232,9 +232,9 @@
                                         <!-- Dinheiro -->
                                         <div class="edit">
                                             @foreach($noti_dinhes as $dinhe)
-                                                @if(count($dinhe->noticia->fotos) > 0)
+                                                @if(count($dinhe->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($dinhe->noticia->fotos as $foto)
+                                                        @foreach($dinhe->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -247,36 +247,36 @@
                                                     <x-icon-dolar class="icon-dia"/>
                                                 </div>
                                                 @foreach($noti_dinhes as $dinhe)
-                                                    @if($dinhe->noticia->title == 'Dolar')
+                                                    @if($dinhe->title == 'Dolar')
                                                         <div class="col-10">
                                                             <div class="row tit-dolar">
                                                                 <div class="retranca">
-                                                                    <h3>{{$dinhe->noticia->title}}</h3>
+                                                                    <h3>{{$dinhe->title}}</h3>
                                                                 </div>
                                                             </div>
                                                             <div class="cota-news">
-                                                                {!! $dinhe->noticia->texto !!}
+                                                                {!! $dinhe->texto !!}
                                                             </div>
                                                             <hr class="cota"/>
                                                         </div>
-                                                    @elseif($dinhe->noticia->title == 'Bovespa')
+                                                    @elseif($dinhe->title == 'Bovespa')
                                                         <div class="col-10">
                                                             <div class="row tit-dolar">
                                                                 <div class="retranca">
-                                                                    <h3>{{$dinhe->noticia->title}}</h3>
+                                                                    <h3>{{$dinhe->title}}</h3>
                                                                 </div>
                                                             </div>
                                                             <div class="cota-news">
-                                                                {!! $dinhe->noticia->texto !!}
+                                                                {!! $dinhe->texto !!}
                                                             </div>
                                                             <hr class="cota"/>
                                                         </div>
                                                     @else
                                                         <div class="row tit-princ">
-                                                            <h3>{{$dinhe->noticia->title}}</h3>
+                                                            <h3>{{$dinhe->title}}</h3>
                                                         </div>
                                                         <div class="texto-news">
-                                                            {!! $dinhe->noticia->texto !!}
+                                                            {!! $dinhe->texto !!}
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -284,10 +284,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_dinhes as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -299,9 +299,9 @@
                                         <!-- Planeta -->
                                         <div class="edit">
                                             @foreach($noti_planes as $plane)
-                                                @if(count($plane->noticia->fotos) > 0)
+                                                @if(count($plane->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($plane->noticia->fotos as $foto)
+                                                        @foreach($plane->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -314,17 +314,17 @@
                                                     <x-icon-globo class="icon-dia"/>
                                                 </div>
                                                 @foreach($noti_planes as $plane)
-                                                    @if(strpos($plane->noticia->resumo, 'recuo'))
+                                                    @if(strpos($plane->resumo, 'recuo'))
                                                         <div class="recuo-news">
-                                                            <h6>{{$plane->noticia->title}}</h6>
-                                                            {!! $plane->noticia->texto !!}
+                                                            <h6>{{$plane->title}}</h6>
+                                                            {!! $plane->texto !!}
                                                         </div>
                                                     @else
                                                         <div class="row tit-princ">
-                                                            <h3>{{$plane->noticia->title}}</h3>
+                                                            <h3>{{$plane->title}}</h3>
                                                         </div>
                                                         <div class="texto-news">
-                                                            {!! $plane->noticia->texto !!}
+                                                            {!! $plane->texto !!}
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -332,10 +332,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_planes as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -347,9 +347,9 @@
                                         <!-- Cuidar -->
                                         <div class="edit">
                                             @foreach($noti_cuidas as $cuida)
-                                                @if(count($cuida->noticia->fotos) > 0)
+                                                @if(count($cuida->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($cuida->noticia->fotos as $foto)
+                                                        @foreach($cuida->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -362,17 +362,17 @@
                                                     <x-icon-tempo class="icon-dia"/>
                                                 </div>
                                                 @foreach($noti_cuidas as $cuida)
-                                                    @if(strpos($cuida->noticia->resumo, 'recuo'))
+                                                    @if(strpos($cuida->resumo, 'recuo'))
                                                         <div class="recuo-news">
-                                                            <h6>{{$cuida->noticia->title}}</h6>
-                                                            {!! $cuida->noticia->texto !!}
+                                                            <h6>{{$cuida->title}}</h6>
+                                                            {!! $cuida->texto !!}
                                                         </div>
                                                     @else
                                                         <div class="row tit-princ">
-                                                            <h3>{{$cuida->noticia->title}}</h3>
+                                                            <h3>{{$cuida->title}}</h3>
                                                         </div>
                                                         <div class="texto-news">
-                                                            {!! $cuida->noticia->texto !!}
+                                                            {!! $cuida->texto !!}
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -380,10 +380,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_cuidas as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -395,9 +395,9 @@
                                         <!-- Cult e Tec -->
                                         <div class="edit cult">
                                             @foreach($noti_cults as $cult)
-                                                @if(count($cult->noticia->fotos) > 0)
+                                                @if(count($cult->fotos) > 0)
                                                     <div class="row img-news img-fluid">
-                                                        @foreach($cult->noticia->fotos as $foto)
+                                                        @foreach($cult->fotos as $foto)
                                                             <img src="{{asset($foto->foto_path)}}" alt="imagem principal" />
                                                             @break
                                                         @endforeach
@@ -410,17 +410,17 @@
                                                     <x-icon-cientec class="icon-dia"/>
                                                 </div>
                                                 @foreach($noti_cults as $cult)
-                                                    @if(strpos($cult->noticia->resumo, 'recuo'))
+                                                    @if(strpos($cult->resumo, 'recuo'))
                                                         <div class="recuo-news">
-                                                            <h6>{{$cult->noticia->title}}</h6>
-                                                            {!! $cult->noticia->texto !!}
+                                                            <h6>{{$cult->title}}</h6>
+                                                            {!! $cult->texto !!}
                                                         </div>
                                                     @else
                                                         <div class="row tit-princ">
-                                                            <h3>{{$cult->noticia->title}}</h3>
+                                                            <h3>{{$cult->title}}</h3>
                                                         </div>
                                                         <div class="texto-news">
-                                                            {!! $cult->noticia->texto !!}
+                                                            {!! $cult->texto !!}
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -428,10 +428,10 @@
                                             <div class="row" style="margin-bottom: -30px">
                                                 <p class="social-news">
                                                     @foreach($noti_cults as $noti)
-                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
-                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
-                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->editoria])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                                                        <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                                                        <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-solid fa-envelope"></span></a>
+                                                        <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                                                         @break
                                                     @endforeach
                                                 </p>
@@ -478,7 +478,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="btn-hero">
-                        <p><a href="{{route('oldnews')}}" class="btn btn-assinar" style="width: 40%">Voltar</a></p>
+                        <p><a href="{{route('oldnews')}}" class="btn btn-assinar btn-voltar">Voltar</a></p>
                     </div>
                 </div>
             </div>

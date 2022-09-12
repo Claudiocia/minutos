@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Nossotime;
 use App\Repositories\ClienteRepository;
 use App\Repositories\ClienteRepositoryEloquent;
 use App\Repositories\EmailRepository;
@@ -12,6 +13,8 @@ use App\Repositories\NewsletterNoticiaRepository;
 use App\Repositories\NewsletterNoticiaRepositoryEloquent;
 use App\Repositories\NewsletterRepository;
 use App\Repositories\NewsletterRepositoryEloquent;
+use App\Repositories\NossotimeRepository;
+use App\Repositories\NossotimeRepositoryEloquent;
 use App\Repositories\NoticiaRepository;
 use App\Repositories\NoticiaRepositoryEloquent;
 use App\Repositories\ParceiroRepository;
@@ -45,6 +48,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(RetrancaRepository::class, RetrancaRepositoryEloquent::class);
         $this->app->bind(ParceiroRepository::class, ParceiroRepositoryEloquent::class);
         $this->app->bind(NewsletterNoticiaRepository::class, NewsletterNoticiaRepositoryEloquent::class);
+        $this->app->bind(NossotimeRepository::class, NossotimeRepositoryEloquent::class);
         //:end-bindings:
     }
 

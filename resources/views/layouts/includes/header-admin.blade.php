@@ -14,5 +14,9 @@
         <div class="my-alert">
             {!! Alert::success(Session::get('msg')) !!}
         </div>
+    @elseif(Session::has('error'))
+        <div>
+            {!! Alert::danger(Session::get('error')) !!}
+        </div>
     @endif
 </div>

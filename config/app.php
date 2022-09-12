@@ -242,6 +242,7 @@ return [
         'Button' => Bootstrapper\Facades\Button::class,
         'Form' => Bootstrapper\Facades\Form::class,
         'Icon' => Bootstrapper\Facades\Icon::class,
+        'Tabbable' => Bootstrapper\Facades\Tabbable::class,
         'Table' => Bootstrapper\Facades\Table::class,
         'MediaObject' => Bootstrapper\Facades\MediaObject::class,
         'Modal' => Bootstrapper\Facades\Modal::class,

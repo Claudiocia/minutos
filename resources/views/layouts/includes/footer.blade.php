@@ -31,8 +31,8 @@
                         <ul class="list-unstyled">
                             <li><a href="{{route('terms.show')}}">Nossos Termos</a></li>
                             <li><a href="{{route('policy.show')}}">Política de Privacidade</a></li>
-                            <li><a href="#">Fale com a gente</a></li>
-                            <li><a href="#">Nosso time</a></li>
+                            <li><a href="{{route('faleconosco')}}">Fale com a gente</a></li>
+                            <li><a href="{{route('nossotime')}}">Nosso time</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">

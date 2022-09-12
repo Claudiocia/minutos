@@ -59,11 +59,16 @@ class Razion extends Model implements Transformable, TableInterface
 
     public function getTableHeaders()
     {
-        // TODO: Implement getTableHeaders() method.
+        return ['Ordem', 'Ativo'];
     }
 
     public function getValueForHeader($header)
     {
-        // TODO: Implement getValueForHeader() method.
+        switch ($header){
+            case 'Ordem':
+                return $this->number;
+            case 'Ativo':
+                return $this->ativo == 's' ? 'Sim' : 'Não';
+        }
     }
 }

@@ -15,9 +15,30 @@
                 <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Inicial') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('admin.users.index').'#user' }}" :active="request()->routeIs('admin.users.index')">
-                    {{ __('Usuários') }}
+                <x-jet-nav-link href="{{ route('admin.sites.index') }}" :active="request()->routeIs('admin.sites.index')">
+                    {{ __('Site') }}
                 </x-jet-nav-link>
+                <x-jet-dropdown id="dropdown-colab">
+                    <x-slot name="trigger">
+                        Nosso Time
+                        <svg class="ms-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </x-slot>
+                    <x-slot name="content">
+                        <h6 class="dropdown-header small text-muted">
+                            {{ __('Gerencia de Colab.') }}
+                        </h6>
+                        <x-jet-dropdown-link href="{{ route('admin.users.index').'#user' }}" :active="request()->routeIs('admin.users.index')" >
+                            {{ __('Usuários') }}
+                        </x-jet-dropdown-link>
+                        <hr class="dropdown-divider">
+                        <x-jet-dropdown-link href="{{ route('admin.nossotimes.index').'#nossotime' }}" :active="request()->routeIs('admin.nossotime.index')">
+                            {{ __('Nosso Time') }}
+                        </x-jet-dropdown-link>
+                        <hr class="dropdown-divider">
+                    </x-slot>
+                </x-jet-dropdown>
                 <x-jet-nav-link href="{{ route('admin.fotos.index') }}" :active="request()->routeIs('admin.fotos.index')">
                     {{ __('Gerenc. Fotos') }}
                 </x-jet-nav-link>

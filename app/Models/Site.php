@@ -76,12 +76,13 @@ class Site extends Model implements Transformable, TableInterface
      * @var array
      */
     protected $fillable = [
-        'id', 'title_site', 'apoio_title', 'text_abert',
+        'id', 'site_nome','title_site', 'apoio_title', 'text_abert',
         'text_botton_site', 'cancel_one', 'cancel_two',
-        'title_razion', 'title_causa', 'apoio_causa',
-        'text_causa', 'title_review', 'apoio_review',
-        'title_cta', 'apoio_cta', 'title_footer',
-        'text_footer', 'site_final', 'apoio_razion',
+        'title_razion', 'razion_one', 'razion_two', 'razion_three',
+        'razion_four', 'razion_five', 'razion_six', 'title_causa',
+        'apoio_causa', 'text_causa', 'causa_final', 'title_review',
+        'apoio_review', 'title_cta', 'apoio_cta', 'final_cta',
+        'title_footer', 'text_footer', 'site_final', 'apoio_razion',
         'causa_final',
     ];
 

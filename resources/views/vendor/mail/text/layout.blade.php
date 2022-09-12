@@ -1,4 +1,6 @@
+@isset($header)
 {!! strip_tags($header) !!}
+@endisset
 
 {!! strip_tags($slot) !!}
 @isset($subcopy)

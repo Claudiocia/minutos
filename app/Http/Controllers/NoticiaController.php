@@ -141,7 +141,7 @@ class NoticiaController extends Controller
      */
     public function show(Noticia $noticia)
     {
-        $noticia = Noticia::whereId($noticia->id)->with('fotos', 'newsletters')->first();
+        $noticia = Noticia::whereId($noticia->id)->with('fotos', 'newsletter')->first();
         //dd($noticia);
         return view('admin.noticias.show', compact('noticia'));
     }
