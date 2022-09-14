@@ -109,7 +109,8 @@ class SiteController extends Controller
             ['nota', '>=', '4']
         ])->inRandomOrder()->limit(5)->get();
         $razions = Razion::whereAtivo('s')->orderBy('number', 'ASC')->get();
-        return view('welcome', compact('rates', 'razions'));
+        $site = Site::first();
+        return view('welcome', compact('rates', 'razions', 'site'));
     }
 
     public function oldnews()

@@ -116,6 +116,7 @@ section {
 
 .btn-assinar{
     width: 80%;
+    margin-top: 20px;
     background: #41a7d7;
     elevation: higher;
     font-size: 20px;
@@ -217,7 +218,7 @@ section {
 --------------------------------------------------------------*/
 .hero-section {
     position: relative;
-    margin-top: -140px;
+    margin-top: -180px;
 }
 
 .hero-section, .hero-section > .container > .row {
@@ -236,7 +237,7 @@ section {
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section{
-        margin-top: -350px;
+        margin-top: -500px;
         margin-left: 10px;
         margin-right: 10px;
     }
