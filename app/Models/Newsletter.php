@@ -62,7 +62,7 @@ class Newsletter extends Model implements Transformable, TableInterface
      */
     protected $fillable = [
         'id', 'abertura','numb_edicao', 'data_edicao',
-        'enviada', 'user_id', 'num_seq'
+        'enviada', 'user_id', 'num_seq', 'title_dia'
     ];
 
     public function user()

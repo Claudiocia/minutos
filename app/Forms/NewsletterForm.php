@@ -54,6 +54,10 @@ class NewsletterForm extends Form
             ->add('user_id', 'hidden', [
                 'value' => \Auth::id(),
             ])
+            ->add('title_dia', 'text', [
+                'label' => 'Título da Newsletter',
+                'attr' => ['required' => 'required']
+            ])
             ->add('abertura', 'textarea',[
                 'label' => 'Abertura da Newsletter',
                 'label_attr' => ['class' => 'block control-label label-form'],

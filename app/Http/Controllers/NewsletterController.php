@@ -12,6 +12,7 @@ use App\Models\Newsletter;
 use App\Models\NewsletterNoticia;
 use App\Models\Noticia;
 use App\Models\Retranca;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -59,6 +60,7 @@ class NewsletterController extends Controller
         $form = \FormBuilder::create(NewsletterForm::class);
         $data = $form->getFieldValues();
         \Validator::make($data, [
+            'title_dia' => ['required', 'max:40'],
             'abertura' => ['required', 'min:30'],
             'data_edicao' => ['required'],
             'noticias' => ['required'],
@@ -124,9 +126,9 @@ class NewsletterController extends Controller
      */
     public function disparaNews(Request $request, Newsletter $newsletter)
     {
-        $newsletter = Newsletter::whereId(1)->with('noticias', 'parceiros', 'fotos')->first();
-        $cliente = Cliente::whereId(1)->first();
-        $subject = 'Email TESTE VIEW';
+        $clientes = Cliente::whereSigned(1)->get();
+        //dd($clientes);
+        $subject = 'Email TESTE VIEW NEWS';
 
         $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
         $ed_ainda_id = Retranca::whereNome('E ainda...')->first()->id;
@@ -172,40 +174,59 @@ class NewsletterController extends Controller
             $fotoParceiro = '';
         }
 
-        $dateTimeObj = new \DateTime($newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
-        $diaFormatted = \IntlDateFormatter::formatObject(
+        $dateTimeObj = new \DateTime(
+            $newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
+
+        $dataFormatted = \IntlDateFormatter::formatObject(
             $dateTimeObj,
-            "EEEE, d 'de' MMMM 'de' y",
+            " d 'de' MMMM 'de' y",
             'pt-BR'
         );
-        $dia = ucwords($diaFormatted);
+        $diaFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            "EEEE, ",
+            'pt-BR'
+        );
 
-        $mailData = [
-            'diaNews' => $dia,
-            'foto_parca' => $fotoParceiro,
-            'abertura' => $newsletter->abertura,
-            'saud' => $cliente->nome,
-            'hist_dia' => $noti_hists,
-            'noti_ainda' => $noti_aindas,
-            'noti_etcs' => $noti_etcs,
-            'num_col' => 2,
-            'noti_disses' => $noti_disses,
-            'noti_dinhes' => $noti_dinhes,
-            'noti_planes' => $noti_planes,
-            'noti_cuidas' => $noti_cuidas,
-            'noti_cults' => $noti_cults,
-        ];
+        $dia = ucwords($diaFormatted).$dataFormatted;
 
-        return new SendMailNews($mailData, $subject);
+        foreach ($clientes as $cliente) {
+
+            $mailData = [
+                'diaNews' => $dia,
+                'foto_parca' => $fotoParceiro,
+                'abertura' => $newsletter->abertura,
+                'saud' => $cliente->nome,
+                'hist_dia' => $noti_hists,
+                'noti_ainda' => $noti_aindas,
+                'noti_etcs' => $noti_etcs,
+                'num_col' => 2,
+                'noti_disses' => $noti_disses,
+                'noti_dinhes' => $noti_dinhes,
+                'noti_planes' => $noti_planes,
+                'noti_cuidas' => $noti_cuidas,
+                'noti_cults' => $noti_cults,
+            ];
+
+            Mail::to($cliente->email)->send(new SendMailNews($mailData, $subject));
+        }
+
+        if (Response::HTTP_OK){
+            $msg = 'Mensagem enviada com sucesso';
+        }else{
+            $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
+        }
+        $request->session()->flash('msg', $msg);
+        return redirect()->route('/');
 
     }
 
     public function testeEmail(Request $request, Newsletter $newsletter)
     {
-        $newsletter = Newsletter::whereId(1)->with('noticias', 'parceiros', 'fotos')->first();
-        $clientes = Cliente::whereSigned(1)->get();
+
+        $clientes = User::whereRole(2)->get();
         //dd($clientes);
-        $subject = 'Email TESTE VIEW NEWS';
+        $subject = 'Email de teste -- '.$newsletter->title_dia;
 
         $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
         $ed_ainda_id = Retranca::whereNome('E ainda...')->first()->id;
