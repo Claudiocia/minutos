@@ -203,7 +203,7 @@ class NewsletterController extends Controller
     public function testeEmail(Request $request, Newsletter $newsletter)
     {
         $newsletter = Newsletter::whereId(1)->with('noticias', 'parceiros', 'fotos')->first();
-        $cliente = Cliente::whereId(1)->first();
+        $clientes = Cliente::whereId([1, 5])->get();
         $subject = 'Email TESTE VIEW NEWS';
 
         $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
@@ -250,13 +250,6 @@ class NewsletterController extends Controller
             $fotoParceiro = '';
         }
 
-        $emails = [
-            $cliente->email,
-            //'claudiosouza.cia@hotmail.com',
-            'divo.araujo@gmail.com',
-            //'adm@canalminutos.com.br',
-        ];
-
         $dateTimeObj = new \DateTime(
             $newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
 
@@ -272,6 +265,8 @@ class NewsletterController extends Controller
         );
 
         $dia = ucwords($diaFormatted).$dataFormatted;
+
+        foreach ($clientes as $cliente) {
 
             $mailData = [
                 'diaNews' => $dia,
@@ -289,8 +284,7 @@ class NewsletterController extends Controller
                 'noti_cults' => $noti_cults,
             ];
 
-        foreach ($emails as $email) {
-            Mail::to($email)->send(new SendMailNews($mailData, $subject));
+            Mail::to($cliente->email)->send(new SendMailNews($mailData, $subject));
         }
 
         if (Response::HTTP_OK){

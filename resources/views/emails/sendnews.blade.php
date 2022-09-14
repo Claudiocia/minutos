@@ -134,10 +134,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_ainda'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -180,10 +180,10 @@
     <div class="row" style="margin: 10px 0 -20px 0;">
     <p class="social-news">
     @foreach($mailNews['noti_etcs'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -233,10 +233,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_disses'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -293,10 +293,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_dinhes'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -344,10 +344,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_planes'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -395,10 +395,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_cuidas'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
@@ -446,10 +446,10 @@
     <div class="row" style="margin-bottom: -20px">
     <p class="social-news">
     @foreach($mailNews['noti_cults'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="mailto:?subject={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     @break
     @endforeach
     </p>
