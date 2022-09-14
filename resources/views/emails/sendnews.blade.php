@@ -19,7 +19,7 @@
     </tr>
     @if($mailNews['foto_parca'] != null)
     <tr>
-    <td style="text-align: center;"><p style="font-size: 9px;">Em parceria com:</p></td>
+    <td style="text-align: center;"><p style="font-size: 10px;">Em parceria com</p></td>
     </tr>
     <tr>
     <td><img src="{{asset($mailNews['foto_parca'])}}" width="180" class="img-fluid"/></td>
