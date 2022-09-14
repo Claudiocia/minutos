@@ -295,7 +295,7 @@ class NewsletterController extends Controller
                 'diaNews' => $dia,
                 'foto_parca' => $fotoParceiro,
                 'abertura' => $newsletter->abertura,
-                'saud' => $cliente->nome,
+                'saud' => $cliente->name,
                 'hist_dia' => $noti_hists,
                 'noti_ainda' => $noti_aindas,
                 'noti_etcs' => $noti_etcs,
