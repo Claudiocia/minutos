@@ -259,13 +259,19 @@ class NewsletterController extends Controller
 
         $dateTimeObj = new \DateTime(
             $newsletter->data_edicao, new \DateTimeZone('America/Sao_Paulo'));
+
+        $dataFormatted = \IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            " d 'de' MMMM 'de' y",
+            'pt-BR'
+        );
         $diaFormatted = \IntlDateFormatter::formatObject(
             $dateTimeObj,
-            "EEEE, d 'de' MMMM 'de' y",
+            "EEEE, ",
             'pt-BR'
         );
 
-        $dia = ucwords($diaFormatted);
+        $dia = ucwords($diaFormatted).$dataFormatted;
 
             $mailData = [
                 'diaNews' => $dia,

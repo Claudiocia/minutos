@@ -338,9 +338,8 @@ img {
     font-size: 0.9em;
     line-height: 0.5em;
 }
-.data-news{
-    margin-top: -15px;
-    margin-bottom: 35px;
+.data-news td{
+    font-size: 12px;
 }
 /* ------ MARCA e PARCEIRO ---------*/
 .parceria{
