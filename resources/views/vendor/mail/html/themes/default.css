@@ -394,7 +394,7 @@ img {
 }
 /* ---------- SAUDACAO IMAGEM ----------*/
 .saud-h4 {
-    font-size: 14px;
+    font-size: 13px;
     font-style: italic;
     margin-top: 5px;
 }
@@ -406,7 +406,7 @@ img {
 .edit-abert p{
     width: 100%;
     font-size: 14px;
-    line-height: 1.6em;
+    line-height: 1.5em;
     margin-top: 5px;
 }
 
