@@ -218,12 +218,12 @@ section {
 --------------------------------------------------------------*/
 .hero-section {
     position: relative;
-    margin-top: -210px;
+    margin-top: -180px;
 }
 
 .hero-section, .hero-section > .container > .row {
     height: 100vh;
-    min-height: 880px;
+    min-height: 680px;
 }
 
 .hero-section.inner-page {
