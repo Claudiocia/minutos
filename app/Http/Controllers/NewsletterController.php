@@ -128,7 +128,7 @@ class NewsletterController extends Controller
     {
         $clientes = Cliente::whereSigned(1)->get();
         //dd($clientes);
-        $subject = 'Email TESTE VIEW NEWS';
+        $subject = $newsletter->title_dia;
 
         $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
         $ed_ainda_id = Retranca::whereNome('E ainda...')->first()->id;
@@ -223,6 +223,7 @@ class NewsletterController extends Controller
 
     public function testeEmail(Request $request, Newsletter $newsletter)
     {
+        $newsletter = Newsletter::whereId(1)->first();
 
         $clientes = User::whereRole(2)->get();
         //dd($clientes);
