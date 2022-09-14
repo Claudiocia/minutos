@@ -492,7 +492,6 @@ img {
     position: relative;
     text-align: center;
     transition: 0.3s background ease;
-    line-height: 0;
 }
 .social-news a img {
     display: inline-block;
