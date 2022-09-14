@@ -482,6 +482,7 @@ img {
 }
 /*---------- Botons de compartilhamento ------------*/
 .social-news{
+    margin-top: 9px;
     margin-bottom: 10px;
 }
 .social-news a {
