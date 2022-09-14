@@ -237,7 +237,6 @@ section {
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section{
-        margin-top: 300px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -246,7 +245,7 @@ section {
         min-height: 1350px;
     }
     .hero-section.inner-page .hero-text {
-        padding-bottom: 100px;
+        padding-bottom: 80px;
     }
     .btn-hero{
         display: flex;
