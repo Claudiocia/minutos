@@ -394,7 +394,7 @@ img {
 }
 /* ---------- SAUDACAO IMAGEM ----------*/
 .saud-h4 {
-    font-size: 13px;
+    font-size: 13px!important;
     font-style: italic;
     margin-top: 5px;
 }
@@ -422,7 +422,7 @@ img {
 .aviso-n{
     font-style: italic;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: -10px;
 }
 /* --------- NOTICIAS -----------*/
