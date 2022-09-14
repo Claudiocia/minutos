@@ -452,7 +452,8 @@ img {
 .tit-princ{
     font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 98%;
-    font-size: 23px;
+    font-size: 24px;
+    font-style: normal!important;
     line-height: 1.3em;
     letter-spacing: 1px;
     margin-bottom: 20px;;
