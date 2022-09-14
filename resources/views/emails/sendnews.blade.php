@@ -206,11 +206,11 @@
     @foreach($mailNews['noti_disses'] as $disse)
     <div class="disse">
     <div class="row tit-disse">
-    <h3 class="tit-disse">{{$disse->title}}</h3>
+    <h3 class="tit-disse" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">{{$disse->title}}</h3>
     </div>
     <div class="container-disse">
     @if(count($disse->fotos) > 0)
-    <div class="disse-news-i">
+    <div class="disse-news-i" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
     {!! $disse->texto !!}
     </div>
     <div class="foto-disse">
@@ -221,7 +221,7 @@
     </div>
     </div>
     @else
-    <div class="col-12 disse-news">
+    <div class="col-12 disse-news" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
     {!! $disse->texto !!}
     </div>
     @endif
