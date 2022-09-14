@@ -292,7 +292,7 @@ img {
 
 /* -----------Cabecalho da NEWS --------- */
 .container-admin-news{
-    padding: 2px 0px 2px 2px;
+    padding: 0px 0px 0px 2px;
     font-family: RobotoSerifRegular, serif;
     color: black;
 }
