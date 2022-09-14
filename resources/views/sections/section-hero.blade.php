@@ -6,7 +6,9 @@
                     <div class="col-lg-5 text-center text-lg-start">
                         <h1>{{$site->title_site}}</h1>
                         {!! $site->text_abert !!}
+                        @if($site->cancel_one != null)
                         <p>{{$site->cancel_one}}</p>
+                        @endif
                         <div class="btn-hero">
                             <p><a href="{{route('clientes.index')}}" class="btn btn-assinar">{{$site->text_botton_site}}</a></p>
                         </div>
