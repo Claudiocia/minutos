@@ -577,6 +577,7 @@ img {
     padding: 0;
     width: 80%;
     font-size: 13px;
+    line-height: 1.4em;
 }
 .disse-news a {
     font-weight: bold;

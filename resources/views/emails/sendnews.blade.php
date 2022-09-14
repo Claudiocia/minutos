@@ -38,7 +38,7 @@
     <table class="table-icon">
     <tr>
     <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4></td>
-    <td><img src="{{asset('icones/cafe_azul-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
+    <td><img src="{{asset('site/icones/azul/cafe-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
     </tr>
     </table>
     </div>
@@ -75,7 +75,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">História do dia</h3></td>
-    <td><img src="{{asset('icones/rapidez_azul-300.png')}}" width="60" alt="icone Dia" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/jornal-300.png')}}" width="60" alt="icone Dia" class="img-fluid" /></td>
     </tr>
     </table>
     @foreach($mailNews['hist_dia'] as $hist)
@@ -119,7 +119,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">E ainda...</h3></td>
-    <td><img src="{{asset('icones/jornalismo_azul-300.png')}}" width="60" alt="icone E ainda..." class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/fast-300.png')}}" width="60" alt="icone E ainda..." class="img-fluid" /></td>
     </tr>
     </table>
     @foreach($mailNews['noti_ainda'] as $ainda)
@@ -153,7 +153,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Etcetera</h3></td>
-    <td><img src="{{asset('icones/tempo_azul-300.png')}}" width="60" alt="icone Etcetera" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/tempo-300.png')}}" width="60" alt="icone Etcetera" class="img-fluid" /></td>
     </tr>
     </table>
     <div class="container-fluid">
@@ -199,7 +199,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Disse-se</h3></td>
-    <td><img src="{{asset('icones/internet_azul-300.png')}}" width="60" alt="icone Disse-se" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/internet-300.png')}}" width="60" alt="icone Disse-se" class="img-fluid" /></td>
     </tr>
     </table>
     <div class="row">
@@ -252,7 +252,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Dinheiro</h3></td>
-    <td><img src="{{asset('icones/dolar_azul-300.png')}}" width="60" alt="icone Dinheiro" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/bolsa-300.png')}}" width="60" alt="icone Dinheiro" class="img-fluid" /></td>
     </tr>
     </table>
     @foreach($mailNews['noti_dinhes'] as $dinhe)
@@ -322,7 +322,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Planeta</h3></td>
-    <td><img src="{{asset('icones/globo_azul-300.png')}}" width="60" alt="icone Planeta" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/globo-300.png')}}" width="60" alt="icone Planeta" class="img-fluid" /></td>
     </tr>
     </table>
     @foreach($mailNews['noti_planes'] as $plane)
@@ -373,7 +373,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Cuidar</h3></td>
-    <td><img src="{{asset('icones/tempo_azul-300.png')}}" width="60" alt="icone Cuidar" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/cuidar-300.png')}}" width="60" alt="icone Cuidar" class="img-fluid" /></td>
     </tr>
     </table>
     @foreach($mailNews['noti_cuidas'] as $cuida)
@@ -424,7 +424,7 @@
     <table class="table-icon">
     <tr>
     <td><h3 class="retr-edit">Cult & Tec</h3></td>
-    <td><img src="{{asset('icones/ct_azul-300.png')}}" width="60" alt="icone Cultura e Tecnologias" class="img-fluid" /></td>
+    <td><img src="{{asset('site/icones/azul/culttec-300.png')}}" width="60" alt="icone Cultura e Tecnologias" class="img-fluid" /></td>
     </tr>
     </table
     @foreach($mailNews['noti_cults'] as $cult)
@@ -463,21 +463,21 @@
     <div class="rodape-geral">
     <table class="table-final">
     <tr>
-    <td><h3>Obrigado por ler</h3></td>
+    <td><h3 style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Obrigado por ler</h3></td>
     </tr>
     <tr>
-    <td><img src="{{asset('icones/jornalismo_br-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
+    <td><img src="{{asset('site/icones/branco/jornal-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
     </tr>
     <tr>
-    <td>
-    <a href="#" style="text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="#">aqui.</a> Se gostou, que tal <a href="#">chamar um amigo</a> para assinar?
+    <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
+    <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
     </td>
     </tr>
     <tr>
     <td>
     <div class="rodape-news">
     <div class="row">
-    <p class="fim">Acompanhe nossas redes sociais</p>
+    <p class="fim" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Acompanhe nossas redes sociais</p>
     <p class="social-news soc-fim">
     <a href="#" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
     <a href="#" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
