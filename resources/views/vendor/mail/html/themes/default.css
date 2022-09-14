@@ -452,11 +452,10 @@ img {
 .tit-princ{
     font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 98%;
-    font-size: 25px;
-    line-height: 1.5em;
+    font-size: 23px;
+    line-height: 1.3em;
     letter-spacing: 1px;
-    margin-bottom: 20px;
-    font-weight: 700;
+    margin-bottom: 20px;;
 }
 .tit-secund{
     font-family: RobotoSerifRegular, Roboto-Serif, serif;
