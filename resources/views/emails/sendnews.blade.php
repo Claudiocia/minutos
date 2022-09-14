@@ -44,14 +44,14 @@
     </div>
     </div>
     <div class="edit-abert">
-    <div>{!! $mailNews['abertura'] !!}</div>
+    <div><p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">{!! $mailNews['abertura'] !!}</p></div>
     </div>
     <div class="row">
     <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h4>
     </div>
     <div class="row aviso-news">
-    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
-    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante pra gente.</p>
+    <p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
+    <p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante para a gente.</p>
     </div>
     </div>
     <!-- FIM Abertura -->
