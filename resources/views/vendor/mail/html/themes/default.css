@@ -310,7 +310,7 @@ img {
 
 .table-abert td:first-child {
     font-family: RobotoSerifRegular, serif;
-    font-size: 14px;
+    font-size: 13px;
     font-style: italic;
     text-align: center;
 }
@@ -318,7 +318,7 @@ img {
     font-family: RobotoSerifRegular, serif;
     height: 20px;
     vertical-align: top;
-    font-size: 16px;
+    font-size: 13px;
     text-align: center;
 }
 .table-abert td{
@@ -335,7 +335,7 @@ img {
 .desk-email h6 {
     display: flex;
     justify-content: center;
-    font-size: 0.9em;
+    font-size: 13px;
     line-height: 0.5em;
 }
 .data-news td p{
