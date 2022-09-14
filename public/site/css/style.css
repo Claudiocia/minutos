@@ -218,7 +218,7 @@ section {
 --------------------------------------------------------------*/
 .hero-section {
     position: relative;
-    margin-top: -180px;
+    margin-top: -150px;
 }
 
 .hero-section, .hero-section > .container > .row {
