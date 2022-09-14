@@ -124,7 +124,7 @@ img {
     -premailer-width: 100%;
     background-color: #b6effb; /*#edf2f7; */
     border-bottom: 1px solid #b6effb;
-    border-top: 1px solid #b6effb;
+    border-top: none;
     margin: 0;
     padding: 0;
     width: 100%;
