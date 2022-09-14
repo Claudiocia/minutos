@@ -241,7 +241,7 @@ section {
         margin-right: 10px;
     }
     .hero-section, .hero-section > .container > .row {
-        height: 100vh;
+        height: 200vh;
         min-height: 1350px;
     }
     .hero-section.inner-page .hero-text {
