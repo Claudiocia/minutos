@@ -481,10 +481,6 @@ img {
     text-decoration: underline;
 }
 /*---------- Botons de compartilhamento ------------*/
-.social-news{
-    margin-top: 9px;
-    margin-bottom: 10px;
-}
 .social-news a {
     display: inline-block;
     font-size: 18px;
@@ -507,6 +503,7 @@ img {
 }
 .ico-soc-h{
     height: 16px;
+    margin-top: 9px;
 }
 .ico-soc-w{
     width: 16px;
