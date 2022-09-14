@@ -50,8 +50,8 @@
     <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h4>
     </div>
     <div class="row aviso-news">
-    <p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
-    <p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante para a gente.</p>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante para a gente.</h4>
     </div>
     </div>
     <!-- FIM Abertura -->
