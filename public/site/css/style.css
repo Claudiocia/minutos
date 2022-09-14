@@ -237,15 +237,16 @@ section {
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section{
+        margin-top: -350px;
         margin-left: 10px;
         margin-right: 10px;
     }
     .hero-section, .hero-section > .container > .row {
-        height: 200vh;
+        height: 100vh;
         min-height: 1350px;
     }
     .hero-section.inner-page .hero-text {
-        padding-bottom: 80px;
+        padding-bottom: 100px;
     }
     .btn-hero{
         display: flex;
