@@ -15,11 +15,11 @@
     <td  class="data-news" style="text-align: center">{!! $mailNews['diaNews']!!}</td>
     </tr>
     <tr>
-    <td><img src="{{asset('icones/minutos.png')}}" height="55" class="img-fluid"/></td>
+    <td><img src="{{asset('icones/minutos.png')}}" height="45" class="img-fluid"/></td>
     </tr>
     @if($mailNews['foto_parca'] != null)
     <tr>
-    <td style="text-align: center"><p>Em parceria com:</p></td>
+    <td class="data-news" style="text-align: center"><p>Em parceria com:</p></td>
     </tr>
     <tr>
     <td><img src="{{asset($mailNews['foto_parca'])}}" width="180" class="img-fluid"/></td>
