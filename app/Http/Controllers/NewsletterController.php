@@ -281,7 +281,7 @@ class NewsletterController extends Controller
                 'hist_dia' => $noti_hists,
                 'noti_ainda' => $noti_aindas,
                 'noti_etcs' => $noti_etcs,
-                'num_col' => 1,
+                'num_col' => 2,
                 'noti_disses' => $noti_disses,
                 'noti_dinhes' => $noti_dinhes,
                 'noti_planes' => $noti_planes,

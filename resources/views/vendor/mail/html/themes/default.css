@@ -453,7 +453,6 @@ img {
     font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 98%;
     font-size: 24px;
-    font-style: normal!important;
     line-height: 1.3em;
     letter-spacing: 1px;
     margin-bottom: 20px;;
@@ -461,7 +460,7 @@ img {
 .tit-secund{
     font-family: RobotoSerifRegular, Roboto-Serif, serif;
     width: 90%;
-    font-size: 21px;
+    font-size: 22px;
     line-height: 1.5em;
     margin-bottom: 20px;
     font-weight: 700;
