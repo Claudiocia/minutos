@@ -47,11 +47,11 @@
     <div>{!! $mailNews['abertura'] !!}</div>
     </div>
     <div class="row">
-    <h5 class="saud-h5" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h5>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h4>
     </div>
     <div class="row aviso-news">
-    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Tem algum feedback? Queremos muito saber. <a href="#">Conte-nos</a></p>
-    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#">Convide um amigo.</a> Isso é muito importante pra gente.</p>
+    <p class="aviso-n" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></p>
+    <p class="aviso-n pn" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante pra gente.</p>
     </div>
     </div>
     <!-- FIM Abertura -->
