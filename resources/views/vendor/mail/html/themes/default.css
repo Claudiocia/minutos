@@ -292,13 +292,13 @@ img {
 
 /* -----------Cabecalho da NEWS --------- */
 .container-admin-news{
-    padding: 2px 2px 2px 2px;
+    padding: 2px 0px 2px 2px;
     font-family: RobotoSerifRegular, serif;
     color: black;
 }
 #news-show-email{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 /* ---- DATA ------ */
 .table-abert{
@@ -394,7 +394,7 @@ img {
 }
 /* ---------- SAUDACAO IMAGEM ----------*/
 .saud-h4 {
-    font-size: 1.2em;
+    font-size: 16px;
     font-style: italic;
     margin-top: 5px;
 }
@@ -405,7 +405,7 @@ img {
 /* ---------- TEXTO ABERTURA ----------*/
 .edit-abert p{
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7em;
     margin-top: 5px;
 }
