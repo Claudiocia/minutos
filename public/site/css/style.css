@@ -237,7 +237,7 @@ section {
 /* ---- testar configuração abaixo --*/
 @media screen and (max-width: 992px) {
     .hero-section{
-        margin-top: -350px;
+        margin-top: -300px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -272,7 +272,6 @@ section {
 @media screen and (max-width: 992px) {
     .hero-section h1 {
         font-size: 2rem;
-        margin-top: 10px;
         text-align: left;
         line-height: 2.7rem;
     }
