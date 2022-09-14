@@ -8,12 +8,12 @@ html {
 body {
     font-family: "Roboto Serif", sans-serif;
     background-color: #FFFFFF;
-    color: #858585;
+    color: #000000;
     line-height: 1.5;
 }
 
 a {
-    color: #777;
+    color: #2d71a1;
     text-decoration: none;
     transition: 0.3s all ease;
 }
@@ -24,7 +24,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: "Roboto Serif", sans-serif;
-    color: #545454;
+    color: #000000;
 }
 
 .container {
@@ -218,7 +218,7 @@ section {
 --------------------------------------------------------------*/
 .hero-section {
     position: relative;
-    margin-top: -180px;
+    margin-top: -210px;
 }
 
 .hero-section, .hero-section > .container > .row {
