@@ -12,7 +12,7 @@
     <div class="row desk-email">
     <table class="table-abert">
     <tr>
-    <td  class="data-news" style="text-align: center">{!! $mailNews['diaNews']!!}</td>
+    <td style="text-align: center"><p style="font-size: 10px;">{!! $mailNews['diaNews']!!}</p></td>
     </tr>
     <tr>
     <td><img src="{{asset('icones/minutos.png')}}" height="45" class="img-fluid"/></td>
