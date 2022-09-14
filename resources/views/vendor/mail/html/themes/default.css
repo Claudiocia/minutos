@@ -292,10 +292,9 @@ img {
 
 /* -----------Cabecalho da NEWS --------- */
 .container-admin-news{
-    padding: 10px 2px 10px 2px;
+    padding: 2px 2px 2px 2px;
     font-family: RobotoSerifRegular, serif;
     color: black;
-    border: 0.8pt solid #b6effb;
 }
 #news-show-email{
     padding-left: 10px;
