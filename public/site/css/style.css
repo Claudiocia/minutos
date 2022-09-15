@@ -1115,6 +1115,11 @@ section {
     fill: #41a7d7;
     margin-top: -10px;
 }
+.icon-cuida{
+    width: 100px;
+    fill: #41a7d7;
+    margin-top: -20px;
+}
 .tit-princ{
     width: 60%;
 }
@@ -1155,6 +1160,10 @@ section {
     .icon-dia{
         width: 60px;
         margin-top: -10px;
+    }
+    .icon-cuida{
+        width: 50px;
+        margin-top: -20px;
     }
     .tit-princ{
         width: 100%;

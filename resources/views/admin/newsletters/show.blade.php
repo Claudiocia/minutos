@@ -12,13 +12,16 @@
                         </div>
                         <div class="panel-body-news">
                             <div class="row news btn-new-reset">
-                                <div class="col-4">
+                                <div class="col-3">
                                 {!! Button::primary('Voltar')->asLinkTo(route('admin.newsletters.index'))->addClass(['class'=>'btn-show-news']) !!}
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     {!! Button::primary('Editar')->asLinkTo(route('admin.newsletters.edit', ['newsletter' => $newsletter->id]))->addClass(['class'=>'btn-show-news']) !!}
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
+                                    {!! Button::primary('Testar Email')->asLinkTo(route('testemail', ['newsletter' => $newsletter->id]))->addClass(['class'=>'btn-show-news']) !!}
+                                </div>
+                                <div class="col-3">
                                     {!! Button::danger('Delete')
                                         ->asLinkTo(route('admin.newsletters.destroy', ['newsletter' => $newsletter->id]))->addClass(['class'=>'btn-show-news'])
                                         ->addAttributes(['onclick' => 'event.preventDefault();document.getElementById("form-delete").submit();'])
@@ -95,7 +98,7 @@
                                         <div class="row">
                                             <div class="retranca">
                                                 <h3>História do dia</h3>
-                                                <x-icon-fast class="icon-dia"/>
+                                                <x-icon-jornal class="icon-dia"/>
                                             </div>
                                             @foreach($noti_hists as $noti_hist)
                                             <div class="row tit-princ">
@@ -136,7 +139,7 @@
                                         <div class="row">
                                             <div class="retranca">
                                                 <h3>E ainda...</h3>
-                                                <x-icon-jornal class="icon-dia"/>
+                                                <x-icon-fast class="icon-dia"/>
                                             </div>
                                             @foreach($noti_aindas as $ainda)
                                                 <div class="row tit-princ">
@@ -269,7 +272,7 @@
                                         <div class="row">
                                             <div class="retranca">
                                                 <h3>Dinheiro</h3>
-                                                <x-icon-dolar class="icon-dia"/>
+                                                <x-icon-bolsa class="icon-dia"/>
                                             </div>
                                             @foreach($noti_dinhes as $dinhe)
                                                 @if($dinhe->title == 'Dolar')
@@ -384,7 +387,7 @@
                                         <div class="row">
                                             <div class="retranca">
                                                 <h3>Cuidar</h3>
-                                                <x-icon-tempo class="icon-dia"/>
+                                                <x-icon-cuidar class="icon-cuida"/>
                                             </div>
                                             @foreach($noti_cuidas as $cuida)
                                                 @if(strpos($cuida->resumo, 'recuo'))
@@ -432,7 +435,7 @@
                                         <div class="row">
                                             <div class="retranca">
                                                 <h3>Cult & Tec</h3>
-                                                <x-icon-cientec class="icon-dia"/>
+                                                <x-icon-culttec class="icon-cuida"/>
                                             </div>
                                             @foreach($noti_cults as $cult)
                                                 @if(strpos($cult->resumo, 'recuo'))

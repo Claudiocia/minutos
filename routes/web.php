@@ -40,8 +40,8 @@ Route::post('/mensagem', [SiteController::class, 'enviaMensagem'])->name('envia-
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);
-Route::get('/preview-email', [NewsletterController::class, 'disparaNews']);
-Route::get('/teste-email', [NewsletterController::class, 'testeEmail']);
+//Route::get('/preview-email/{newsletter}', [NewsletterController::class, 'disparaNews']);
+Route::get('/teste-email/{newsletter}', [NewsletterController::class, 'testeEmail'])->name('testemail');
 
 
 Route::get('/noticias/{id}', [NoticiaController::class, 'showPublic'])->name('noticias.show');

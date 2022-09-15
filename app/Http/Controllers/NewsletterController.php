@@ -122,7 +122,7 @@ class NewsletterController extends Controller
      *
      * @param Newsletter $newsletter
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function disparaNews(Request $request, Newsletter $newsletter)
     {
@@ -217,13 +217,13 @@ class NewsletterController extends Controller
             $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
         }
         $request->session()->flash('msg', $msg);
-        return redirect()->route('/');
+        return redirect()->route('admin.newsletters.index');
 
     }
 
     public function testeEmail(Request $request, Newsletter $newsletter)
     {
-        $newsletter = Newsletter::whereId(1)->first();
+        //$newsletter = Newsletter::whereId(1)->first();
 
         $clientes = User::whereRole(2)->get();
         //dd($clientes);
@@ -316,7 +316,7 @@ class NewsletterController extends Controller
             $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
         }
         $request->session()->flash('msg', $msg);
-        return redirect()->route('/');
+        return redirect()->route('admin.newsletters.show', ['newsletter' => $newsletter->id]);
 
     }
 
