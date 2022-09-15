@@ -93,7 +93,6 @@ class NoticiaController extends Controller
             'resumo' => ['required', 'string', 'max:255'],
             'texto' => ['required'],
             'retranca_id' => ['required'],
-            'fonte' => ['required'],
         ], [
             'title.required' => 'Favor dar um título para a noticia',
             'title.max' => 'O tamanho máximo do título são 255 caracteres',
@@ -101,7 +100,6 @@ class NoticiaController extends Controller
             'resumo.max' => 'O tamanho máximo do resumo são 255 caracteres',
             'texto.required' => 'Faltou o texto da notícia',
             'retranca_id.required' => 'Selecione uma Editoria!',
-            'fonte.required' => 'Informar a fonte da notícia é obrigatório!',
         ])->validate();
         $data['data_cria'] = now();
 

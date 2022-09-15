@@ -35,7 +35,8 @@ class NoticiaForm extends Form
                 'attr' => ['class' => 'ckeditor form-control', 'required' => 'required'],
             ])
             ->add('fonte', 'text', [
-                'attr' => ['class' => 'form-control', 'maxlength' => '255', 'required' => 'required'],
+                'attr' => ['class' => 'form-control', 'maxlength' => '255'],
+                'value' => 'Redação',
             ])
             ->add('link', 'text', [
                 'attr' => ['class' => 'form-control', 'maxlength' => '255'],
