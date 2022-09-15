@@ -145,6 +145,8 @@ class FotoController extends Controller
         if (key_exists('retranca_id', $data)){
             $retrancas = Retranca::whereIn('id', $data['retranca_id'])->get();
             $foto->retrancas()->sync($retrancas);
+        }elseif (count($foto->retrancas) > 0){
+            $foto->retrancas()->detach();
         }
         $foto2 = Foto::whereId($foto->id)->with('retrancas')->first();
         $foto2->fill($data);
