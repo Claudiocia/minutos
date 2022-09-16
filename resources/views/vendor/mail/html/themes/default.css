@@ -530,7 +530,7 @@ img {
 .tab-notas td p{
     font-size: 15px;
     line-height: 18px;
-    margin: 1px;
+    margin: 0;
     padding: 0;
 }
 .tab-notas td a {
