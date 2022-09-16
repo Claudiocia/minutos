@@ -67,9 +67,7 @@ Route::group([
         config('jetstream.auth_session'),
         'verified']
 ], function (){
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [UserController::class, 'dashboardAdmin'])->name('dashboard');
 
     Route::resource('users', UserController::class);
 

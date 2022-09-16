@@ -470,7 +470,7 @@
     </tr>
     <tr>
     <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
-    <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
+    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
     </td>
     </tr>
     <tr>

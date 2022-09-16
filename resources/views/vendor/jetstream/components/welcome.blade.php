@@ -19,7 +19,7 @@
             <div class="row g-0">
                 <div class="col-md-6 pe-0">
                     <div class="card-body border-right border-bottom p-3 h-100">
-                        A idéia nesses cards é apresentar dados estatísticos sobre nossas newsletters.
+                        {{$card1}}
                     </div>
                 </div>
                 <div class="col-md-6 pe-0">

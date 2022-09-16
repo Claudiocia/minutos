@@ -39,6 +39,18 @@ class UserController extends Controller
      *
      * @return View
      */
+    public function dashboardAdmin()
+    {
+        $teste = "Teste de envio para o dashboard";
+        //dd($teste);
+        return view('dashboard', compact('teste'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
     public function create()
     {
         $form = \FormBuilder::create(UserForm::class,[
