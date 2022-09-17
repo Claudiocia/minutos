@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function dashboardAdmin()
     {
-        $numassin = Cliente::whereSigned(2)->count();
+        $numassin = Cliente::whereSigned(1)->count();
         //dd($teste);
         return view('dashboard', compact('numassin'));
     }
