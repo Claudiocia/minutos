@@ -22,10 +22,17 @@
                         {{$card1}}
                     </div>
                 </div>
+
+                <div class="col-md-6 ps-0">
+                    {{$card2}}
+                </div>
+
                 <div class="col-md-6 pe-0">
-                    <div class="card-body border-right border-bottom p-3 h-100">
-                        Número de assinantes, taxas de aberturas, notas de avaliação entre outras informações relevantes.
-                    </div>
+                    {{$card3}}
+                </div>
+
+                <div class="col-md-6 ps-0">
+                    {{$card4}}
                 </div>
             </div>
         </div>

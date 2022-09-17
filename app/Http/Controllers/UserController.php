@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Forms\UserForm;
+use App\Models\Cliente;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -41,9 +42,9 @@ class UserController extends Controller
      */
     public function dashboardAdmin()
     {
-        $teste = "Teste de envio para o dashboard";
+        $numassin = Cliente::whereSigned(2)->count();
         //dd($teste);
-        return view('dashboard', compact('teste'));
+        return view('dashboard', compact('numassin'));
     }
 
     /**
