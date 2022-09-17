@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-marca-minutos height="30"/>
+        <x-marca-minutos height="30"></x-marca-minutos>
     </x-slot>
     <x-jet-welcome >
         <x-slot name="card1">

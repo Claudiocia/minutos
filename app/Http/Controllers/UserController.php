@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Laravel\Jetstream\Jetstream;
 
 class UserController extends Controller
 {
@@ -25,14 +24,13 @@ class UserController extends Controller
     {
         $search = $request->get('search');
         if($search == null){
-            $users = User::orderBy('name', 'ASC')->paginate(15);
-            return view('admin.users.index', compact('users'));
+            $users = User::orderBy('name', 'ASC')->paginate();
         }else{
             $users = User::where('name', 'LIKE', '%'.$search.'%')
                 ->orWhere('email', 'LIKE', '%'.$search.'%')
                 ->paginate(15);
-            return view('admin.users.index', compact('users'));
         }
+        return view('admin.users.index', compact('users'));
     }
 
     /**

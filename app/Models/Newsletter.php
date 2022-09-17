@@ -49,6 +49,8 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property int|null $num_seq
  * @method static Builder|Newsletter whereAbertura($value)
  * @method static Builder|Newsletter whereNumSeq($value)
+ * @property string|null $title_dia
+ * @method static Builder|Newsletter whereTitleDia($value)
  */
 class Newsletter extends Model implements Transformable, TableInterface
 {

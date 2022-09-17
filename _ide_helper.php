@@ -16676,6 +16676,112 @@
          
     }
             /**
+     * Facade for Tabbable class
+     *
+     * @package Bootstrapper\Facades
+     * @see Bootstrapper\Tabbable
+     */ 
+        class Tabbable {
+                    /**
+         * Renders the tabbable object
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function render()
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->render();
+        }
+                    /**
+         * Creates content with a tabbed navigation
+         *
+         * @param array $contents The content
+         * @return \Bootstrapper\Tabbable 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */ 
+        public static function tabs($contents = [])
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->tabs($contents);
+        }
+                    /**
+         * Creates content with a pill navigation
+         *
+         * @param array $contents
+         * @return \Bootstrapper\Tabbable 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */ 
+        public static function pills($contents = [])
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->pills($contents);
+        }
+                    /**
+         * Sets the contents
+         *
+         * @param array $contents An array of arrays
+         * @return \Bootstrapper\Tabbable 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */ 
+        public static function withContents($contents)
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->withContents($contents);
+        }
+                    /**
+         * Sets which tab should be active
+         *
+         * @param int $active
+         * @return \Bootstrapper\Tabbable 
+         * @static 
+         */ 
+        public static function active($active)
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->active($active);
+        }
+                    /**
+         * Sets the tabbable objects to fade in
+         *
+         * @return \Bootstrapper\Tabbable 
+         * @static 
+         */ 
+        public static function fade()
+        {
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->fade();
+        }
+                    /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return \Bootstrapper\Tabbable 
+         * @static 
+         */ 
+        public static function withAttributes($attributes)
+        {            //Method inherited from \Bootstrapper\RenderedObject         
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->withAttributes($attributes);
+        }
+                    /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return \Bootstrapper\Tabbable 
+         * @static 
+         */ 
+        public static function addClass($classes)
+        {            //Method inherited from \Bootstrapper\RenderedObject         
+                        /** @var \Bootstrapper\Tabbable $instance */
+                        return $instance->addClass($classes);
+        }
+         
+    }
+            /**
      * Facade for the Table class
      *
      * @package Bootstrapper\Facades
@@ -23654,6 +23760,7 @@ namespace  {
             class Button extends \Bootstrapper\Facades\Button {}
             class Form extends \Collective\Html\FormFacade {}
             class Icon extends \Bootstrapper\Facades\Icon {}
+            class Tabbable extends \Bootstrapper\Facades\Tabbable {}
             class Table extends \Bootstrapper\Facades\Table {}
             class MediaObject extends \Bootstrapper\Facades\MediaObject {}
             class Modal extends \Bootstrapper\Facades\Modal {}
