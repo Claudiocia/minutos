@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Forms\RateForm;
 use App\Models\Rate;
+use App\Models\Site;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;

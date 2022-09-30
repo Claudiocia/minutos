@@ -9,6 +9,8 @@ use App\Repositories\EmailRepository;
 use App\Repositories\EmailRepositoryEloquent;
 use App\Repositories\FotoRepository;
 use App\Repositories\FotoRepositoryEloquent;
+use App\Repositories\IndicatorRepository;
+use App\Repositories\IndicatorRepositoryEloquent;
 use App\Repositories\NewsletterNoticiaRepository;
 use App\Repositories\NewsletterNoticiaRepositoryEloquent;
 use App\Repositories\NewsletterRepository;
@@ -19,6 +21,10 @@ use App\Repositories\NoticiaRepository;
 use App\Repositories\NoticiaRepositoryEloquent;
 use App\Repositories\ParceiroRepository;
 use App\Repositories\ParceiroRepositoryEloquent;
+use App\Repositories\PremioIndicatorRepository;
+use App\Repositories\PremioIndicatorRepositoryEloquent;
+use App\Repositories\PremioRepository;
+use App\Repositories\PremioRepositoryEloquent;
 use App\Repositories\RateRepository;
 use App\Repositories\RateRepositoryEloquent;
 use App\Repositories\RazionRepository;
@@ -49,6 +55,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ParceiroRepository::class, ParceiroRepositoryEloquent::class);
         $this->app->bind(NewsletterNoticiaRepository::class, NewsletterNoticiaRepositoryEloquent::class);
         $this->app->bind(NossotimeRepository::class, NossotimeRepositoryEloquent::class);
+        $this->app->bind(IndicatorRepository::class, IndicatorRepositoryEloquent::class);
+        $this->app->bind(PremioRepository::class, PremioRepositoryEloquent::class);
         //:end-bindings:
     }
 

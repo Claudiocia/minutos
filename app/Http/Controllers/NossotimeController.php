@@ -6,6 +6,7 @@ use App\Forms\NossotimeForm;
 use App\Forms\RelFotoNossotimeForm;
 use App\Models\Foto;
 use App\Models\Nossotime;
+use App\Models\Site;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;

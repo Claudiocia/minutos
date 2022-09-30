@@ -53,7 +53,7 @@ class Rate extends Model implements Transformable, TableInterface
 
     public function cliente()
     {
-        return $this->belongsTo(Cliente::class);
+        return $this->belongsTo(Cliente::class)->withTrashed();
     }
 
     public function getValueForHeader($header)

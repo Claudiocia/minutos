@@ -14,6 +14,7 @@
                             <div class="row btn-new-reset">
                                 {!! Button::primary('Voltar')->asLinkTo(route('admin.clientes.index').'#assinante')->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::primary('Editar')->asLinkTo(route('admin.clientes.edit', ['cliente' => $cliente->id]))->addClass(['class'=>'estilo-btn']) !!}
+                                {!! Button::primary('Enviar email')->asLinkTo(route('admin.clientes.lembrete', ['cliente' => $cliente->id]))->addClass(['class'=>'estilo-btn']) !!}
                                 {!! Button::danger('Delete')
                                         ->asLinkTo(route('admin.clientes.destroy', ['cliente' => $cliente->id]))->addClass(['class'=>'estilo-btn'])
                                         ->addAttributes(['onclick' => 'event.preventDefault();document.getElementById("form-delete").submit();'])
@@ -49,6 +50,12 @@
                                                 Inativo
                                                 @else
                                                 Ativo
+                                                @endif
+                                                --
+                                                @if($cliente->validado == null)
+                                                        Falta validar email
+                                                    @else
+                                                        Assinante com email validado
                                                 @endif
                                             </div>
                                         </div>

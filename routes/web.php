@@ -4,10 +4,12 @@ use App\Http\Controllers\ClienteAutoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CookieConsentController;
 use App\Http\Controllers\FotoController;
+use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NossotimeController;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\PremioController;
 use App\Http\Controllers\RateAdminController;
 use App\Http\Controllers\RateController;
 use App\Http\Controllers\RazionController;
@@ -37,6 +39,8 @@ Route::get('/cookie-consent/{kook}', CookieConsentController::class)->name('cook
 Route::get('/nosso-time', [SiteController::class, 'nossoTime'])->name('nossotime');
 Route::get('/fale-conosco', [SiteController::class, 'faleConosco'])->name('faleconosco');
 Route::post('/mensagem', [SiteController::class, 'enviaMensagem'])->name('envia-mensagem');
+Route::resource('/indicators', IndicatorController::class);
+Route::get('/indicators/{token}', [IndicatorController::class, 'assinaInd'])->name('indicators.assina-ind');
 
 //rota email
 Route::get('/send-email', [MailController::class, 'sendEmail']);
@@ -86,13 +90,16 @@ Route::group([
     Route::resource('razions', RazionController::class);
     Route::get('nossotimes/{nossotime}/photo-rel', [NossotimeController::class, 'photorel'])->name('nossotimes.photorel');
     Route::resource('clientes', ClienteController::class);
+    Route::get('clientes/lembrete/{cliente}', [ClienteController::class, 'lembreteEmail'])->name('clientes.lembrete');
     Route::resource('rates', RateAdminController::class);
     Route::resource('retrancas', RetrancaController::class);
     Route::get('retrancas/apagar/{id}', [RetrancaController::class, 'apagar'])->name('retrancas.apagar');
     Route::resource('noticias', NoticiaController::class);
+    Route::get('noticias-dia', [NoticiaController::class, 'noticiasDia'])->name('noticias.noticias-dia');
     Route::get('noticias/{noticia}/photo-rel', [NoticiaController::class, 'photorel'])->name('noticias.photorel');
     Route::resource('newsletters', NewsletterController::class);
     Route::get('newsletters/{newsletter}/photo-rel', [NewsletterController::class, 'photorel'])->name('newsletters.photorel');
     Route::get('/newsletters/sendmail/{newsletter}', [NewsletterController::class, 'disparaNews'])->name('newsletters.sendmail');
+    Route::resource('premios', PremioController::class);
 
 });

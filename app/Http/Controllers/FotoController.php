@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Forms\FotoForm;
 use App\Models\Foto;
 use App\Models\Retranca;
+use App\Models\Site;
 use App\Utils\DefaultFunctions;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

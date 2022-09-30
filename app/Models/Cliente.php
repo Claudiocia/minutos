@@ -45,6 +45,9 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereDeletedAt($value)
  * @method static \Illuminate\Database\Query\Builder|Cliente withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Cliente withoutTrashed()
+ * @property-read \App\Models\Indicator|null $indicator
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Premio[] $premios
+ * @property-read int|null $premios_count
  */
 class Cliente extends Model implements Transformable, TableInterface
 {
@@ -71,6 +74,16 @@ class Cliente extends Model implements Transformable, TableInterface
     public function rate()
     {
         return $this->hasOne(Rate::class);
+    }
+
+    public function indicator()
+    {
+        return $this->hasOne(Indicator::class);
+    }
+
+    public function premios()
+    {
+        return $this->belongsToMany(Premio::class);
     }
 
     public function getTableHeaders()

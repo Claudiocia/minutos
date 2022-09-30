@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Forms\ClienteForm;
+use App\Mail\SendMailCliente;
 use App\Models\Cliente;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClienteController extends Controller
 {
@@ -93,6 +96,63 @@ class ClienteController extends Controller
         return view('admin.clientes.show', compact('cliente'));
     }
 
+
+    /**
+     * Validate email informado
+     *
+     * @param  Request $request
+     * @param  Cliente $cliente
+     * @return \Illuminate\View\View
+     */
+    public function lembreteEmail(Request $request, Cliente $cliente)
+    {
+        //dd($cliente);
+
+        $email = $cliente->email;
+
+        if ($cliente->token == null){
+            $data['token'] = md5(now().$cliente->email.$cliente->nome);
+            $cliente->fill($data);
+            $cliente->save();
+        }
+        $subject = 'Solicitação de reenvio de email';
+
+        $mensagem  = "Você recebeu esta mensagem porque se inscreveu no Canal Minutos.";
+        $mensagem .= "<br/>";
+        $mensagem .= "Para confirmar a sua inscrição e passar a receber nossa newsletter, ";
+        $mensagem .= "por favor, valide o seu e-mail clicando no botão abaixo. ";
+        $mensagem .= "<br/><br/>";
+        $mensagem .= "Obrigado por assinar o Canal Minutos. ";
+        $mensagem .= "<br/>";
+        $mensagem .= "Informação sem tempo a perder! ";
+        $mensagem .= "<br/>";
+
+        $mailData = [
+            'title' => 'Olá, '.$cliente->nome,
+            'sub-title' => 'Valide o seu e-mail!',
+            'mensagem' => $mensagem,
+            'url' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
+            'title-button' => 'Validar E-mail',
+            'url_copia' => route('clientes.verify', ['id' => $cliente->id, 'token' => $cliente->token]),
+            'date' => now(),
+        ];
+
+        Mail::to($email)->send(new SendMailCliente($mailData, $subject));
+
+
+
+        if (Response::HTTP_OK){
+            $msg = 'Email enviado com sucesso. Verifique sua caixa de spam!';
+            $request->session()->flash('msg', $msg);
+        }else{
+            $error = 'Ops! Tivemos problema. Envie um novo email de verificação!';
+            $request->session()->flash('error', $error);
+        }
+
+        return view('clientes.bemvindo');
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -133,7 +193,6 @@ class ClienteController extends Controller
 
         $cliente->fill($data);
         $cliente->save();
-
         $request->session()->flash('msg', 'Assinante atualizado com sucesso!');
         return redirect()->route('admin.clientes.index');
     }

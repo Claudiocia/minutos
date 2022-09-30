@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Forms\ClienteAutoForm;
 use App\Mail\SendMailCliente;
 use App\Models\Cliente;
+use App\Models\Rate;
+use App\Models\Site;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;

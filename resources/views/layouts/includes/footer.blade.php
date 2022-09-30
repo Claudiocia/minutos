@@ -1,18 +1,20 @@
+<?php
+ $site = \App\Models\Site::first();
+?>
 <!-- ======= Footer ======= -->
 <footer class="footer" role="contentinfo">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-5 mb-md-0">
-                <h3>Sobre o Canal Minutos</h3>
-                <p>O Minutos oferece uma cobertura mais inteligente e eficiente das questões que moldam o Brasil e o mundo.
-                    Todas as manhãs, em nosso boletim diário, apresentamos as notícias mais relevantes da política,
-                    finanças, ciência, saúde, cultura e tecnologia. Sempre priorizando os fatos que te ajudarão a
-                    formar sua opinião e a tomar as melhores decisões, mas sem te dizer como pensar.</p>
+                @if($site)
+                <h3>{{$site->title_footer}}</h3>
+                {!! $site->text_footer !!}
+                @endif
                 <p class="social">
-                    <a href="#"><span class="fa-brands fa-twitter"></span></a>
-                    <a href="#"><span class="fa-brands fa-facebook"></span></a>
-                    <a href="#"><span class="fa-brands fa-instagram"></span></a>
-                    <a href="#"><span class="fa-brands fa-linkedin"></span></a>
+                    <a href="https://twitter.com/canalminutos_"><span class="fa-brands fa-twitter"></span></a>
+                    <a href="https://www.facebook.com/profile.php?id=100086184559229"><span class="fa-brands fa-facebook"></span></a>
+                    <a href="https://instagram.com/canalminutos_?igshid=YmMyMTA2M2Y="><span class="fa-brands fa-instagram"></span></a>
+                    <a href="https://www.linkedin.com/company/canal-minutos/"><span class="fa-brands fa-linkedin"></span></a>
                 </p>
             </div>
             <div class="col-md-7 ms-auto">
@@ -23,6 +25,7 @@
                             <li><a href="{{route('clientes.create')}}">Reenviar E-mail</a></li>
                             <li><a href="{{route('oldnews')}}">Edições Anteriores</a></li>
                             <li><a href="{{route('rates.index')}}">Avaliar o serviço</a></li>
+                            <li><a href="{{route('indicators.index')}}">Club Minuteria</a></li>
                             <li><a href="{{route('clientes.cancelar')}}">Cancelar Assinatura</a></li>
                         </ul>
                     </div>
@@ -56,7 +59,7 @@
             <div class="col-md-7">
                 <p class="copyright">&copy; Copyright Canal Minutos. Todos os direitos reservados</p>
                 <div class="credits">
-                    Desenvolvido por <a href="#">Marketmix</a>
+                    Desenvolvido por Marketmix
                 </div>
             </div>
         </div>

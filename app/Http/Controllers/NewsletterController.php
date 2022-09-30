@@ -12,7 +12,9 @@ use App\Models\Newsletter;
 use App\Models\NewsletterNoticia;
 use App\Models\Noticia;
 use App\Models\Retranca;
+use App\Models\Site;
 use App\Models\User;
+use FormBuilder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -41,7 +43,7 @@ class NewsletterController extends Controller
      */
     public function create()
     {
-        $form = \FormBuilder::create(NewsletterForm::class, [
+        $form = FormBuilder::create(NewsletterForm::class, [
             'url' => route('admin.newsletters.store'),
             'method' => 'POST',
             'id' => 'form-news',
@@ -57,7 +59,7 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        $form = \FormBuilder::create(NewsletterForm::class);
+        $form = FormBuilder::create(NewsletterForm::class);
         $data = $form->getFieldValues();
         \Validator::make($data, [
             'title_dia' => ['required', 'max:40'],
@@ -107,7 +109,7 @@ class NewsletterController extends Controller
     public function photorel(Newsletter $newsletter)
     {
         $fotos = Foto::whereUsing('parceiro')->get();
-        $form = \FormBuilder::create(RelFotoNewsletterForm::class, [
+        $form = FormBuilder::create(RelFotoNewsletterForm::class, [
             'url' => route('admin.newsletters.update', ['newsletter' => $newsletter->id]),
             'method' => 'PUT',
             'model' => $newsletter,
@@ -379,7 +381,7 @@ class NewsletterController extends Controller
     {
         $newsletter = Newsletter::with('noticias')->whereId($newsletter->id)->first();
 
-        $form = \FormBuilder::create(NewsletterForm::class, [
+        $form = FormBuilder::create(NewsletterForm::class, [
             'url' => route('admin.newsletters.update', ['newsletter' => $newsletter->id]),
             'method' => 'PUT',
             'id' => 'form-news',
@@ -399,7 +401,7 @@ class NewsletterController extends Controller
     public function update(Request $request, Newsletter $newsletter)
     {
         $data = $request->all();
-        //dd($data['foto']);
+
         if ($data['foto']!= null){
             if(key_exists('foto_id', $data)) {
                 $newsletter->fotos()->sync($data['foto_id']);

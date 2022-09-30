@@ -11,9 +11,12 @@ class ClienteAutoForm extends Form
         $this
             ->add('nome', 'text', [
                 'label' => 'Nome',
+                'attr' => ['placeholder' => 'digite seu nome', 'required' => 'required'],
             ])
             ->add('email', 'text', [
-                'label' => 'Email'
+                'label' => 'Email',
+                'value' => $this->model ? $this->model->email : '',
+                'attr' => ['placeholder' => 'digite seu email', 'required' => 'required'],
             ])
             ->add('terms', 'checkbox', [
                 'label' => 'Eu concordo com os Termos do Serviço e com a Política de Privacidade',

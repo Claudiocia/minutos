@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Forms\RetrancaForm;
 use App\Models\Retranca;
+use App\Models\Site;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

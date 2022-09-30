@@ -12,7 +12,7 @@ roubos, bem como acesso, divulgação, cópia, uso ou modificação não autoriz
 quando exigido por lei.</p> 
 <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que 
 não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade 
-por suas respectivas <a href='https://privacidade.me/' target='_BLANK'>políticas de privacidade</a>. </p> 
+por suas respectivas políticas de privacidade. </p> 
 <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não 
 possamos fornecer alguns dos serviços desejados.</p> 
 <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de 

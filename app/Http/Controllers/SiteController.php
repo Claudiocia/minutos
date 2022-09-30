@@ -116,13 +116,15 @@ class SiteController extends Controller
     public function oldnews()
     {
         $newsletters = Newsletter::orderByDesc('numb_edicao')->paginate();
-        return \view('newsletters.index', compact('newsletters'));
+        $site = Site::first();
+        return \view('newsletters.index', compact('newsletters', 'site'));
     }
 
     public function nossoTime()
     {
+        $site = Site::first();
         $nossotimes = Nossotime::with('foto')->whereAtivo('s')->orderBy('nome', 'DESC')->get();
-        return \view('nosso-time', compact('nossotimes'));
+        return \view('nosso-time', compact('nossotimes', 'site'));
     }
 
     /**
@@ -132,7 +134,8 @@ class SiteController extends Controller
      */
     public function faleConosco()
     {
-        return \view('/contatos.fale-conosco');
+        $site = Site::first();
+        return \view('/contatos.fale-conosco', compact('site'));
     }
 
     /**

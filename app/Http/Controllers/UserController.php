@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Forms\UserForm;
 use App\Models\Cliente;
+use App\Models\Site;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -22,6 +23,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $site = Site::first();
         $search = $request->get('search');
         if($search == null){
             $users = User::orderBy('name', 'ASC')->paginate();
@@ -30,7 +32,7 @@ class UserController extends Controller
                 ->orWhere('email', 'LIKE', '%'.$search.'%')
                 ->paginate(15);
         }
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.index', compact('users', 'site'));
     }
 
     /**

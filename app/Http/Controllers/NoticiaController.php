@@ -9,6 +9,7 @@ use App\Models\Newsletter;
 use App\Models\NewsletterNoticia;
 use App\Models\Noticia;
 use App\Models\Retranca;
+use App\Models\Site;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -59,6 +60,61 @@ class NoticiaController extends Controller
         }elseif ($search != null && $editoria != null && $public != null){
             $noticias = Noticia::busca($search)->public($public)->where('retranca_id', '=', $editoria)->paginate(1000);
            return view('admin.noticias.index', compact('noticias', 'editorias'));
+        }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return View
+     */
+    public function noticiasDia(Request $request)
+    {
+        $editorias = Retranca::all();
+        $search = $request->get('search');
+        $editoria = $request->get('editoria');
+        $public = $request->get('public');
+        $date = now();
+        $data = $date->format('Y-m-d');
+        //$data = '2022-08-16';
+        //dd($data);
+
+        if ($search == null && $editoria == null && $public == null) {
+            $noticias = Noticia::with('fotos', 'newsletter')
+                ->where('data_cria', 'LIKE', '%'.$data.'%')
+                ->orderBy('created_at', 'DESC')
+                ->paginate(8);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria == null && $public == null){
+            $noticias = Noticia::where([
+                ['data_cria', 'LIKE', '%'.$data.'%'],
+                ['title', 'LIKE', '%'.$search.'%'],
+            ])->orderBy('data_cria', 'DESC')->paginate(1000);
+
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria != null && $public == null){
+            $noticias = Noticia::where([
+                ['data_cria', 'LIKE', '%'.$data.'%'],
+                ['retranca_id', '=', $editoria],
+            ])->orderBy('data_cria', 'DESC')->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria == null && $public != null){
+            $noticias = Noticia::public($public)->orderBy('id', 'ASC')->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search == null && $editoria != null && $public != null){
+            $noticias = Noticia::public($public)->where('retranca_id', '=', $editoria)->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria == null && $public != null){
+            $noticias = Noticia::public($public)->where('texto', 'LIKE', '%'.$search.'%')->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+
+        }elseif ($search != null && $editoria != null && $public == null){
+            $noticias = Noticia::busca($search)->where('retranca_id', '=', $editoria)->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
+        }elseif ($search != null && $editoria != null && $public != null){
+            $noticias = Noticia::busca($search)->public($public)->where('retranca_id', '=', $editoria)->paginate(1000);
+            return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
         }
     }
 

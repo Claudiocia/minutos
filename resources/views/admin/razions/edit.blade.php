@@ -24,7 +24,7 @@
                                  !!}
                             </div>
                             <div class="row btn-new-reset">
-                                {!! Button::primary('Voltar')->asLinkTo(route('admin.nossotimes.index').'#nossotime') !!}
+                                {!! Button::primary('Voltar')->asLinkTo(route('admin.sites.index').'#razion') !!}
                             </div>
                         </div>
                         </div>
