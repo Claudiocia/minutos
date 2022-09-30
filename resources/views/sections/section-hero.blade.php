@@ -4,7 +4,7 @@
             <div class="col-12 hero-text-image">
                 <div class="row">
                     <div class="col-lg-6 text-center text-lg-start">
-                        <h1>{{$site->title_site}}</h1>
+                        <div class="hero-title"><h1>{{$site->title_site}}</h1></div>
                         {!! $site->text_abert !!}
                         @if($site->cancel_one != null)
                         <p>{{$site->cancel_one}}</p>

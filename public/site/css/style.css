@@ -232,6 +232,10 @@ section {
     min-height: 0;
 }
 
+.hero-title{
+    width: 80%;
+}
+
 .hero-section.inner-page .hero-text {
     transform: translateY(-150px);
 }
