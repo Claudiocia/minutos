@@ -1,5 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Serif);
 @charset "UTF-8";
+@font-face {
+  font-family: "RobotoSerifRegular";
+  src: url(/fonts/RobotoSerifRegular.eot?c9d5220a30355974f9f16b079ad51158);
+  src: url(/fonts/RobotoSerifRegular.eot?c9d5220a30355974f9f16b079ad51158) format("embedded-opentype"), url(/fonts/RobotoSerifRegular.woff2?6139338636cc5c2b0686527872f281a1) format("woff2"), url(/fonts/RobotoSerifRegular.woff?32d9e89399b43d3263466d081c1c2f7e) format("woff"), url(/fonts/RobotoSerifRegular.ttf?7bfbb2626f101dfcb0a69fee87bf07ea) format("truetype"), url(/fonts/RobotoSerifRegular.svg?61ed66f828ffd54dadb38c64efdad61d#RobotoSerifRegular) format("svg");
+}
+@font-face {
+  font-family: "RobotoRegular";
+  src: url(/fonts/RobotoRegular.eot?414f6fa6a305918482c6f9be9723bd00);
+  src: url(/fonts/RobotoRegular.eot?414f6fa6a305918482c6f9be9723bd00) format("embedded-opentype"), url(/fonts/RobotoRegular.woff2?7e6ed467acf79dfb576020553b06215d) format("woff2"), url(/fonts/RobotoRegular.woff?c17b7c6f563884bb1e3b5ef9da79e366) format("woff"), url(/fonts/RobotoRegular.ttf?6d41b7f9338b7afc0f5fdf6ccfe31cba) format("truetype"), url(/fonts/RobotoRegular.svg?8679f233caa77c561800fa07f6577406#RobotoRegular) format("svg");
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(/fonts/RobotoBold.eot?015b818329c50f91ce98b74cffb80731);
+  src: url(/fonts/RobotoBold.eot?015b818329c50f91ce98b74cffb80731) format("embedded-opentype"), url(/fonts/RobotoBold.woff2?6756f889091596cd9911f53fac74f91f) format("woff2"), url(/fonts/RobotoBold.woff?f2c9ef52a2d9471cf73f0e4ec15b7150) format("woff"), url(/fonts/RobotoBold.ttf?e53216b66d54fb1ae457f879976cc4f8) format("truetype"), url(/fonts/RobotoBold.svg?ff48b445fc18fc714b2835cce94fbba6#RobotoBold) format("svg");
+}
 /*!
  * Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)

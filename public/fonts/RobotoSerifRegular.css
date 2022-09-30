@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'RobotoSerifRegular';
-    src: url('fonts/RobotoSerifRegular.eot');
-    src: url('fonts/RobotoSerifRegular.eot') format('embedded-opentype'),
-         url('fonts/RobotoSerifRegular.woff2') format('woff2'),
-         url('fonts/RobotoSerifRegular.woff') format('woff'),
-         url('fonts/RobotoSerifRegular.ttf') format('truetype'),
-         url('fonts/RobotoSerifRegular.svg#RobotoSerifRegular') format('svg');
+    src: url('regular/RobotoSerifRegular.eot');
+    src: url('regular/RobotoSerifRegular.eot') format('embedded-opentype'),
+         url('regular/RobotoSerifRegular.woff2') format('woff2'),
+         url('regular/RobotoSerifRegular.woff') format('woff'),
+         url('regular/RobotoSerifRegular.ttf') format('truetype'),
+         url('regular/RobotoSerifRegular.svg#RobotoSerifRegular') format('svg');
 }

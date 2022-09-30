@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('roboto-regular/RobotoRegular.eot');
+    src: url('roboto-regular/RobotoRegular.eot') format('embedded-opentype'),
+         url('roboto-regular/RobotoRegular.woff2') format('woff2'),
+         url('roboto-regular/RobotoRegular.woff') format('woff'),
+         url('roboto-regular/RobotoRegular.ttf') format('truetype'),
+         url('roboto-regular/RobotoRegular.svg#RobotoRegular') format('svg');
+}

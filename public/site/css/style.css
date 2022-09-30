@@ -64,7 +64,7 @@ section {
 }
 
 .section-heading {
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-weight: bold;
     font-size: 3rem;
     background: linear-gradient(-45deg, #3db3c5, #274685); /* #3db3c5, #274685 */
@@ -267,7 +267,7 @@ section {
 /*---- fim do teste ----*/
 
 .hero-section h1 {
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-size: 3.6rem;
     font-weight: bold;
     line-height: 3.6rem;
@@ -343,7 +343,7 @@ section {
     margin-top: 40px;
 }
 .step-title h1{
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-size: 45px;
     line-height: 45px;
     font-style: normal;
@@ -395,7 +395,7 @@ section {
     padding: 30px;
 }
 .step p{
-    font-family: "Roboto";
+    font-family: "RobotoRegular";
     font-weight: bold;
     color: #FFFFFF;
 }
@@ -453,11 +453,11 @@ section {
 
 .causa-section h2 {
     text-transform: uppercase;
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
 }
 
 .causa-section h1 {
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 45px;
@@ -496,7 +496,7 @@ section {
 }
 
 .cta-section h1{
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2.5rem;
@@ -504,7 +504,7 @@ section {
     margin-bottom: 20px;
 }
 .cta-section h2 {
-    font-family: Roboto!important;
+    font-family: RobotoRegular!important;
     font-weight: bold;
     color: #fff;
     font-size: 1.5rem;
