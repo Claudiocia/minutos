@@ -23,7 +23,7 @@ class FotoController extends Controller
      */
     public function index()
     {
-        $fotos = Foto::orderBy('using', 'ASC')->paginate(8);
+        $fotos = Foto::orderBy('id', 'DESC')->paginate(8);
         return view('admin.fotos.index', compact('fotos'));
     }
 
