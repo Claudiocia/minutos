@@ -25,7 +25,7 @@
                             <li><a href="{{route('clientes.create')}}">Reenviar E-mail</a></li>
                             <li><a href="{{route('oldnews')}}">Edições Anteriores</a></li>
                             <li><a href="{{route('rates.index')}}">Avaliar o serviço</a></li>
-                            <li><a href="{{route('indicators.index')}}">Club Minuteria</a></li>
+                            <!-- <li><a href="{{route('indicators.index')}}">Club Minuteria</a></li> -->
                             <li><a href="{{route('clientes.cancelar')}}">Cancelar Assinatura</a></li>
                         </ul>
                     </div>
