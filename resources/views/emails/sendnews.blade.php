@@ -499,7 +499,7 @@
     <tr>
     <td>
     <h6 class="final">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
-    <h6 style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
+    <h6 class="final" style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
     </td>
     </tr>
     </table>
