@@ -221,7 +221,7 @@ img {
 }
 
 .bullet{
-    font-family:RobotoSerif;
+    font-family: RobotoSerifRegular, serif;
     padding: 0;
     font-size:16px;
     margin-top:25px;
