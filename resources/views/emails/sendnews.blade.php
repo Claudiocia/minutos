@@ -37,7 +37,7 @@
     <div class="edit-abert">
     <table class="table-icon">
     <tr>
-    <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Bom dia, {{strtok($mailNews['saud'], " ")}}</h4></td>
+    <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Bom dia,</h4></td>
     <td><img src="{{asset('site/icones/azul/cafe-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
     </tr>
     </table>
@@ -470,7 +470,7 @@
     </tr>
     <tr>
     <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
-    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="#" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
+    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text={{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
     </td>
     </tr>
     <tr>
@@ -479,10 +479,10 @@
     <div class="row">
     <p class="fim" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Acompanhe nossas redes sociais</p>
     <p class="social-news soc-fim">
-    <a href="#" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" /></a>
-    <a href="#" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" /></a>
-    <a href="#" target="_blank"><img src="{{asset('icones/sociais/instagram.png')}}" alt="email"  class="ico-soc-w img-fluid" /></a>
-    <a href="#" target="_blank"><img src="{{asset('icones/sociais/linkedin.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" /></a>
+    <a href="https://twitter.com/canalminutos_" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.facebook.com/profile.php?id=100086184559229" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
+    <a href="https://instagram.com/canalminutos_?igshid=YmMyMTA2M2Y=" target="_blank"><img src="{{asset('icones/sociais/instagram.png')}}" alt="email"  class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
+    <a href="https://www.linkedin.com/company/canal-minutos/" target="_blank"><img src="{{asset('icones/sociais/linkedin.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
     </p>
     </div>
     </div>
@@ -499,7 +499,7 @@
     <tr>
     <td>
     <h6 class="final">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
-    <h6 style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="#" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
+    <h6 style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
     </td>
     </tr>
     </table>

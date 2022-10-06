@@ -11,10 +11,10 @@
                 {!! $site->text_footer !!}
                 @endif
                 <p class="social">
-                    <a href="https://twitter.com/canalminutos_"><span class="fa-brands fa-twitter"></span></a>
-                    <a href="https://www.facebook.com/profile.php?id=100086184559229"><span class="fa-brands fa-facebook"></span></a>
-                    <a href="https://instagram.com/canalminutos_?igshid=YmMyMTA2M2Y="><span class="fa-brands fa-instagram"></span></a>
-                    <a href="https://www.linkedin.com/company/canal-minutos/"><span class="fa-brands fa-linkedin"></span></a>
+                    <a href="https://twitter.com/canalminutos_" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                    <a href="https://www.facebook.com/profile.php?id=100086184559229" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                    <a href="https://instagram.com/canalminutos_?igshid=YmMyMTA2M2Y=" target="_blank"><span class="fa-brands fa-instagram"></span></a>
+                    <a href="https://www.linkedin.com/company/canal-minutos/" target="_blank"><span class="fa-brands fa-linkedin"></span></a>
                 </p>
             </div>
             <div class="col-md-7 ms-auto">
