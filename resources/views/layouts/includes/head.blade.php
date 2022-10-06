@@ -17,9 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Canal Minutos - Newsletter</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    @include('layouts.includes.meta-tag')
 
     <!-- Favicons -->
     <link href="{{asset('site/img/favicon.ico')}}" rel="icon">
