@@ -131,7 +131,7 @@ class NewsletterController extends Controller
 
         $emails = Cliente::orderBy('id', 'ASC')->get();
         $numReg = $emails->count();
-        dd($numReg);
+        //dd($numReg);
         $chunks = $emails->chunk(50);
 
         //dd($chunks->toArray());
