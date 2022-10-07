@@ -213,7 +213,6 @@ class NewsletterController extends Controller
             ];
         foreach ($chunks as $chunk){
             Mail::to("admin@canalminutos.com.br")
-                ->cc($chunk->toArray())
                 ->bcc($chunk)
                 ->send(new SendMailNews($mailData, $subject));
         }
