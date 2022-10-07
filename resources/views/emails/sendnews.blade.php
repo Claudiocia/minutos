@@ -168,17 +168,6 @@
     </table>
     </div>
     </div>
-    <div class="row" style="margin: 10px 0 -20px 0;">
-    <p class="social-news">
-    @foreach($mailNews['noti_etcs'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
-    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
-    @break
-    @endforeach
-    </p>
-    </div>
     </div>
     <!-- FIM Etcetera -->
     <div class="d-flex justify-content-center">
@@ -197,7 +186,7 @@
     @foreach($mailNews['noti_disses'] as $disse)
     <div class="disse">
     <div class="row tit-disse">
-    <h3 class="tit-disse" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">{{$disse->title}}</h3>
+    <h3 class="tit-disse" style="font-family: RobotoSerifRegular, serif">{{$disse->title}}</h3>
     </div>
     <div class="container-disse">
     @if(count($disse->fotos) > 0)
@@ -220,17 +209,6 @@
     </div>
     @endforeach
     </div>
-    </div>
-    <div class="row" style="margin-bottom: -20px">
-    <p class="social-news">
-    @foreach($mailNews['noti_disses'] as $noti)
-    <a href="https://twitter.com/intent/tweet?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook" height="16" class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
-    <a href="mailto:?subject=Canal-Minutos&body={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/envelope.png')}}" alt="email" width="16" class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://api.whatsapp.com/send?text={{route('noticias.show', ['id' => $noti->retranca_id])}}" target="_blank"><img src="{{asset('icones/sociais/whatsapp.png')}}" alt="whatsapp" width="16" class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
-    @break
-    @endforeach
-    </p>
     </div>
     </div>
     <!-- FIM Disse -->
@@ -501,18 +479,6 @@
     </div>
     </div>
     </div>
-
-
-
-
-    {{-- Subcopy --}}
-    @isset($subcopy)
-        @slot('subcopy')
-            @component('mail::subcopy')
-                {{ $subcopy }}
-            @endcomponent
-        @endslot
-    @endisset
 
     {{-- Footer --}}
     @slot('footer')
