@@ -133,7 +133,7 @@ class Noticia extends Model implements Transformable, TableInterface
             case 'Título':
                 return $this->title;
             case 'Data':
-                return \Carbon\Carbon::parse($this->data_cria)->format('d/m/Y');
+                return \Carbon\Carbon::parse($this->data_cria)->format('d/m/Y | H:m');
             case 'Publicada':
                 return $this->public == 'n' ? 'Não' : 'Sim';
         }

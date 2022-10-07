@@ -88,12 +88,14 @@ class Cliente extends Model implements Transformable, TableInterface
 
     public function getTableHeaders()
     {
-        return ['Nome', 'Email', 'Situação', 'Avalia'];
+        return ['ID','Nome', 'Email', 'Situação', 'Avalia'];
     }
 
     public function getValueForHeader($header)
     {
         switch ($header){
+            case 'ID':
+                return $this->id;
             case 'Nome':
                 return $this->nome;
             case 'Email':
