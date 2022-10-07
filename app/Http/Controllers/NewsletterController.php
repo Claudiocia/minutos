@@ -129,7 +129,7 @@ class NewsletterController extends Controller
     public function disparaNews(Request $request, Newsletter $newsletter)
     {
         $array =[1, 2, 10];
-        $emails = Cliente::findMany($array)->get();
+        $emails = Cliente::findMany($array);
         $numReg = $emails->count();
         dd($numReg);
         $chunks = $emails->chunk(4);
