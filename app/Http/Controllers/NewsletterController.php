@@ -128,8 +128,13 @@ class NewsletterController extends Controller
      */
     public function disparaNews(Request $request, Newsletter $newsletter)
     {
-        $clientes = Cliente::whereSigned(1)->get();
-        //dd($clientes);
+        $emails = Cliente::select('email')->whereId([1,2,10])->get();
+        $numReg = $emails->count();
+        dd($numReg);
+        $chunks = $emails->chunk(4);
+
+        //dd($chunks->toArray());
+
         $subject = $newsletter->title_dia;
 
         $ed_hist_id = Retranca::whereNome('História do dia')->first()->id;
@@ -192,26 +197,27 @@ class NewsletterController extends Controller
 
         $dia = ucwords($diaFormatted).$dataFormatted;
 
-        foreach ($clientes as $cliente) {
-
-            $mailData = [
+        $mailData = [
                 'diaNews' => $dia,
                 'foto_parca' => $fotoParceiro,
                 'abertura' => $newsletter->abertura,
-                'saud' => $cliente->nome,
                 'hist_dia' => $noti_hists,
                 'noti_ainda' => $noti_aindas,
                 'noti_etcs' => $noti_etcs,
-                'num_col' => 2,
                 'noti_disses' => $noti_disses,
                 'noti_dinhes' => $noti_dinhes,
                 'noti_planes' => $noti_planes,
                 'noti_cuidas' => $noti_cuidas,
                 'noti_cults' => $noti_cults,
             ];
-
-            Mail::to($cliente->email)->send(new SendMailNews($mailData, $subject));
+        foreach ($chunks as $chunk){
+            Mail::to("admin@canalminutos.com.br")
+                ->cc($chunk->toArray())
+                ->bcc($chunk)
+                ->send(new SendMailNews($mailData, $subject));
         }
+
+
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';
