@@ -131,8 +131,8 @@ class NewsletterController extends Controller
         $array =[1, 2, 10];
         $emails = Cliente::findMany($array);
         $numReg = $emails->count();
-        dd($numReg);
-        $chunks = $emails->chunk(4);
+        //dd($numReg);
+        $chunks = $emails->chunk(50);
 
         //dd($chunks->toArray());
 
