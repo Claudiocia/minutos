@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="w-auto p-3">
                             <div class="panel-heading-admin">
-                                <h5>Lista de Assinantes - Total ({{count($clientes)}})</h5>
+                                <h5>Lista de Assinantes - Total ({{$num}})</h5>
                                 <div class="form-search">
                                     <form action="{{ route('admin.clientes.index') }}" method="get">
                                         <label class="label-search">Pesquisar</label>

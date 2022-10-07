@@ -25,25 +25,26 @@ class ClienteController extends Controller
     {
         $search = $request->get('search');
         //dd($search);
+        $num = Cliente::count();
         if($search == null){
             $clientes = Cliente::orderBy('nome', 'ASC')->paginate();
-            return view('admin.clientes.index', compact('clientes'));
+            return view('admin.clientes.index', compact('clientes', 'num'));
         }elseif ($search == 'ativo'){
             $clientes = Cliente::where('signed', '=', '1')
                 ->orderBy('nome', 'ASC')->paginate();
-            return view('admin.clientes.index', compact('clientes'));
+            return view('admin.clientes.index', compact('clientes', 'num'));
         }elseif ($search == 'inativo'){
             $clientes = Cliente::where('signed', '=', '2')
                 ->orderBy('nome', 'ASC')->paginate();
-            return view('admin.clientes.index', compact('clientes'));
+            return view('admin.clientes.index', compact('clientes', 'num'));
         }elseif ($search == 'cancelado'){
             $clientes = Cliente::onlyTrashed()->orderBy('deleted_at')->paginate();
-            return view('admin.clientes.index', compact('clientes'));
+            return view('admin.clientes.index', compact('clientes', 'num'));
         }else{
             $clientes = Cliente::where('nome', 'LIKE', '%'.$search.'%')
                 ->orWhere('email', 'LIKE', '%'.$search.'%')
                 ->orderBy('nome', 'ASC')->paginate();
-            return view('admin.clientes.index', compact('clientes'));
+            return view('admin.clientes.index', compact('clientes', 'num'));
         }
     }
 
