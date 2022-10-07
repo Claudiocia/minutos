@@ -158,21 +158,12 @@
     </table>
     <div class="container-fluid">
     <table class="tab-notas">
-    <?php $col = 1; ?>
     @foreach($mailNews['noti_etcs'] as $etc)
-    @if($mailNews['num_col'] > $col)
     <tr>
     <td>
     {!! $etc->texto !!}
     </td>
-    <?php $col++; ?>
-    @elseif($mailNews['num_col'] == $col)
-    <td>
-    {!! $etc->texto !!}
-    </td>
     </tr>
-    <?php $col = 1; ?>
-    @endif
     @endforeach
     </table>
     </div>
