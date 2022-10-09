@@ -115,7 +115,7 @@ class SiteController extends Controller
 
     public function oldnews()
     {
-        $newsletters = Newsletter::orderByDesc('numb_edicao')->paginate();
+        $newsletters = Newsletter::whereEnviada('s')->orderByDesc('numb_edicao')->paginate();
         $site = Site::first();
         return \view('newsletters.index', compact('newsletters', 'site'));
     }
