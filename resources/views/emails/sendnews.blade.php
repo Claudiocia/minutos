@@ -435,23 +435,11 @@
     <td><h3 style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Obrigado por ler</h3></td>
     </tr>
     <tr>
-    <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
-    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
-    </td>
+    <td><img src="{{asset('site/icones/branco/jornal-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
     </tr>
     <tr>
-    <td>
-    <div class="rodape-news">
-    <div class="row">
-    <p class="fim" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Acompanhe nossas redes sociais</p>
-    <p class="social-news soc-fim">
-    <a href="https://twitter.com/canalminutos_" target="_blank"><img src="{{asset('icones/sociais/twitter.png')}}" alt="twitter"  class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://www.facebook.com/profile.php?id=100086184559229" target="_blank"><img src="{{asset('icones/sociais/facebook.png')}}" alt="facebook"  class="ico-soc-h img-fluid" style="margin-top: 6px;" /></a>
-    <a href="https://instagram.com/canalminutos_?igshid=YmMyMTA2M2Y=" target="_blank"><img src="{{asset('icones/sociais/instagram.png')}}" alt="email"  class="ico-soc-w img-fluid" style="margin-top: 9px;" /></a>
-    <a href="https://www.linkedin.com/company/canal-minutos/" target="_blank"><img src="{{asset('icones/sociais/linkedin.png')}}" alt="whatsapp"  class="ico-soc-w img-fluid" style="margin-top: 6px;" /></a>
-    </p>
-    </div>
-    </div>
+    <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
+    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
     </td>
     </tr>
     <tr>
