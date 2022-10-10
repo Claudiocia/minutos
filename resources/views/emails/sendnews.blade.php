@@ -457,14 +457,6 @@
     </div>
     </td>
     </tr>
-    </table>
-    </div>
-    <!-- FIM RODAPE ---- -->
-    <!-- Assinatura Final -->
-    <table class="table-final-ass">
-    <tr>
-    <td><img src="{{asset('icones/minutos.png')}}" height="30" alt="Marca Minutos" class="img-fluid" /></td>
-    </tr>
     <tr>
     <td>
     <h6 class="final">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
@@ -472,18 +464,11 @@
     </td>
     </tr>
     </table>
-    <!-- Assinatura fim -->
     </div>
     </div>
     </div>
     </div>
     </div>
     </div>
-
-    {{-- Footer --}}
-    @slot('footer')
-        @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.')
-        @endcomponent
-    @endslot
+    </div>
 @endcomponent
