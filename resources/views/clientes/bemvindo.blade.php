@@ -32,6 +32,9 @@
                                             solicite o reenvio</p>
                                         <p>Obrigado!</p>
                                     </div>
+                                    <div class="row cliente">
+                                        <h5>Leia agora a nossa edição mais recente. <a href="{{route('newsletters.show', ['newsletter' => $newsletter->id])}}">Clique aqui</a></h5>
+                                    </div>
                                     @if (Session::has('msg'))
                                         <div class="my-alert">
                                             {!! Alert::success(Session::get('msg')) !!}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Forms\ClienteAutoForm;
 use App\Mail\SendMailCliente;
 use App\Models\Cliente;
+use App\Models\Newsletter;
 use App\Models\Rate;
 use App\Models\Site;
 use Illuminate\Http\RedirectResponse;
@@ -156,8 +157,9 @@ class ClienteAutoController extends Controller
             $error = 'Ops! Tivemos problema. Peça um novo e-mail de verificação';
             $request->session()->flash('error', $error);
         }
+        $newsletter = Newsletter::whereEnviada('s')->orderByDesc('created_at')->first();
 
-        return view('clientes.bemvindo', compact('cliente'));
+        return view('clientes.bemvindo', compact('cliente', 'newsletter'));
     }
 
     /**
