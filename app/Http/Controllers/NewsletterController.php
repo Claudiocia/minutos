@@ -221,6 +221,9 @@ class NewsletterController extends Controller
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';
+            $data['enviada'] = 's';
+            $newsletter->fill($data);
+            $newsletter->save();
         }else{
             $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
         }
@@ -318,9 +321,6 @@ class NewsletterController extends Controller
 
         if (Response::HTTP_OK){
             $msg = 'Mensagem enviada com sucesso';
-            $data['enviada'] = 's';
-            $newsletter->fill($data);
-            $newsletter->save();
         }else{
             $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
         }

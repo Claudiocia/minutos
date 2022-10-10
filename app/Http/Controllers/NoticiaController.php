@@ -10,6 +10,7 @@ use App\Models\NewsletterNoticia;
 use App\Models\Noticia;
 use App\Models\Retranca;
 use App\Models\Site;
+use DateTime;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -75,14 +76,19 @@ class NoticiaController extends Controller
         $search = $request->get('search');
         $editoria = $request->get('editoria');
         $public = $request->get('public');
-        $date = now();
-        $data = $date->format('Y-m-d');
+        $date = new DateTime();
+        $data = $date->format('Y-m-d H:i:s');
+        $timestamp = strtotime($data);
+        $tempo = 25200;
+        $novaData = ($timestamp - $tempo);
+        $dataNova = date('Y-m-d H:i:s', $novaData);
         //$data = '2022-08-16';
-        //dd($data);
+
+        //dd($dataNova);
 
         if ($search == null && $editoria == null && $public == null) {
             $noticias = Noticia::with('fotos', 'newsletter')
-                ->where('data_cria', 'LIKE', '%'.$data.'%')
+                ->where('data_cria', '>=', $dataNova)
                 ->orderBy('created_at', 'DESC')
                 ->paginate(8);
             return view('admin.noticias.noticias-dia', compact('noticias', 'editorias'));
