@@ -435,9 +435,6 @@
     <td><h3 style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Obrigado por ler</h3></td>
     </tr>
     <tr>
-    <td><img src="{{asset('site/icones/branco/jornal-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
-    </tr>
-    <tr>
     <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
     <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
     </td>
@@ -459,8 +456,8 @@
     </tr>
     <tr>
     <td>
-    <h6 class="final">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
-    <h6 class="final" style="margin-top: -20px;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
+    <h6 class="final" style="color:#FFFFFF;">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
+    <h6 class="final" style="margin-top: -20px;color: #FFFFFF;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
     </td>
     </tr>
     </table>
