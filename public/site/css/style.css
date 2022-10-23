@@ -64,7 +64,7 @@ section {
 }
 
 .section-heading {
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-weight: bold;
     font-size: 3rem;
     background: linear-gradient(-45deg, #3db3c5, #274685); /* #3db3c5, #274685 */
@@ -343,7 +343,7 @@ section {
     margin-top: 40px;
 }
 .step-title h1{
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-size: 45px;
     line-height: 45px;
     font-style: normal;
@@ -395,7 +395,7 @@ section {
     padding: 30px;
 }
 .step p{
-    font-family: "RobotoRegular";
+    font-family: RobotoSerifRegular;
     font-weight: bold;
     color: #FFFFFF;
 }
@@ -453,11 +453,11 @@ section {
 
 .causa-section h2 {
     text-transform: uppercase;
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
 }
 
 .causa-section h1 {
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 45px;
@@ -496,7 +496,7 @@ section {
 }
 
 .cta-section h1{
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2.5rem;
@@ -504,7 +504,7 @@ section {
     margin-bottom: 20px;
 }
 .cta-section h2 {
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-weight: bold;
     color: #fff;
     font-size: 1.5rem;
@@ -894,14 +894,14 @@ section {
 .btn-show{
     width: 100%;
     font-size: 16px;
-    font-family: "Roboto Serif";
+    font-family: RobotoSerifRegular;
     font-weight: bold;
     color: #f0f0f0;
 }
 
 .label-form {
     font-weight: 700;
-    font-family: "Roboto Serif";
+    font-family: RobotoSerifRegular;
     color: black;
     margin: 8px 8px 0px 8px;
 }
@@ -1021,7 +1021,7 @@ textarea {
 
 /*------- Show news ---------------*/
 .panel-body-news {
-    font-family: "Roboto Serif";
+    font-family: RobotoSerifRegular;
 }
 .news {
     display: flex;
@@ -1702,7 +1702,7 @@ section {
     margin: 0 0 10px 0;
     padding: 0;
     line-height: 1;
-    font-family: "Montserrat", sans-serif;
+    font-family: RobotoSerifRegular, serif;
     font-weight: 300;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -1712,7 +1712,7 @@ section {
 #contact .contact-about p {
     font-size: 14px;
     line-height: 24px;
-    font-family: "Montserrat", sans-serif;
+    font-family: RobotoSerifRegular, serif;
     color: #888;
 }
 

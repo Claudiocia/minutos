@@ -14,7 +14,7 @@ class MailController extends Controller
     {
         $email = 'claudiosouza.cia@user.com';
         $nome ='Claudio Souza';
-        $tele = 'Canal Minutos';
+        $tele = 'Minutos';
         $mensagem  = "Olá $nome, ";
         $mensagem .= "<br/><br/>";
         $mensagem .= "Você efetuou um cadastro no site da $tele.</br>";
@@ -61,7 +61,7 @@ class MailController extends Controller
     {
         $email = 'claudiosouza.cia@user.com';
         $nome ='Claudio Souza';
-        $tele = 'Canal Minutos';
+        $tele = 'Minutos';
         $mensagem  = "Olá $nome, ";
         $mensagem .= "<br/><br/>";
         $mensagem .= "Você efetuou um cadastro no site da $tele.</br>";

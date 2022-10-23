@@ -212,7 +212,7 @@ class NewsletterController extends Controller
                 'noti_cults' => $noti_cults,
             ];
         foreach ($chunks as $chunk){
-            Mail::to("admin@canalminutos.com.br")
+            Mail::to("newsletter@canalminutos.com.br")
                 ->bcc($chunk)
                 ->send(new SendMailNews($mailData, $subject));
         }

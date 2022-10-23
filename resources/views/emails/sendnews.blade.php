@@ -37,21 +37,21 @@
     <div class="edit-abert">
     <table class="table-icon">
     <tr>
-    <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Bom dia,</h4></td>
+    <td><h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif">Bom dia,</h4></td>
     <td><img src="{{asset('site/icones/azul/cafe-300.png')}}" alt="Hora do cafezinho" class="img-fluid"/></td>
     </tr>
     </table>
     </div>
     </div>
     <div class="edit-abert">
-    <div><p class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">{!! $mailNews['abertura'] !!}</p></div>
+    <div><p class="saud-h4" style="font-family: RobotoSerifRegular, serif">{!! $mailNews['abertura'] !!}</p></div>
     </div>
     <div class="row">
-    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Boa leitura!</h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif">Boa leitura!</h4>
     </div>
     <div class="row aviso-news">
-    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Tem algum feedback? Queremos muito saber. <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></h4>
-    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; margin-top: -10px;">Gostou do conteúdo? <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Convide um amigo.</a> Isso é muito importante para a gente.</h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif;">Tem algum feedback? Queremos muito saber. <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif; margin-top: -10px;">Gostou do conteúdo? <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, serif">Convide um amigo.</a> Isso é muito importante para a gente.</h4>
     </div>
     </div>
     <!-- FIM Abertura -->
@@ -190,7 +190,7 @@
     </div>
     <div class="container-disse">
     @if(count($disse->fotos) > 0)
-    <div class="disse-news-i" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
+    <div class="disse-news-i" style="font-family: RobotoSerifRegular, serif">
     {!! $disse->texto !!}
     </div>
     <div class="foto-disse">
@@ -201,7 +201,7 @@
     </div>
     </div>
     @else
-    <div class="col-12 disse-news" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">
+    <div class="col-12 disse-news" style="font-family: RobotoSerifRegular, serif">
     {!! $disse->texto !!}
     </div>
     @endif
@@ -432,19 +432,19 @@
     <div class="rodape-geral">
     <table class="table-final">
     <tr>
-    <td><h3 style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">Obrigado por ler</h3></td>
+    <td><h3 style="font-family: RobotoSerifRegular, serif;">Obrigado por ler</h3></td>
     </tr>
     <tr>
     <td><img src="{{asset('site/icones/branco/jornal-300.png')}}" width="90" alt="Icone newsletter" class="img-fluid"  /></td>
     </tr>
     <tr>
-    <td style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">
-    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif;">chamar um amigo</a> para assinar?
+    <td style="font-family: RobotoSerifRegular, serif;">
+    <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, serif; text-decoration: #41a7d7 underline;">Conte pra gente</a> o que achou da newsletter de hoje. Veja outras edições <a href="{{route('oldnews')}}" style="font-family: RobotoSerifRegular, serif;">aqui.</a> Se gostou, que tal <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, serif;">chamar um amigo</a> para assinar?
     </td>
     </tr>
     <tr>
     <td>
-    <h6 class="final" style="color:#FFFFFF;">Você está recebendo esse email porque se inscreveu na newsletter do Canal Minutos.</h6>
+    <h6 class="final" style="color:#FFFFFF;">Você está recebendo esse email porque se inscreveu na newsletter do Minutos.</h6>
     <h6 class="final" style="margin-top: -20px;color: #FFFFFF;">Para se descadastrar a qualquer momento, <a href="{{route('clientes.cancelar')}}" style="text-decoration: #41a7d7 underline;">clique aqui.</a></h6>
     </td>
     </tr>

@@ -3,7 +3,7 @@
 body,
 body *:not(html):not(style):not(br):not(tr):not(code) {
     box-sizing: border-box;
-    font-family: RobotoSerifRegular sans-serif;
+    font-family: RobotoSerifRegular, serif;
     position: relative;
 }
 
@@ -225,6 +225,7 @@ img {
     padding: 0;
     font-size:16px;
     margin-top:25px;
+    line-height: 2em;
 }
 
 .button {
@@ -384,7 +385,7 @@ img {
     vert-align: top;
 }
 .edit-abert p{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
 }
 .table-icon{
     border: none;
@@ -446,7 +447,7 @@ img {
     padding-top: 20px;
 }
 .retr-edit{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
     font-size: 1.5em;
     color: #41a7d7;
     font-style: italic;
@@ -458,7 +459,7 @@ img {
     margin-top: -10px;
 }
 .tit-princ{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
     width: 98%;
     font-size: 24px;
     line-height: 1.3em;
@@ -467,28 +468,30 @@ img {
     font-weight: lighter;
 }
 .tit-secund{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
     width: 90%;
     font-size: 20px;
     line-height: 1.5em;
     margin-bottom: 20px;
 }
 .edit p{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
     font-size: 16px;
     line-height: 1.6em;
 }
 .texto-news p{
-    font-family: RobotoSerifRegular, Roboto-Serif, serif;
+    font-family: RobotoSerifRegular, serif;
     margin-top: -15px;
 }
 .texto-news a {
+    font-family: RobotoSerifRegular, serif;
     font-weight: bold;
     color: #41a7d7;
     text-decoration: underline;
 }
 /*---------- Botons de compartilhamento ------------*/
 .social-news a {
+    font-family: RobotoSerifRegular, serif;
     display: inline-block;
     font-size: 18px;
     width: 30px;
@@ -516,6 +519,7 @@ img {
 
 /*--------------- ETC --------------*/
 .nota-news p{
+    font-family: RobotoSerifRegular, serif;
     font-size: 15px;
 }
 .container-fluid  {
@@ -535,12 +539,14 @@ img {
     width: 100%;
 }
 .tab-notas td p{
+    font-family: RobotoSerifRegular, serif;
     font-size: 15px;
     line-height: 18px;
     margin: 0;
     padding: 0;
 }
 .tab-notas td a {
+    font-family: RobotoSerifRegular, serif;
     font-weight: bold;
     color: #41a7d7;
     text-decoration: underline;
@@ -557,6 +563,7 @@ img {
     margin-bottom: 20px;
 }
 .tit-disse h3{
+    font-family: RobotoSerifRegular, serif;
     width: 98%;
     line-height: 1.4em;
     margin-left: 8px;
@@ -566,6 +573,7 @@ img {
     font-size: 16px;
 }
 .disse-news p {
+    font-family: RobotoSerifRegular, serif;
     margin: 0 0 0 20px;
     padding: 0;
     width: 98%;
@@ -573,6 +581,7 @@ img {
     line-height: 1.4em;
 }
 .disse-news-i p{
+    font-family: RobotoSerifRegular, serif;
     margin: 0 0 0 20px;
     padding: 0;
     width: 80%;
@@ -580,6 +589,7 @@ img {
     line-height: 1.4em;
 }
 .disse-news a {
+    font-family: RobotoSerifRegular, serif;
     font-weight: bold;
     color: #41a7d7;
     text-decoration: underline;
@@ -609,6 +619,7 @@ img {
 }
 /*--------- Dinheiro -----------*/
 .cota-news p{
+    font-family: RobotoSerifRegular, serif;
     font-size: 18px;
     font-style: italic;
     font-weight: bold;
@@ -621,6 +632,7 @@ img {
     width: 96%;
 }
 .recuo-news h6 {
+    font-family: RobotoSerifRegular, serif;
     color: #41a7d7;
     font-size: 18px;
     font-weight: bold;
@@ -628,6 +640,7 @@ img {
     margin-bottom: 8px;
 }
 .recuo-news p{
+    font-family: RobotoSerifRegular, serif;
     margin-top: -10px;
     margin-left: 5px;
 }
@@ -651,10 +664,12 @@ img {
     padding: 10px;
 }
 .table-final td{
+    font-family: RobotoSerifRegular, serif;
     text-align: center;
     color: #FFFFFF;
 }
 .table-final td h3{
+    font-family: RobotoSerifRegular, serif;
     font-size: 20px;
     text-align: center;
     color: #FFFFFF;
@@ -667,6 +682,7 @@ img {
 }
 
 .table-final td p{
+    font-family: RobotoSerifRegular, serif;
     margin-top: 8px;
     margin-left: 20px;
     margin-right: 20px;
@@ -676,6 +692,7 @@ img {
     color: #FFFFFF;
 }
 .table-final td a{
+    font-family: RobotoSerifRegular, serif;
     text-decoration: underline;
     color: #41a7d7;
     font-weight: bold;
@@ -683,6 +700,7 @@ img {
 
 /* -------- ASSINATURA -------------*/
 .table-final-ass{
+    font-family: RobotoSerifRegular, serif;
     width: 100%;
     border: none;
     background-color: #cccccc;
@@ -690,6 +708,7 @@ img {
     padding: 10px;
 }
 .table-final-ass td {
+    font-family: RobotoSerifRegular, serif;
     text-align: center;
 }
 .rodape-news-final{
@@ -701,6 +720,7 @@ img {
     padding: 10px;
 }
 .rodape-tit2 {
+    font-family: RobotoSerifRegular, serif;
     position: relative;
     margin-top: 20px;
 }
@@ -712,6 +732,7 @@ img {
     height: 30px;
 }
 .final {
+    font-family: RobotoSerifRegular, serif;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
