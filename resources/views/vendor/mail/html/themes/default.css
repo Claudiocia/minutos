@@ -227,6 +227,11 @@ img {
     margin-top:25px;
     line-height: 2em;
 }
+.bullet ul li {
+    font-family:RobotoSerifRegular, serif;
+    font-size: 16px;
+    line-height:2.1em;
+}
 
 .button {
     -webkit-text-size-adjust: none;
