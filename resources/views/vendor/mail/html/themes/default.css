@@ -225,12 +225,12 @@ img {
     padding: 0;
     font-size:16px;
     margin-top:25px;
-    line-height: 2em;
+    line-height: 1.9em;
 }
 .bullet ul li {
     font-family:RobotoSerifRegular, serif;
     font-size: 16px;
-    line-height:2em;
+    line-height:1.9em;
 }
 
 .button {
