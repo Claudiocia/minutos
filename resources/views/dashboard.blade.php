@@ -66,7 +66,7 @@
                             <a href="#" class="h5 font-weight-bolder text-decoration-none text-dark">Newsletters</a>
                         </div>
                         <p class="text-muted">
-                            teste Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+                            Aqui vamos colocar dados estatísticos das Newsletters tipo: taxa de abertura, taxa de cliques em links, e outras medições realmente interessantes para o desenvolvimento do trabalho. Em breve teremos a implantação disto, assim que o envio da news passar a ser no mailchimp.
                         </p>
                     </div>
                 </div>
