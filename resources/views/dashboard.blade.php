@@ -83,7 +83,7 @@
                             <span class="h5 font-weight-bolder text-decoration-none text-dark">Avaliações</span>
                         </div>
                         <p class="text-muted">
-                            Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started what matters most: building your application.
+                            Próximo texto a ser alterado Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started what matters most: building your application.
                         </p>
                     </div>
                 </div>
