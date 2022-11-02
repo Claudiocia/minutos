@@ -425,12 +425,25 @@ img {
 }
 
 /* --------- FEEDBACK ----------*/
+.intervalo{
+    align-items: center;
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 10px;
+}
+.retr-saud{
+    font-family: RobotoSerifRegular, serif;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+}
 .aviso-news {
     margin-top: 0;
     margin-right: 30px;
 }
 .aviso-news a {
-    color: #41a7d7;
+    color: #0a53be;
     text-decoration: underline;
 }
 .aviso-n{
