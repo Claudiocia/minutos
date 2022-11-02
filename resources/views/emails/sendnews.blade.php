@@ -49,10 +49,6 @@
     <div class="row">
     <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif">Boa leitura!</h4>
     </div>
-    <div class="row aviso-news">
-    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif;">Tem algum feedback? Queremos muito saber. <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></h4>
-    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif; margin-top: -10px;">Gostou do conteúdo? <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, serif">Convide um amigo.</a> Isso é muito importante para a gente.</h4>
-    </div>
     </div>
     <!-- FIM Abertura -->
     <div class="d-flex justify-content-center">
@@ -212,6 +208,16 @@
     </div>
     </div>
     <!-- FIM Disse -->
+    <div class="d-flex justify-content-center">
+    <hr class="linha-news"/>
+    </div>
+    <div class="intervalo">
+    <div class="row aviso-news">
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif">Primeira leitura? assine nossa newsletter <a href="{{route('clientes.index')}}">aqui.</a></h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif; margin-top: -10px;">Tem algum feedback? Queremos muito saber. <a href="{{route('rates.index')}}" style="font-family: RobotoSerifRegular, Roboto-Serif, serif">Conte-nos</a></h4>
+    <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif; margin-top: -10px;">Está bom o conteúdo? <a href="https://api.whatsapp.com/send?text=Olha que newsletter boa. Lembrei de você. {{route('clientes.index')}}" style="font-family: RobotoSerifRegular, serif">Convide um amigo.</a> Isso é muito importante para a gente.</h4>
+    </div>
+    </div>
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
