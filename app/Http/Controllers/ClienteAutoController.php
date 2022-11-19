@@ -293,7 +293,9 @@ class ClienteAutoController extends Controller
             $request->session()->flash('error', $error);
         }
 
-        return view('clientes.bemvindo');
+        $newsletter = null;
+
+        return view('clientes.bemvindo', compact('newsletter'));
 
     }
 
