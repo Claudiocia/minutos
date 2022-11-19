@@ -33,7 +33,9 @@
                                         <p>Obrigado!</p>
                                     </div>
                                     <div class="row cliente">
+                                        @if($newsletter != null)
                                         <h5>Leia agora a nossa edição mais recente. <a href="{{route('newsletters.show', ['newsletter' => $newsletter->id])}}">Clique aqui</a></h5>
+                                        @endif
                                     </div>
                                     @if (Session::has('msg'))
                                         <div class="my-alert">
