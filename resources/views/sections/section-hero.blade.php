@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-6 d-flex justify-content-center">
                         <div class="col-lg-7 iphone-wrap">
-                            <img src="{{asset('site/img/minutos1.gif')}}" alt="Image" class="phone-1">
+                            <img src="{{asset('site/img/arte_minutos1.png')}}" alt="Image" class="phone-1">
                         </div>
                     </div>
                 </div>
