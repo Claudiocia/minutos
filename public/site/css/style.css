@@ -267,7 +267,7 @@ section {
 /*---- fim do teste ----*/
 
 .hero-section h1 {
-    font-family: RobotoRegular!important;
+    font-family: RobotoSerifRegular!important;
     font-size: 3.6rem;
     font-weight: bold;
     line-height: 3.6rem;
@@ -313,11 +313,11 @@ section {
     position: absolute;
     top: 0;
     overflow: hidden;
-    left: 30px;
+    left: 20px;
     border-radius: 20px;
 }
 .hero-section .iphone-wrap .phone-1 {
-    width: 250px;
+    width: 450px;
 }
 
 @media screen and (max-width: 992px) {
@@ -326,8 +326,8 @@ section {
         top: 20px;
     }
     .hero-section .iphone-wrap .phone-1 {
-        width: 150px;
-        margin-left: 20px;
+        width: 250px;
+        margin-left: 15px;
     }
 
 }
