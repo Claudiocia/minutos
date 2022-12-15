@@ -1,4 +1,5 @@
 <title>Canal Minutos - Informação sem tempo a perder</title>
+    <meta name="facebook-domain-verification" content="i1n8l0485asqc2pkg5yywp4rols4fp" />
     <meta name="description" content="Os fatos mais relevantes do Brasil e do mundo no seu e-mail. Assine nossa newsletter e fique informado em até 7 minutos. E o melhor: sem pagar nada." />
     <meta name="keywords" content="newsletter, fatos, relevantes, brevidade inteligente">
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
