@@ -51,7 +51,18 @@ Route::get('/teste-email/{newsletter}', [NewsletterController::class, 'testeEmai
 Route::get('/noticias/{id}', [NoticiaController::class, 'showPublic'])->name('noticias.show');
 
 //rotas clientes
-Route::resource('clientes', ClienteAutoController::class);
+//Route::resource('clientes', ClienteAutoController::class);
+
+Route::get('clientes/cadastro', 'App\Http\Controllers\ClienteAutoController@index')->name('clientes.index');
+Route::post('clientes/obrigado', 'App\Http\Controllers\ClienteAutoController@store')->name('clientes.store');
+Route::get('clientes/create', 'App\Http\Controllers\ClienteAutoController@create')->name('clientes.create');
+Route::get('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@show')->name('clientes.show');
+Route::put('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@update')->name('clientes.update');
+Route::delete('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@destroy')->name('clientes.destroy');
+Route::get('clientes/{cliente}/edit', 'App\Http\Controllers\ClienteAutoController@edit')->name('clientes.edit');
+
+//Route::post('/delete/{id}','App\Http\Controllers\AdminController@destroyProduct');
+
 Route::get('/email-verify/{id}/{token}', [ClienteAutoController::class, 'verifyEmailCliente'])
     ->name('clientes.verify');
 Route::post('/clientes/sendemail', [ClienteAutoController::class, 'reenviarEmail'])

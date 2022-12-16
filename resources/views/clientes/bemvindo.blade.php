@@ -1,4 +1,4 @@
-@extends('layouts.assina')
+@extends('layouts.bemvincli')
 
 @section('conteudo')
     <div class="row align-items-center flex-column">
