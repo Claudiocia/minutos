@@ -137,6 +137,7 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @if(count($noti_etcs) != 0)
                                         <!-- Etecetera -->
                                         <div class="edit">
                                             @foreach($noti_etcs as $etc)
@@ -179,7 +180,9 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- Disse-se -->
+                                        @if(count($noti_disses) != 0)
                                         <div class="edit">
                                             <div class="row">
                                                 <div class="retranca">
@@ -229,7 +232,9 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- Dinheiro -->
+                                        @if(count($noti_dinhes) != 0)
                                         <div class="edit">
                                             @foreach($noti_dinhes as $dinhe)
                                                 @if(count($dinhe->fotos) > 0)
@@ -296,7 +301,9 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- Planeta -->
+                                        @if(count($noti_planes) != 0)
                                         <div class="edit">
                                             @foreach($noti_planes as $plane)
                                                 @if(count($plane->fotos) > 0)
@@ -344,7 +351,9 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- Cuidar -->
+                                        @if(count($noti_cuidas) != 0)
                                         <div class="edit">
                                             @foreach($noti_cuidas as $cuida)
                                                 @if(count($cuida->fotos) > 0)
@@ -392,7 +401,9 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- Cult e Tec -->
+                                        @if(count($noti_cults) != 0)
                                         <div class="edit cult">
                                             @foreach($noti_cults as $cult)
                                                 @if(count($cult->fotos) > 0)
@@ -440,6 +451,7 @@
                                         <div class="d-flex justify-content-center">
                                             <hr class="linha-news"/>
                                         </div>
+                                        @endif
                                         <!-- rodapé -->
                                         <div class="edit rodape-news">
                                             <div class="rodape-tit">

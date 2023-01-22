@@ -143,6 +143,7 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @if(count($mailNews['noti_etcs']) != 0)
     <!-- Inicio Etcetera -->
     <div class="edit">
     <div class="row">
@@ -169,7 +170,9 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <!-- Inicio Disse -->
+    @if(count($mailNews['noti_disses']) != 0)
     <div class="edit">
     <div class="row">
     <table class="table-icon">
@@ -211,6 +214,7 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <div class="intervalo">
     <div class="row aviso-news">
     <h4 class="saud-h4" style="font-family: RobotoSerifRegular, serif">Primeira leitura? assine nossa newsletter <a href="{{route('clientes.index')}}">aqui.</a></h4>
@@ -221,6 +225,7 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @if(count($mailNews['noti_dinhes']) != 0)
     <!-- Inicio Dinheiro -->
     <div class="edit">
     <div class="row">
@@ -281,7 +286,9 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <!-- Inicio Planeta -->
+    @if(count($mailNews['noti_planes']) != 0)
     <div class="edit">
     @foreach($mailNews['noti_planes'] as $plane)
     @if(count($plane->fotos) > 0)
@@ -332,7 +339,9 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <!-- Inicio Cuidar -->
+    @if(count($mailNews['noti_cuidas']) != 0)
     <div class="edit">
     @foreach($mailNews['noti_cuidas'] as $cuida)
     @if(count($cuida->fotos) > 0)
@@ -383,7 +392,9 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <!-- Inicio Cult & Tec -->
+    @if(count($mailNews['noti_cults']) != 0)
     <div class="edit cult">
     @foreach($mailNews['noti_cults'] as $cult)
     @if(count($cult->fotos) > 0)
@@ -434,6 +445,7 @@
     <div class="d-flex justify-content-center">
     <hr class="linha-news"/>
     </div>
+    @endif
     <!-- Inicio Rodapé -->
     <div class="rodape-geral">
     <table class="table-final">
