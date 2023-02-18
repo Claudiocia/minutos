@@ -35,10 +35,17 @@
                                             $linkShow = route('admin.newsletters.show', ['newsletter' => $newsletter->id]);
                                             $linkFoto = route('admin.newsletters.photorel', ['newsletter' => $newsletter->id]);
                                             $linkEnvi = route('admin.newsletters.sendmail', ['newsletter' => $newsletter->id]);
-                                            return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-pencil-alt"></i>')->asLinkTo($linkEdit)."|".
-                                            \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow)."|".
-                                            \Bootstrapper\Facades\Button::LINK('<i class="fas fa-image"></i>')->asLinkTo($linkFoto)."|".
-                                            \Bootstrapper\Facades\Button::LINK('<i class="fa-solid fa-share"></i>')->asLinkTo($linkEnvi);
+                                            if ($newsletter->enviada == 'n'){
+                                                return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-pencil-alt"></i>')->asLinkTo($linkEdit)."|".
+                                                    \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow)."|".
+                                                    \Bootstrapper\Facades\Button::LINK('<i class="fas fa-image"></i>')->asLinkTo($linkFoto)."|".
+                                                    \Bootstrapper\Facades\Button::LINK('<i class="fa-solid fa-share"></i>')->asLinkTo($linkEnvi);
+                                            }
+                                            else {
+                                                return \Bootstrapper\Facades\Button::LINK('<i class="fas fa-pencil-alt"></i>')->asLinkTo($linkEdit)."|".
+                                                    \Bootstrapper\Facades\Button::LINK('<i class="fas fa-eye"></i>')->asLinkTo($linkShow)."|".
+                                                    \Bootstrapper\Facades\Button::LINK('<i class="fas fa-image"></i>')->asLinkTo($linkFoto);
+                                            }
                                         })
                                     !!}
                                 </div>
