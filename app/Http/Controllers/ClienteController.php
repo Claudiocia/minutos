@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Forms\ClienteForm;
+use App\Forms\MensagemCliForm;
 use App\Mail\SendMailCliente;
+use App\Mail\SendMailMensagem;
+use App\Mail\SendMailNews;
 use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -60,6 +64,65 @@ class ClienteController extends Controller
             'method' => 'POST',
         ]);
         return view('admin.clientes.create', compact('form'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
+    public function createMsg()
+    {
+        $form = \FormBuilder::create(MensagemCliForm::class, [
+            'url' => route('admin.clientes.envia-msg'),
+            'method' => 'POST',
+        ]);
+
+        return view('admin.clientes.msg.mensagem', compact('form'));
+    }
+
+    public function enviaMsg(Request $request)
+    {
+        $data = $request->all();
+        //dd($data);
+
+        $emails = Cliente::orderBy('id', 'ASC')->get();
+        $clientes = User::whereRole(2)->get();
+        $numReg = $emails->count();
+        //dd($numReg);
+        $chunks = $emails->chunk(50);
+
+        $subject = $data['title'];
+        $mensagem = $data['mensagem'];
+        $date = $data['data'];
+
+        foreach ($clientes as $cliente) {
+        $mailData = [
+            'title' => $subject,
+            'mensagem' => $mensagem,
+            'date' => $date,
+        ];
+
+            Mail::to($cliente->email)->send(new SendMailMensagem($mailData, $subject));
+        }
+
+        /*
+        foreach ($chunks as $chunk){
+            dd($chunk);
+            Mail::to("newsletter@canalminutos.com.br")
+                ->bcc($chunk)
+                ->send(new SendMailMensagem($mailData, $subject));
+        }*/
+
+
+        if (Response::HTTP_OK){
+            $msg = 'Mensagem enviada com sucesso';
+        }else{
+            $msg = 'Ops! Tivemos problema. Tente novamente mais tarde';
+        }
+        $request->session()->flash('msg', $msg);
+        return redirect()->route('admin.clientes.index');
+
     }
 
     /**

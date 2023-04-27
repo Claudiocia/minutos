@@ -44,13 +44,13 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Newsletter whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|Newsletter withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Newsletter withoutTrashed()
- * @mixin \Eloquent
  * @property string $abertura
  * @property int|null $num_seq
  * @method static Builder|Newsletter whereAbertura($value)
  * @method static Builder|Newsletter whereNumSeq($value)
  * @property string|null $title_dia
  * @method static Builder|Newsletter whereTitleDia($value)
+ * @mixin \Eloquent
  */
 class Newsletter extends Model implements Transformable, TableInterface
 {

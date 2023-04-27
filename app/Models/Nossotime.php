@@ -37,9 +37,9 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Nossotime whereTexto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Nossotime whereTwitter($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Nossotime whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property string $ativo
  * @method static \Illuminate\Database\Eloquent\Builder|Nossotime whereAtivo($value)
+ * @mixin \Eloquent
  */
 class Nossotime extends Model implements Transformable, TableInterface
 {

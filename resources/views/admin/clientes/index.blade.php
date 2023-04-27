@@ -30,6 +30,7 @@
                                 <div class="row btn-new-reset" id="assinante">
                                     {!! Button::primary('Novo')->asLinkTo(route('admin.clientes.create'))->addClass(['class'=>'estilo-btn']) !!}
                                     {!! Button::primary('Limpar')->asLinkTo(route('admin.clientes.index').'#assinante')->addClass(['class'=>'estilo-btn']) !!}
+                                    {!! Button::primary('Mensagem')->asLinkTo(route('admin.clientes.msg.mensagem'))->addClass(['class'=>'estilo-btn']) !!}
                                 </div>
                                 <div class="row" style="margin-left: 10px; margin-right: 10px;">
                                     {!!

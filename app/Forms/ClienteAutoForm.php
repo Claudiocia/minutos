@@ -10,7 +10,7 @@ class ClienteAutoForm extends Form
     {
         $this
             ->add('nome', 'text', [
-                'label' => 'Nome',
+                'label' => 'Como você prefere ser chamado?',
                 'attr' => ['placeholder' => 'digite seu nome', 'required' => 'required'],
             ])
             ->add('email', 'text', [

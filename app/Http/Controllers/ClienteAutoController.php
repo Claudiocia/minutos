@@ -159,7 +159,21 @@ class ClienteAutoController extends Controller
         }
         $newsletter = Newsletter::whereEnviada('s')->orderByDesc('created_at')->first();
 
+        $this->mailchimp($cliente);
+
         return view('clientes.bemvindo', compact('cliente', 'newsletter'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Cliente $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function mailchimp(Cliente $cliente)
+    {
+        //dd($cliente);
+        return \view('clientes.mailchimp', compact('cliente'));
     }
 
     /**

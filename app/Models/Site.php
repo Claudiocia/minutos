@@ -64,13 +64,13 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Site whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|Site withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Site withoutTrashed()
- * @mixin \Eloquent
  * @property string $site_nome
  * @property string|null $final_cta
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @method static \Illuminate\Database\Eloquent\Builder|Site whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Site whereFinalCta($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Site whereSiteNome($value)
+ * @mixin \Eloquent
  */
 class Site extends Model implements Transformable, TableInterface
 {

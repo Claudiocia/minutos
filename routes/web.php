@@ -60,6 +60,7 @@ Route::get('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@sho
 Route::put('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@update')->name('clientes.update');
 Route::delete('clientes/{cliente}', 'App\Http\Controllers\ClienteAutoController@destroy')->name('clientes.destroy');
 Route::get('clientes/{cliente}/edit', 'App\Http\Controllers\ClienteAutoController@edit')->name('clientes.edit');
+Route::get('clientes/mailchimp/{cliente}', 'App\Http\Controllers\ClienteAutoController@mailchimp')->name('clientes.mailchimp');
 
 //Route::post('/delete/{id}','App\Http\Controllers\AdminController@destroyProduct');
 
@@ -101,6 +102,8 @@ Route::group([
     Route::resource('razions', RazionController::class);
     Route::get('nossotimes/{nossotime}/photo-rel', [NossotimeController::class, 'photorel'])->name('nossotimes.photorel');
     Route::resource('clientes', ClienteController::class);
+    Route::get('clientes/msg/mensagem', [ClienteController::class, 'createMsg'])->name('clientes.msg.mensagem');
+    Route::post('clientes/envia-msg', [ClienteController::class, 'enviaMsg'])->name('clientes.envia-msg');
     Route::get('clientes/lembrete/{cliente}', [ClienteController::class, 'lembreteEmail'])->name('clientes.lembrete');
     Route::resource('rates', RateAdminController::class);
     Route::resource('retrancas', RetrancaController::class);

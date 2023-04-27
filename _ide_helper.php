@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 8.83.24.
+ * Generated for Laravel 8.83.27.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -9916,12 +9916,12 @@
          * Clones a request and overrides some of its parameters.
          *
          * @return static 
-         * @param array $query The GET parameters
-         * @param array $request The POST parameters
-         * @param array $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
-         * @param array $cookies The COOKIE parameters
-         * @param array $files The FILES parameters
-         * @param array $server The SERVER parameters
+         * @param array|null $query The GET parameters
+         * @param array|null $request The POST parameters
+         * @param array|null $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+         * @param array|null $cookies The COOKIE parameters
+         * @param array|null $files The FILES parameters
+         * @param array|null $server The SERVER parameters
          * @return static 
          * @static 
          */ 
@@ -18610,10 +18610,10 @@
          *
          * @static 
          */ 
-        public static function save($filename)
+        public static function save($filename, $disk = null)
         {
                         /** @var \Barryvdh\DomPDF\PDF $instance */
-                        return $instance->save($filename);
+                        return $instance->save($filename, $disk);
         }
                     /**
          * Make the PDF downloadable by the user
@@ -18648,7 +18648,7 @@
                     /**
          * 
          *
-         * @param \Barryvdh\DomPDF\array<string> $pc
+         * @param array<string> $pc
          * @static 
          */ 
         public static function setEncryption($password, $ownerpassword = '', $pc = [])
@@ -18782,10 +18782,10 @@
          *
          * @static 
          */ 
-        public static function save($filename)
+        public static function save($filename, $disk = null)
         {
                         /** @var \Barryvdh\DomPDF\PDF $instance */
-                        return $instance->save($filename);
+                        return $instance->save($filename, $disk);
         }
                     /**
          * Make the PDF downloadable by the user
@@ -18820,7 +18820,7 @@
                     /**
          * 
          *
-         * @param \Barryvdh\DomPDF\array<string> $pc
+         * @param array<string> $pc
          * @static 
          */ 
         public static function setEncryption($password, $ownerpassword = '', $pc = [])
@@ -19383,7 +19383,7 @@
          *
          * @param string $header The name of the header to retrieve. Can be HTTP compliant such as
          *                       "User-Agent" or "X-Device-User-Agent" or can be php-esque with the
-         *                       all-caps, HTTP_ prefixed, underscore seperated awesomeness.
+         *                       all-caps, HTTP_ prefixed, underscore separated awesomeness.
          * @return string|null The value of the header.
          * @static 
          */ 
@@ -19708,6 +19708,16 @@
         {
                         /** @var \Livewire\LivewireManager $instance */
                         return $instance->getComponentAliases();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveMissingComponent($resolver)
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->resolveMissingComponent($resolver);
         }
                     /**
          * 

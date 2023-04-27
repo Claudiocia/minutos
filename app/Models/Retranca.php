@@ -25,7 +25,6 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Retranca whereId($value)
  * @method static Builder|Retranca whereNome($value)
  * @method static Builder|Retranca whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property Carbon|null $deleted_at
  * @method static \Illuminate\Database\Query\Builder|Retranca onlyTrashed()
  * @method static Builder|Retranca whereDeletedAt($value)
@@ -33,6 +32,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Query\Builder|Retranca withoutTrashed()
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Foto[] $fotos
  * @property-read int|null $fotos_count
+ * @mixin \Eloquent
  */
 class Retranca extends Model implements Transformable, TableInterface
 {

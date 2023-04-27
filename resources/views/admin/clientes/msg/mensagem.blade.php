@@ -8,18 +8,18 @@
                 <div class="col-md-12">
                     <div class="w-auto p-3">
                         <div class="panel-heading-admin">
-                            <h5>Novo Assinante aqui</h5>
+                            <h5>Mensagem aos Assinantes</h5>
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
                                 {!! Button::primary('Voltar')->asLinkTo(route('admin.clientes.index').'#assinante') !!}
                             </div>
                             <div class="form-admin">
-                                <?php $icon = '<i class="fas fa-save"></i>'; ?>
+                                <?php $icon = '<i class="fas fa-paper-plane"></i>'; ?>
                                 {!!
                                         form($form->add('salvar', 'submit', [
                                             'attr' => ['class' => 'btn btn-primary btn-block estilo-btn', 'style' => 'width:120px'],
-                                            'label' => $icon.' Salvar'
+                                            'label' => $icon.'  Enviar'
                                          ]))
                                  !!}
                             </div>

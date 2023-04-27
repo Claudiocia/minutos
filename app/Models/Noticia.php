@@ -48,7 +48,6 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Noticia whereTitle($value)
  * @method static Builder|Noticia whereUpdatedAt($value)
  * @method static Builder|Noticia whereUserId($value)
- * @mixin \Eloquent
  * @property string $public
  * @property Carbon|null $deleted_at
  * @method static \Illuminate\Database\Query\Builder|Noticia onlyTrashed()
@@ -62,6 +61,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Noticia newsl($id)
  * @method static Builder|Noticia public($public)
  * @method static Builder|Noticia whereNewsletterId($value)
+ * @mixin \Eloquent
  */
 class Noticia extends Model implements Transformable, TableInterface
 {

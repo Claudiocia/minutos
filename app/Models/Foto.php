@@ -40,9 +40,9 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Foto whereOriginName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Foto whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Foto whereUsing($value)
- * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Retranca[] $retrancas
  * @property-read int|null $retrancas_count
+ * @mixin \Eloquent
  */
 class Foto extends Model implements Transformable, TableInterface
 {

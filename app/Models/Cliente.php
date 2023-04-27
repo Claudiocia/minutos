@@ -32,7 +32,6 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereReview($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereSigned($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property string|null $motivo
  * @property-read \App\Models\Rate|null $rate
  * @method static \Illuminate\Database\Eloquent\Builder|Cliente whereMotivo($value)
@@ -48,6 +47,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property-read \App\Models\Indicator|null $indicator
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Premio[] $premios
  * @property-read int|null $premios_count
+ * @mixin \Eloquent
  */
 class Cliente extends Model implements Transformable, TableInterface
 {
