@@ -95,24 +95,26 @@ class ClienteController extends Controller
         $subject = $data['title'];
         $mensagem = $data['mensagem'];
         $date = $data['data'];
-
-        foreach ($clientes as $cliente) {
         $mailData = [
             'title' => $subject,
             'mensagem' => $mensagem,
             'date' => $date,
         ];
 
-            Mail::to($cliente->email)->send(new SendMailMensagem($mailData, $subject));
-        }
-
         /*
+        foreach ($clientes as $cliente) {
+
+
+            Mail::to($cliente->email)->send(new SendMailMensagem($mailData, $subject));
+        }*/
+
+
         foreach ($chunks as $chunk){
             dd($chunk);
             Mail::to("newsletter@canalminutos.com.br")
                 ->bcc($chunk)
                 ->send(new SendMailMensagem($mailData, $subject));
-        }*/
+        }
 
 
         if (Response::HTTP_OK){
