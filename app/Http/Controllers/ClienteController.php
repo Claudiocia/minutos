@@ -110,7 +110,7 @@ class ClienteController extends Controller
 
 
         foreach ($chunks as $chunk){
-            dd($chunk);
+            //dd($chunk);
             Mail::to("newsletter@canalminutos.com.br")
                 ->bcc($chunk)
                 ->send(new SendMailMensagem($mailData, $subject));
